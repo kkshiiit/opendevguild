@@ -9,7 +9,9 @@ import tomllib
 import zipfile
 
 from jsonschema import Draft202012Validator
-from skills_ref import validate as validate_skill
+from skills_ref import find_skill_md
+from skills_ref.errors import ParseError
+from skills_ref.validator import validate_metadata
 from skills_ref.parser import parse_frontmatter
 from strictyaml import dirty_load, YAMLError
 
@@ -30,6 +32,19 @@ DIRECTORIES = ('.github', 'skills', 'docs', 'contracts', 'examples', 'scripts', 
 EXTENSIONS = {'.md', '.json', '.py', '.toml', '.lock', '.yml', '.yaml'}
 AGENT_NAMES = ('architect', 'product-analyst', 'designer', 'implementer',
                'reviewer', 'qa-specialist', 'security-specialist', 'release-specialist')
+
+
+def validate_skill(directory):
+    """Use official parsing/validation with explicit UTF-8 on every host.
+
+    Upstream's demonstration file wrapper uses the platform default encoding,
+    which failed on Windows CP1252. No specification checks are reimplemented.
+    """
+    path=find_skill_md(directory)
+    if path is None:return ['Missing required file: SKILL.md']
+    try:metadata,_=parse_frontmatter(path.read_text(encoding='utf-8'))
+    except (ParseError,UnicodeError,OSError) as error:return [str(error)]
+    return validate_metadata(metadata,directory)
 
 
 def read_json(path):

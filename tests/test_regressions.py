@@ -17,6 +17,18 @@ import guild  # noqa: E402
 
 
 class RegressionTests(unittest.TestCase):
+    def test_official_adapter_reads_utf8_independent_of_platform_default(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path=Path(temporary)/'unicode-safe';path.mkdir()
+            (path/'SKILL.md').write_text('---\nname: unicode-safe\ndescription: Typography — interacción y percepción.\nlicense: Apache-2.0\n---\nBody\n',encoding='utf-8')
+            original=Path.read_text
+            def strict_read(target,*args,**kwargs):
+                if kwargs.get('encoding')!='utf-8':
+                    raise UnicodeDecodeError('charmap',b'\x9d',0,1,'simulated Windows default')
+                return original(target,*args,**kwargs)
+            with mock.patch.object(Path,'read_text',strict_read):
+                self.assertEqual(guild.validate_skill(path),[])
+
     def fixture(self, parent):
         """Copy public source inputs only, never the workspace or its environment."""
         target = Path(parent) / 'source'
