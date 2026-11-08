@@ -1,6 +1,6 @@
-# Delivery report — OpenDevGuild0.3.0
+# Delivery report — OpenDevGuild 0.3.0
 
-Date:2026-11-08. [Español user guide](../README.es.md).
+Date: 2026-11-08. [Español user guide](../README.es.md).
 
 ## A. Executive outcome
 
@@ -23,7 +23,7 @@ knowledge, not automatic model training.
 
 ## C. Inventory
 
-All42 procedures have the18-item author contract, official metadata, explicit
+All 42 procedures have the18-item author contract, official metadata, explicit
 activation boundaries, specialized steps and embedded tests. Functional scenario
 presence is not execution evidence. All have5 structured routing cases; model
 behavioral coverage remains selective.
@@ -84,7 +84,7 @@ or isolation guarantee is inferred. See [agent evidence](agent-verification.md).
 
 ## E. Quality
 
-Local official/project validation and all72 unittest methods pass, including19
+Local official/project validation and all 73 unittest methods pass, including 19
 visual methods. Ruff fatal-error checks pass. All210 deterministic routing cases
 match:261 expected activations,0 extra/missed/forbidden. Dependency/source audit
 records are retained; no complete security certification is claimed.
@@ -103,11 +103,11 @@ is treated as approval. Hosted CI is a separate observed state below.
 ## F. Agent-resource measurements
 
 Measured routing activations are deterministic policy outputs, not actual
-host skill invocations. Browser capture elapsed5.029s and32-sample Canvas median
-0.100ms are local observations only. Test duration varies per run. Provider-wide
+host skill invocations. Browser capture elapsed 5.029 s and32-sample Canvas median
+0.100 ms are local observations only. Test duration varies per run. Provider-wide
 token, cost, model versions and exact whole-task tool telemetry were unavailable;
 no invented statistics, efficiency comparison or token-saving claim is made.
-The archive keeps references on demand; individual skills remain below8KiB.
+The archive keeps references on demand; individual skills remain below 8 KiB.
 
 ## G. GitHub and distribution
 
@@ -151,4 +151,26 @@ are runnable; native recipe commands are not misrepresented as executed runs.
 4. Broaden assistive, wide-gamut and real GPU/energy testing according to risk.
 5. Review new source/advisory findings and maintain pins/compatibility evidence.
 
-Publication observation is appended after the authorized remote operation.
+## Publication observation
+
+- Source uploaded to https://github.com/kkshiiit/opendevguild on branch `main`.
+- Tested implementation commit: `bd9a99efbffde6c4fcb07065c5ac14459117e824`.
+- [Hosted CI run42525419231](https://github.com/kkshiiit/opendevguild/actions/runs/42525419231)
+  completed successfully: Linux/Python3.11 and3.12, Windows/Python3.12,
+  macOS/Python3.12 and the actual Chromium visual job all passed.
+- Initial Windows default-encoding failure was reproduced, fixed using explicit
+  UTF-8 with the official parser/validator API, and covered by a new regression.
+  This is a file-reading adapter, not a replacement specification validator.
+- Visibility change was attempted under explicit user authorization. GitHub
+  returned HTTP403: Resource not accessible by integration. The repository
+  remains private at this observation. No claim of public publication is made.
+- The managed desktop is enabled but its control tools were not exposed, so no
+  authenticated web fallback was available. The owner can change visibility under
+  repository Settings → Danger Zone → Change repository visibility → Public.
+  No credentials should be shared. Administrative protection/reporting changes
+  are not asserted as enabled through this restricted integration.
+- No GitHub Release, stable tag or universal plugin-directory listing was created.
+  A reproducible local0.3.0 candidate ZIP and SHA-256 are separate deliverables.
+- Delivery documentation follows the tested implementation in a separate commit;
+  the exact checkout revision is available through `git rev-parse HEAD`.
+

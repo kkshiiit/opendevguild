@@ -2,14 +2,14 @@
 
 Date: 2026-11-08. The complete master brief and Visual Intelligence Engine V1
 extension are reconciled. All 34 original skills remain; eight optional visual
-specialists bring the catalog to42. See the [final report](final-report.md).
+specialists bring the catalog to 42. See the [final report](final-report.md).
 
 ## Executed local checks
 
 | Check | Observed result | Boundary |
 | --- | --- | --- |
 | Official skills-ref and project policy |42 formats, contracts, scenarios, paths, TOML/YAML and manifest valid|Structure is not model effectiveness|
-| Full unittest suite |72 methods passed, including19 visual methods|Optional pixel tests require the visual dependency group|
+| Full unittest suite |73 methods passed, including 19 visual methods|Optional pixel tests require the visual dependency group|
 | Fatal-error lint |Ruff E9/F63/F7/F82 passed|Not a complete style/security analysis|
 | Routing fixtures |210/210 exact;261 expected activations;0 extra/missed/forbidden|Caller-classified deterministic policy, not natural-language host activation|
 | Handoff and gates |Six states, thirteen fields, independent reviewer declaration and six evidence gates checked|Declared observations/identities cannot be authenticated by schema|
@@ -65,3 +65,13 @@ global Git settings were not changed. Historical skill snapshots remain bound to
 their actual tested inputs. Partial capture runs and raw authentication diagnostics
 are excluded. A public source repository is distinct from a stable release,
 verified native integration or public plugin-directory acceptance.
+
+## Hosted verification and publication blocker
+
+[Run42525419231](https://github.com/kkshiiit/opendevguild/actions/runs/42525419231)
+passed all five jobs on implementation bd9a99e: Linux3.11/3.12, Windows3.12,
+macOS3.12 and real Chromium visual execution. The initial Windows locale-decoding
+failure was fixed and regression-tested without changing specification rules.
+Local complete suite:73 passed. The source is uploaded to the user-selected
+repository. Public visibility remains BLOCKED by GitHub HTTP403 despite explicit
+authorization; the actual owner must use an administrative session.

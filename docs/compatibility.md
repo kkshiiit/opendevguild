@@ -118,3 +118,12 @@ results, and keep vendor-specific configuration separate from portable skills.
 Security, privacy and accessibility procedures do not confer certification or
 legal compliance. Self-review alone cannot establish VERIFIED; independent review
 and applicable gate evidence are required.
+
+## Executed tooling matrix
+
+[Hosted CI42525419231](https://github.com/kkshiiit/opendevguild/actions/runs/42525419231)
+passed the library tooling on Linux/Python3.11 and3.12, Windows/Python3.12 and
+macOS/Python3.12, plus a Chromium visual-fixture job. This verifies tooling, not
+native app rendering, native Codex profile loading, model behavior or an aesthetic
+benchmark. Windows file handling uses explicit UTF-8 with the official
+skills-ref parser/metadata validator; no specification rules are reimplemented.
