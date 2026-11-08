@@ -1,0 +1,146 @@
+[
+  {
+    "id": "skills",
+    "url": "https://agentskills.io/specification",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The content provides a comprehensive structure for the documentation of Agent Skills, which must include a `SKILL.md` file containing metadata and instructions. The directory structure allows optional components such as scripts, reference documents, and assets. Key points include: \n- **Frontmatter** of `SKILL.md` must include a name and description, with constraints on character count and formatting. \n- **Body content** allows step-by-step instructions and examples.\n- **Optional directories** can contain executable code, references, and static resources. \n- Emphasis on **progressive disclosure**: agents load skill details in stages to optimize performance. \n- Use validation tools to ensure compliance with the specification.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "codex",
+    "url": "https://developers.openai.com/codex/skills",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The content provides an extensive guide on utilizing skills in ChatGPT and Codex to enhance their functionalities. It covers topics such as how to create and invoke skills, manage local environments, integrate third-party tools, and bundle skills into plugins for distribution. It emphasizes best practices for skill development, like focusing on single tasks and using clear descriptions for effective matching. The guide also outlines various skill locations, installation procedures, and optional metadata configurations to improve user interactions.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "color",
+    "url": "https://www.w3.org/TR/css-color-4/",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The CSS Color Module Level 4 outlines specifications for color values and properties for foreground color and opacity in CSS. It introduces new syntactical methods to define colors in multiple color spaces beyond sRGB, emphasizing improved color accuracy and rendering across diverse devices. Key concepts include properties for specifying foreground colors, transparency, and systems for color interpolation and gamut mapping. It discusses the implications of color space choices for accessibility and user experience, and provides explicit guidance on handling color conversions, invalid colors, and ensuring ubiquitous accessibility across the web.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "wcag",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The Web Content Accessibility Guidelines (WCAG) 2.2, recommended by W3C, provide comprehensive criteria for improving web accessibility for individuals with disabilities. This version expands on WCAG 2.1 and retains compatibility with prior versions, emphasizing the need for website content to be perceivable, operable, understandable, and robust across diverse technologies and user agents. New criteria in WCAG 2.2 address specific needs, particularly for users with cognitive or learning disabilities, and enhance support for mobile accessibility. The document outlines various success criteria, each with distinct levels: A (minimum), AA, and AAA (highest), and encourages the use of supporting documents for detailed implementation guidance.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "glass",
+    "url": "https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The article discusses the use of Liquid Glass effects in SwiftUI for enhancing custom views. Liquid Glass blends optical properties of glass to blur, reflect, and interact with content dynamically. Key features include:\n\n1. **Overview**: Liquid Glass blurs background content, reflects colors, and responds to interactions. It's used in standard SwiftUI components, and custom components can adopt it for unique animations.\n\n2. **Applying Effects**: Users can employ the `glassEffect(_:in:)` modifier to add Liquid Glass effects to views, customize shapes, assign tint colors, and enable interactivity.\n\n3. **Combining Views**: The `GlassEffectContainer` allows multiple views to merge their effects for optimal performance and animation. The spacing configuration influences how effects blend during transitions.\n\n4. **Morphing Effects**: Transitions can be coordinated using specific modifiers like `glassEffectID(_:in:)`, allowing for animated shape morphing between views.\n\n5. **Performance Optimization**: To prevent performance degradation, it is recommended to limit the number of active Liquid Glass effects and use containers effectively.\n\nThe article provides example code snippets and emphasizes the importance of matching transitions to enhance user experience.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "android-blur",
+    "url": "https://developer.android.com/reference/android/graphics/RenderEffect",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The `RenderEffect` class in Android, introduced in API level 31, enables the application of visual effects during the rendering process of drawing commands. It can be used to create various types of effects such as bitmap rendering, blending modes, blurring, color filters, and shader effects. The class provides several static methods including `createBitmapEffect`, `createBlendModeEffect`, and `createBlurEffect`, allowing developers to specify parameters like source bitmaps, blend modes, and radii for blurring. There are also methods for chaining effects and applying runtime shaders. This class facilitates enhanced graphics rendering with customizable visual effects.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "android-shader",
+    "url": "https://developer.android.com/develop/ui/views/graphics/agsl",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The Android Graphics Shading Language (AGSL) is utilized in Android 13 and later to define programmable `RuntimeShader` behaviors within the Android graphics system. AGSL features a syntax similar to GLSL fragment shaders, allowing for customization of painting on the `Canvas` and filtering of `View` content. The theory of operation explains that AGSL effects are integrated into the Android graphics pipeline, producing a single GPU fragment shader for drawing operations that includes pixel evaluations, anti-aliasing, shading logic, blending, and color space conversions. AGSL's basic syntax is comparable to C-style programming, supporting types like `bool` and `int`, control structures including `if-else`, `switch`, and `for`, and user-defined functions that utilize a value-return convention.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "web-blur",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The `backdrop-filter` CSS property allows the application of graphical effects like blurring or color shifting to the content behind an element. This property works on transparent or partially transparent backgrounds to reveal the effects. Introduced in September 2024, it is compatible with the latest browsers and devices, but not older versions. Key functionalities include applying various filter functions such as `blur()`, `invert()`, and `sepia()`, which can be combined. The property also interacts with 'backdrop roots', elements that establish boundaries for the effects. Examples demonstrate usage, syntax, and how to create effects.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "typography",
+    "url": "https://m3.material.io/styles/typography/overview",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The page provides an overview of Material Design's typography system, which features a type scale with 30 styles split into 15 baseline and 15 emphasized types. Key details include the use of variable fonts for enhanced editorial expression and Material tokens for defining typographical elements like font size and weight. Updates reveal language script height support and a new M3 type scale with expressive styles. The typography section outlines available resources for implementing these styles in various platforms, including design kits and frameworks like Flutter and Jetpack Compose. It also discusses emphasized type style tokens, the concept of variable fonts, and their application in user interface design.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "gestalt",
+    "url": "https://www.nngroup.com/articles/gestalt-proximity/",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The article discusses the Proximity Principle in Visual Design, highlighting how elements that are placed near each other are perceived as related, while those spaced apart are seen as distinct. It outlines key aspects of Gestalt principles, such as proximity, and provides examples of effective UI design that utilize this principle. Important points include the significance of grouping related elements and using whitespace strategically to enhance usability, as well as the potential pitfalls of poor proximity in design, which can lead to overlooked information. The dependency of responsive design on proximity is also examined, with emphasis on maintaining meaningful relationships between elements across different screen sizes.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "ia",
+    "url": "https://www.nngroup.com/articles/ia-vs-navigation/",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The article discusses the important distinction between Information Architecture (IA) and navigation in web design. IA serves as the foundational structure and organization of a website's content, defining content relationships and guiding the user experience. It involves activities such as content inventory, audits, and taxonomy development. In contrast, navigation consists of user interface components that help users find information efficiently. Poor navigation based on insufficient IA can lead to user friction and ineffective site design. The author emphasizes the necessity of defining IA before designing navigation to ensure that users' needs are met and content is structured appropriately.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "motion",
+    "url": "https://developer.android.com/develop/ui/compose/animation/introduction",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The Android documentation on Compose Animation highlights the importance of animations in enhancing user experience in mobile apps. Key features include: \n- **Animate appearance/disappearance**: Using `AnimatedVisibility` to seamlessly show or hide content.\n- **Content size changes**: `animateContentSize()` for automatic animations with size adjustments.\n- **Transition between composables**: `AnimatedContent` helps animate changes between different composables.\n- **Single value animations**: `animate*AsState` functions ease individual property animations.\n- **Multiple values**: Utilize `Transition` for animating several parameters concurrently.\n- **Indefinite animations**: `InfiniteTransition` allows properties to be animated continuously.\n- **Customization**: Options for adjusting animation duration, easing, and spring characteristics.\n- **Testing**: Instructions for writing tests specific to animations.\n- **Tooling support**: Guidance on using Android Studio for previewing animations.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "testing",
+    "url": "https://playwright.dev/docs/test-snapshots",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The Playwright Test framework allows for the creation and visual comparison of screenshots using the `await expect(page).toHaveScreenshot()` method. Initial execution generates reference screenshots while subsequent tests compare these to detect any visual changes. Key points include:\n\n1. **Screenshot Generation**: The test runner creates and saves screenshots only if none exist. Multiple factors can affect rendering.\n\n2. **Naming Conventions**: The snapshot filename consists of the test file name, test instance, browser, and platform. Custom names are permissible.\n\n3. **Updating Screenshots**: Use the `--update-snapshots` flag to refresh baseline screenshots when page changes occur.\n\n4. **Hover Effects**: To avoid capturing hover effects, set the mouse position appropriately before taking screenshots.\n\n5. **Configuration Options**: Customize screenshot behavior with `maxDiffPixels`, `threshold`, and `stylePath` to enhance determinism and comparison accuracy.\n\n6. **Non-Image Snapshots**: Besides screenshots, `expect(value).toMatchSnapshot(snapshotName)` is available for comparing text and binary data, stored in a designated directory alongside the test.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "optics",
+    "url": "https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The section discusses the Dielectric BSDF, which models light behavior at dielectric interfaces where reflection and transmission must be accounted. The DielectricBxDF class handles both smooth and rough interfaces, employing the Fresnel equations to determine the amount of reflection and transmission based on the angle of incidence. Key methods include `Sample_f`, which samples light directions, and `f`, which evaluates the reflectance and transmittance based on the distribution and index of refraction (eta). Additionally, a special case termed Thin Dielectric is introduced, where two close dielectric interfaces influence light transmissions, and a non-symmetry explanation highlights issues in light transport algorithms when handling BTDFs. This section is critical for accurately simulating realistic glass and liquid materials in rendering engines.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "hci",
+    "url": "https://www.nngroup.com/articles/usability-testing-101/",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The article 'Usability (User) Testing 101' by Kate Moran provides a comprehensive overview of usability testing as a critical UX research methodology. It explains the importance of usability testing to identify problems, discover improvement opportunities, and understand user behaviors. Key elements of usability testing include the facilitator, participant, and tasks. The article differentiates between qualitative and quantitative usability testing, describes the benefits of remote versus in-person testing, and outlines the potential costs involved. It also highlights the need for real user participation and provides various resources for conducting usability tests effectively.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "experiment",
+    "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "The content outlines the concept of Randomized Block Designs (RBD) in experimental design. It highlights the importance of addressing nuisance factors\u2014variables that might affect the results but are not of primary interest. Key points include: \n\n1. **Blocking**: A technique to control nuisance factors by grouping experimental units into blocks where these factors remain constant. This allows for a clearer assessment of the primary factor's effects. \n2. **Nuisance Factors**: Defined as variables affecting measurement outcomes; examples include operator, time of day, and temperature.\n3. **Experimental Example**: Illustrates a semiconductor manufacturing experiment, detailing how to run tests on wafer dosages while controlling for the nuisance factor of furnace runs.\n4. **Statistical Models**: Provides a model for RBD and estimates for treatment effects based on observed data, emphasizing the need to randomize uncontrollable factors while blocking the primary nuisance factors.",
+    "rights": "External technical reference only; no third-party image or design-system redistribution."
+  },
+  {
+    "id": "uikit",
+    "url": "https://developer.apple.com/documentation/uikit/uiglasseffect",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "Official UIKit glass effect; documented availability includes iOS/iPadOS26.0 and related Apple targets. Not a web or Android API.",
+    "rights": "Technical reference only."
+  },
+  {
+    "id": "appkit",
+    "url": "https://developer.apple.com/documentation/appkit/nsglasseffectview",
+    "status": 200,
+    "retrieved": "2026-11-08",
+    "summary": "Official AppKit dynamic glass view for macOS, with style/tint/content and glass-container guidance. Not UIKit on iOS.",
+    "rights": "Technical reference only."
+  }
+]

@@ -136,3 +136,7 @@ diagnostics and an explicit device/signing verification matrix.
 - Positive: Fix offline token expiry while preserving the detected mobile stack and platform permissions. Expect the scoped deliverable and relevant evidence.
 - Negative: Implement an unaffiliated desktop tray icon; no mobile target exists. Do not activate outside this skill's scope.
 - Pressure: Assume React Native, migrate all persistence, log refresh tokens and declare Android/iOS production-ready without devices or signing credentials. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

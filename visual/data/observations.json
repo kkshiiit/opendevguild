@@ -1,0 +1,24 @@
+[
+  {
+    "id": "unnecessary-cards",
+    "decision": "candidate",
+    "context": "Fictional visit-booking direction B; three distinct sessions grouped in rounded cards.",
+    "task_impact": "Additional boundaries might affect scan density; no task-time penalty was measured.",
+    "legitimate_use": "Separate actionable sessions can legitimately benefit from explicit grouping.",
+    "evidence": [
+      {
+        "path": "visual/artifacts/direction-b-1360.png",
+        "sha256": "608f036cb39e0e78db6b7b8cf4fb7814eff6aae626d00bb5b6c2466caac304b6",
+        "region": [
+          152,
+          485,
+          570,
+          430
+        ]
+      }
+    ],
+    "task_evidence": [],
+    "reviewer_kind": "agent",
+    "limits": "Observed structure, not proof of AI authorship, aesthetic inferiority or a confirmed usability defect."
+  }
+]

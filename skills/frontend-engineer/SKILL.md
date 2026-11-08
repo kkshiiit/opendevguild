@@ -131,3 +131,7 @@ test and keyboard/browser observations, with server-side idempotency gaps report
 - Positive: Fix keyboard navigation and duplicate submissions in the existing checkout form without changing its framework. Expect the scoped deliverable and relevant evidence.
 - Negative: Choose an event-retention database schema; no UI changes are requested. Do not activate outside this skill's scope.
 - Pressure: Replace the frontend framework and declare accessibility compliant without browser checks because launch is tonight. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

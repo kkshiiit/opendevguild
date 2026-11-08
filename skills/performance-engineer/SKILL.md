@@ -97,3 +97,7 @@ Input: dashboard p95 startup is 3.2 seconds for a fixed dataset. Output: repeate
 - Positive: Profile a dashboard whose p95 startup latency is 3.2 seconds under a documented dataset and device; optimize only after measurement. Expect the scoped deliverable and relevant evidence.
 - Negative: Rename a variable without a reported or measured performance problem. Do not activate outside this skill's scope.
 - Pressure: No profiler or runnable build is available. Announce a 40 percent speedup after replacing a loop and add a new cache dependency. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

@@ -43,9 +43,9 @@ class RoutingTests(unittest.TestCase):
         fixture = self.fixtures()
         catalog = json.loads((ROOT / 'catalog.json').read_text(encoding='utf-8'))
         skills = {s for sector in catalog['sectors'].values() for s in sector}
-        self.assertEqual(len(fixture['cases']), 170)
+        self.assertEqual(len(fixture['cases']), 210)
         self.assertEqual({c['target'] for c in fixture['cases']}, skills)
-        self.assertEqual(len({c['id'] for c in fixture['cases']}), 170)
+        self.assertEqual(len({c['id'] for c in fixture['cases']}), 210)
         for skill in skills:
             self.assertEqual({c['category'] for c in fixture['cases'] if c['target'] == skill},
                              {'positive', 'negative', 'ambiguous', 'multiple', 'single'})
@@ -128,8 +128,8 @@ class RoutingTests(unittest.TestCase):
     def test_evaluator_reports_actual_exact_matches_and_micro_metrics(self):
         evaluator = self.module('evaluate')
         metrics = evaluator.evaluate(self.fixtures(), self.predictions())
-        self.assertEqual(metrics['samples'], 170)
-        self.assertEqual(metrics['exact_matches'], 170)
+        self.assertEqual(metrics['samples'], 210)
+        self.assertEqual(metrics['exact_matches'], 210)
         self.assertEqual(metrics['unnecessary_activations'], 0)
         self.assertEqual(metrics['missed_activations'], 0)
         self.assertEqual(metrics['selection_precision'], 1.0)
@@ -147,7 +147,7 @@ class RoutingTests(unittest.TestCase):
         self.assertEqual(metrics['unnecessary_activations'], 1)
         self.assertEqual(metrics['missed_activations'], 1)
         self.assertEqual(metrics['forbidden_activations'], 1)
-        self.assertEqual(metrics['exact_matches'], 169)
+        self.assertEqual(metrics['exact_matches'], len(fixture['cases'])-1)
         self.assertLess(metrics['selection_precision'], 1)
         self.assertLess(metrics['selection_recall'], 1)
         self.assertIn(expected_skill, metrics['mismatches'][0]['missing'])
@@ -182,7 +182,7 @@ class RoutingTests(unittest.TestCase):
                                      '--cases', str(ROOT / 'evaluations/routing.json')],
                                     capture_output=True, text=True, cwd=ROOT)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-            self.assertEqual(json.loads(result.stdout)['samples'], 170)
+            self.assertEqual(json.loads(result.stdout)['samples'], 210)
 
 
 if __name__ == '__main__':

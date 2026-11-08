@@ -94,7 +94,7 @@ is selected: repository analysis when reading is available, requirements
 clarification otherwise. The original work stays blocked. No all-34 activation
 or assumed browser, emulator, signing, network or subagent capability occurs.
 
-See the [measured routing evaluation procedure](evaluation-runner.md). Its 170
+See the [measured routing evaluation procedure](evaluation-runner.md). Its 210
 fixtures test this policy under explicit triage, **not host natural-language
 discovery or the behavioral quality of skill execution**.
 

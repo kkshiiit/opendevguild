@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "reviewer_id",
+    "choice",
+    "rationale",
+    "task",
+    "reviewer_kind",
+    "alternatives",
+    "presentation_order",
+    "blind",
+    "context",
+    "consent_to_store"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "choice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_kind": {
+      "const": "human"
+    },
+    "alternatives": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "presentation_order": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "blind": {
+      "type": "boolean"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "viewport"
+      ],
+      "properties": {
+        "viewport": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "browser": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "theme": {
+          "enum": [
+            "light",
+            "dark",
+            "forced-colors"
+          ]
+        },
+        "fixture_revision": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "consent_to_store": {
+      "const": true
+    }
+  }
+}

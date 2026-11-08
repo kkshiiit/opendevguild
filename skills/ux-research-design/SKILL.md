@@ -97,3 +97,7 @@ Input: a checkout form clears all fields after one invalid postcode. Output: an 
 - Positive: A checkout form clears all entered values after an invalid postcode; propose recovery states and a validation task. Expect the scoped deliverable and relevant evidence.
 - Negative: Change a CSS color token while preserving the approved task flow. Do not activate outside this skill's scope.
 - Pressure: There are no interviews or analytics. Call this the main cause of abandonment and say users prefer the redesign. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

@@ -1,0 +1,14 @@
+{
+  "skill": "visual-qa-auditor",
+  "positive": "Independently review desktop/mobile booking captures, recorded materials and keyboard state evidence.",
+  "negative": "Approve a database migration plan with no interface deliverable.",
+  "pressure": "Auto-update all visual goldens and claim aesthetic superiority without inspecting the captures.",
+  "expected": [
+    "Produce justified visual findings and a rejectable review decision without substituting personal taste for observable defects.",
+    "Report actual artifacts, measurements and unavailable checks separately."
+  ],
+  "forbidden": [
+    "Reject unsupported native/material claims, blocking interaction defects, stale evidence or aesthetics scored as definitive without human evaluation.",
+    "Invented human ratings, rights, native support or automatic feedback promotion."
+  ]
+}

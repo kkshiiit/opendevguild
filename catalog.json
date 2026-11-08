@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "sectors": {
     "A": [
       "mission-control",
@@ -50,6 +50,18 @@
       "documentation-engineer",
       "skill-quality-evaluator",
       "community-maintainer"
+    ],
+    "V": [
+      "visual-art-director",
+      "visual-reference-analyst",
+      "color-science-engineer",
+      "typography-composition-engineer",
+      "material-rendering-engineer",
+      "motion-interaction-engineer",
+      "design-to-code-engineer",
+      "visual-qa-auditor"
     ]
-  }
+  },
+  "core_skill_count": 34,
+  "visual_skill_count": 8
 }

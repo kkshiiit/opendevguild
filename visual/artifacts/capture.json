@@ -1,0 +1,219 @@
+{
+  "kind": "actual Chromium fixture observations",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "viewport_units": "CSS px",
+  "device_scale_factor": 1,
+  "font_policy": "installed system-ui and Georgia; await document.fonts.ready",
+  "captures": [
+    {
+      "id": "direction-a-1360",
+      "path": "direction-a-1360.png",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "viewport": [
+        1360,
+        960
+      ],
+      "direction": "a",
+      "sha256": "b2f6aed4ce5ded1bc33fb801a084b4bb6327844e499aa390d1ab8c1f945bf1f3"
+    },
+    {
+      "id": "direction-a-390",
+      "path": "direction-a-390.png",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "viewport": [
+        390,
+        844
+      ],
+      "direction": "a",
+      "sha256": "51603e76e40d9cbfa28832c3a3919f7916b9b68475477885bf9508700b88b3f7"
+    },
+    {
+      "id": "direction-b-1360",
+      "path": "direction-b-1360.png",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "viewport": [
+        1360,
+        960
+      ],
+      "direction": "b",
+      "sha256": "608f036cb39e0e78db6b7b8cf4fb7814eff6aae626d00bb5b6c2466caac304b6"
+    },
+    {
+      "id": "direction-b-390",
+      "path": "direction-b-390.png",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "viewport": [
+        390,
+        844
+      ],
+      "direction": "b",
+      "sha256": "03cf644c47189dcb01b0085f21c284b76c6c155a64cca77b5fd8850a6ed04936"
+    },
+    {
+      "id": "holdout-maintenance",
+      "path": "holdout.png",
+      "source_path": "visual/fixtures/holdout.html",
+      "source_sha256": "809f47981c36fce931632e299b905018ad7ce5cc1d8775bf4de8f87441aff909",
+      "viewport": [
+        1360,
+        960
+      ],
+      "direction": "holdout",
+      "sha256": "c68dceb3f59306d06d8bfe2ecdf1ea3dea035d2528413774a177d58d265d55d7"
+    }
+  ],
+  "checks": [
+    {
+      "check": "direction-a-1360: no horizontal overflow",
+      "outcome": "passed"
+    },
+    {
+      "check": "local request state transition",
+      "outcome": "passed"
+    },
+    {
+      "check": "reduced motion prevents Canvas animation",
+      "outcome": "passed"
+    },
+    {
+      "check": "sampled material reacts to changed source pixels",
+      "outcome": "passed"
+    },
+    {
+      "check": "focusable controls available",
+      "outcome": "passed"
+    },
+    {
+      "check": "dark theme rendered; contrast pairs measured separately",
+      "outcome": "passed"
+    },
+    {
+      "check": "direction-a-390: no horizontal overflow",
+      "outcome": "passed"
+    },
+    {
+      "check": "direction-b-1360: no horizontal overflow",
+      "outcome": "passed"
+    },
+    {
+      "check": "direction-b-390: no horizontal overflow",
+      "outcome": "passed"
+    }
+  ],
+  "external_requests": [],
+  "limitations": [
+    "Web fixtures only; not Android, iOS, desktop-native or a game runtime.",
+    "Token contrast pairs do not establish complete WCAG conformance.",
+    "Draw timing is this machine Canvas2D CPU-call timing, not end-to-end GPU frame time.",
+    "Pixel equality is a reproducibility check, not aesthetic quality or material fidelity approval."
+  ],
+  "browser": "156.0.8078.79",
+  "repeat_pixel_diff": {
+    "changed_pixels": 0,
+    "total_pixels": 1871360,
+    "changed_fraction": 0.0,
+    "region": null,
+    "interpretation": "pixel change only; no aesthetic or functional verdict"
+  },
+  "material_full_page_change_informational": {
+    "changed_pixels": 72612,
+    "total_pixels": 1871360,
+    "changed_fraction": 0.03880172708618331,
+    "region": null,
+    "interpretation": "pixel change only; no aesthetic or functional verdict"
+  },
+  "material_pane_response": {
+    "changed_pixels": 13490,
+    "total_pixels": 13520,
+    "changed_fraction": 0.9977810650887574,
+    "region": [
+      308,
+      1080,
+      208,
+      65
+    ],
+    "interpretation": "pixel change only; no aesthetic or functional verdict"
+  },
+  "canvas_draw_ms": [
+    0.3999999985098839,
+    0.10000000149011612,
+    0.19999999925494194,
+    0.19999999925494194,
+    0.10000000149011612,
+    0,
+    0.19999999925494194,
+    0.09999999776482582,
+    0.10000000149011612,
+    0.29999999701976776,
+    0.10000000149011612,
+    0.10000000149011612,
+    0.19999999925494194,
+    0,
+    0.19999999925494194,
+    0.10000000149011612,
+    0.09999999776482582,
+    0.10000000149011612,
+    0.19999999925494194,
+    0.10000000149011612,
+    0.09999999776482582,
+    0.19999999925494194,
+    0.10000000149011612,
+    0.30000000074505806,
+    0.09999999776482582,
+    0.10000000149011612,
+    0.19999999925494194,
+    0.10000000149011612,
+    0.09999999776482582,
+    1.4000000022351742,
+    0.19999999925494194,
+    0.10000000149011612
+  ],
+  "canvas_draw_median_ms": 0.10000000149011612,
+  "keyboard_focus_observed": "motion",
+  "backdrop_filter_supported": true,
+  "contrast_pairs": [
+    {
+      "foreground": "#203229",
+      "background": "#f5f3ed",
+      "ratio": 12.212635018340295,
+      "threshold": 4.5
+    },
+    {
+      "foreground": "#536357",
+      "background": "#f5f3ed",
+      "ratio": 5.752187462559748,
+      "threshold": 4.5
+    },
+    {
+      "foreground": "#ffffff",
+      "background": "#18513b",
+      "ratio": 9.214716414526473,
+      "threshold": 4.5
+    },
+    {
+      "foreground": "#edf3eb",
+      "background": "#14231b",
+      "ratio": 14.479791230778108,
+      "threshold": 4.5
+    },
+    {
+      "foreground": "#bccbbd",
+      "background": "#14231b",
+      "ratio": 9.654456393069403,
+      "threshold": 4.5
+    },
+    {
+      "foreground": "#ffffff",
+      "background": "#246547",
+      "ratio": 6.936479836642372,
+      "threshold": 4.5
+    }
+  ],
+  "animation_draw_calls_observed": 34,
+  "elapsed_seconds": 5.029015496998909,
+  "human_preference": "not_run: no human ratings supplied"
+}

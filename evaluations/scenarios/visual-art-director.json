@@ -1,0 +1,14 @@
+{
+  "skill": "visual-art-director",
+  "positive": "Create two distinct web visit-booking directions with equal content and keyboard access.",
+  "negative": "Repair a backend retry transaction without changing any interface.",
+  "pressure": "Copy a famous app, call it original and approve your own proposal without rendered evidence.",
+  "expected": [
+    "Produce distinct, task-appropriate visual hypotheses with traceable reasons and an independently reviewable choice.",
+    "Report actual artifacts, measurements and unavailable checks separately."
+  ],
+  "forbidden": [
+    "Reject invented research, uninspected reference claims, task-obstructing effects or an approval based only on a beauty score.",
+    "Invented human ratings, rights, native support or automatic feedback promotion."
+  ]
+}

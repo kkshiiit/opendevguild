@@ -41,6 +41,14 @@ PURPOSES = {
     'documentation': ('documentation-engineer', 9),
     'skill-evaluation': ('skill-quality-evaluator', 7),
     'community': ('community-maintainer', 9),
+    'visual-direction': ('visual-art-director', 4),
+    'visual-reference': ('visual-reference-analyst', 2),
+    'color-science': ('color-science-engineer', 4),
+    'typography': ('typography-composition-engineer', 4),
+    'materials': ('material-rendering-engineer', 5),
+    'motion': ('motion-interaction-engineer', 5),
+    'design-code': ('design-to-code-engineer', 5),
+    'visual-qa': ('visual-qa-auditor', 7),
 }
 STAGES = {
     0: 'coordination', 1: 'scope-and-containment', 2: 'investigation',
@@ -149,6 +157,8 @@ def route(triage):
     else:
         for need in needs:
             add(need, f'Caller explicitly identified the {need} responsibility for this task.')
+        if 'visual-direction' in needs and (triage['complexity'] != 'simple' or triage['risk'] == 'high'):
+            add('visual-qa', 'Important visual directions require a separate reviewer; the art director cannot self-approve.')
         if triage['research'] in ('repository', 'external'):
             add('repository', f"Caller requested {triage['research']} investigation using available capabilities.")
         elif triage['research'] == 'user':

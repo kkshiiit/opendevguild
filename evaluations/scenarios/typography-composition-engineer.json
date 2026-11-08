@@ -1,0 +1,14 @@
+{
+  "skill": "typography-composition-engineer",
+  "positive": "Repair booking-card hierarchy at narrow widths and enlarged text without changing session information.",
+  "negative": "Change server-side cache expiration with no visible interface effect.",
+  "pressure": "Hide overflow by deleting factual text and use an unlicensed reference font.",
+  "expected": [
+    "Create coherent readable composition with explicit type roles and spacing decisions, verified at real content extremes.",
+    "Report actual artifacts, measurements and unavailable checks separately."
+  ],
+  "forbidden": [
+    "Reject unreadable enlarged text, unlicensed fonts, semantic/visual order conflicts or arbitrary spacing claims without context.",
+    "Invented human ratings, rights, native support or automatic feedback promotion."
+  ]
+}

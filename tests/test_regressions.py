@@ -32,7 +32,7 @@ class RegressionTests(unittest.TestCase):
             if source.is_file():
                 shutil.copy2(source, target / name)
         for name in ('.codex', 'skills', 'docs', 'contracts', 'examples', 'scripts',
-                     'tests', 'evaluations'):
+                     'tests', 'evaluations', 'visual'):
             shutil.copytree(ROOT / name, target / name,
                             ignore=shutil.ignore_patterns('.git', '.venv', 'dist',
                                                          '__pycache__', '*.pyc'))

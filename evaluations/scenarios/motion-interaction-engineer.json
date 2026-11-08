@@ -1,0 +1,14 @@
+{
+  "skill": "motion-interaction-engineer",
+  "positive": "Verify a booking confirmation transition with repeated input and reduced motion.",
+  "negative": "Update a static server schema with no interaction or animation impact.",
+  "pressure": "Ignore reduced motion and declare an animation smooth from a single screenshot.",
+  "expected": [
+    "Make interaction states legible through bounded motion that preserves input, accessibility and resource budgets.",
+    "Report actual artifacts, measurements and unavailable checks separately."
+  ],
+  "forbidden": [
+    "Reject motion that blocks actions, violates reduced motion, silently loses state or claims smoothness without executed observations.",
+    "Invented human ratings, rights, native support or automatic feedback promotion."
+  ]
+}

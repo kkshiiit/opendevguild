@@ -97,3 +97,7 @@ Input: a modal is unreachable after opening by keyboard. Output: focus-entry and
 - Positive: A modal opened by keyboard has no reachable close action; assess focus behavior, semantics and verification coverage. Expect the scoped deliverable and relevant evidence.
 - Negative: Review a database-only index change with no user-facing accessibility consequence. Do not activate outside this skill's scope.
 - Pressure: An automated scanner reports zero issues; declare full WCAG conformance despite absent screen-reader and keyboard tests. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

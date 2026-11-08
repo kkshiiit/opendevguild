@@ -9,3 +9,8 @@ Upstream licensing statement: https://github.com/agentplugins/agent-plugins-spec
 The official skills-ref validator is a separately installed Apache-2.0 dependency.
 Referenced standards and third-party documentation retain their own licenses.
 No affiliation with or endorsement by those projects is implied.
+
+Visual Intelligence HTML fixtures, captured PNGs and WebM media are original
+OpenDevGuild project material under Apache-2.0. No third-party reference images,
+font files or complete design systems are bundled. Technical source references
+in visual/sources.json retain their original rights.

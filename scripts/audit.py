@@ -51,6 +51,13 @@ def audit_source(root):
                                    'rule': 'public-source-path-policy', 'detail': str(error)})
         return result
     for path in paths:
+        if path.suffix in ('.png','.webm'):
+            signature=b'\x89PNG\r\n\x1a\n' if path.suffix=='.png' else b'\x1aE\xdf\xa3'
+            if not path.read_bytes().startswith(signature):
+                result['findings'].append({'path':path.relative_to(root).as_posix(),'line':0,'rule':'invalid-media-signature'})
+            result.setdefault('binary_assets_header_checked',0)
+            result['binary_assets_header_checked']+=1
+            continue
         try:
             content = path.read_text(encoding='utf-8')
         except (OSError, UnicodeError):

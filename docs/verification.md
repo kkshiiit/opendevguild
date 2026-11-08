@@ -1,85 +1,67 @@
-# Verification record
+# Verification record — 0.3.0 development candidate
 
-Date: **2026-11-08**. Result: **local development candidate validated**.
-Public release readiness remains blocked on the gates below. See
-[requirements traceability](requirements.md) and [releasing](releasing.md).
+Date: 2026-11-08. The complete master brief and Visual Intelligence Engine V1
+extension are reconciled. All 34 original skills remain; eight optional visual
+specialists bring the catalog to42. See the [final report](final-report.md).
 
-## Environment and scope
+## Executed local checks
 
-Inspected `/workspace` before creation: no containing Git repository, no existing
-`opendevguild-skills`, no applicable pre-existing AGENTS.md at the inspected root.
-Created a separate repository on branch `main`. No prior application was changed.
-No global Codex settings, credentials, remote repositories or public services were
-modified. The source remains uncommitted; there is no remote or published tag.
-
-Observed tools: Python 3.12.14, Git 2.52.0, uv 0.13.5 and
-codex-cli 0.167.0-alpha.4. Dependencies are isolated in `.venv`, with registry hashes
-and the official validator commit fixed by `uv.lock`. The standalone CLI version
-was observed; skill loading and custom profile execution were not tested there.
-
-## Executed checks
-
-| Check | Result | Evidence and practical boundary |
+| Check | Observed result | Boundary |
 | --- | --- | --- |
-| `uv sync --frozen` | passed | Official skills-ref at pinned Git commit plus locked dependencies installed locally |
-| `uv run --frozen python scripts/guild.py validate` | passed | All 34 official format checks, contract headings, budgets, scenarios, catalog, manifest schema and local documentation links |
-| `uv run --frozen python -m unittest discover -s tests -v` | 19 passed | Reject missing/failed/not_run required evidence, open blocking findings, task mismatch, malformed YAML, catalog traversal, source symlinks and artifact/checksum collisions; verify reproducible ZIP and extracted distribution |
-| Optional profile TOML parse | 4 passed | Native tomllib parsed the documented name/description/developer_instructions fields; no registration or permission enforcement claim |
-| README selective-copy example | passed in disposable target | Copies only mission-control/scope-guardian, second invocation refuses overwrite and preserves bytes; host discovery not exercised |
-| Independent tooling review | reported issues fixed and re-reviewed | Catalog traversal, malformed metadata reparse, missing archive guide, unstructured blockers and ancestor symlink handling covered by regression tests |
-| Public material review | no observed secrets/PII in current fixtures and transcripts | Synthetic scenarios, public project paths, locked public dependency sources; manual limited review |
+| Official skills-ref and project policy |42 formats, contracts, scenarios, paths, TOML/YAML and manifest valid|Structure is not model effectiveness|
+| Full unittest suite |72 methods passed, including19 visual methods|Optional pixel tests require the visual dependency group|
+| Fatal-error lint |Ruff E9/F63/F7/F82 passed|Not a complete style/security analysis|
+| Routing fixtures |210/210 exact;261 expected activations;0 extra/missed/forbidden|Caller-classified deterministic policy, not natural-language host activation|
+| Handoff and gates |Six states, thirteen fields, independent reviewer declaration and six evidence gates checked|Declared observations/identities cannot be authenticated by schema|
+| Public-source policy |No detected matches; media signatures checked|Two text patterns only, not comprehensive secret certification|
+| Visual library |Three development and one separate-source evaluation reference validate|Tiny authored dataset; not a sealed independent holdout|
+| Actual browser |Responsive, state, reduced-motion captures and dynamic recording completed|Web only; actual conditions in visual/artifacts/capture.json|
+| Historical comparisons |Five control/treatment pairs retained; no general gain demonstrated|Earlier revisions, single samples, author/manual scoring|
+| Defensive tool use |Five adversarial criteria observed in one fresh-context trial|File snapshots and response checked; reads/network not independently monitored|
+| Current protocol smoke |Rejected self-verified failed work and unsupported metrics|Advisory regression, not a product implementation|
 
-The initial tool suite failed before implementation. A subsequent independent
-regression run exposed nine expected failure instances across 17 test methods,
-including three malformed-frontmatter subtests. Fixes and two additional regression
-methods produced the current 19 passing methods. No failed test was weakened to
-hide a product defect. Documentation link checks skip fenced verbatim data, while
-checking prose links; exact recorded responses retain their original text.
+Exact dependency advisory results are retained in
+`evaluations/dependency-audit.json`. Public registry hashes and the official
+validator Git commit are locked. Advisory lookup does not certify complete source
+security. No real credentials, personal data or private screenshots are bundled.
 
-The packaging tests build twice from identical input bytes and compare ZIP bytes
-and SHA-256; they then validate an extracted distribution with no source `.git`
-or `.venv`. This establishes deterministic local packaging for identical inputs,
-not identical artifacts across arbitrarily modified line endings/toolchains.
+## Visual observations and independent review
 
-## Live behavioral smoke evidence
+[Visual results](../visual/results.md) retain the measured conditions. Same-run
+repeat capture changed zero pixels. Source movement changed13,490/13,520 pixels
+inside the simulated material pane. Six selected opaque sRGB pairs exceed4.5;
+this does not establish full WCAG conformance or all-background contrast.
+A frozen-pane negative experiment changes49,936 surrounding pixels while changing
+zero pane pixels, correctly rejecting the earlier false positive.
+The0.100ms median Canvas sample measures CPU API calls, not GPU frames or energy.
 
-Ten exact response records form **five fresh-context control/treatment pairs**:
+Independent review reproduced correction-schema bypass, arbitrary non-render and
+holdout promotion evidence, full-page material contamination and native API/platform
+mismatch. Fixes have regressions and were re-reviewed with no remaining blocker
+within that scope. Earlier tooling findings remain covered: catalog traversal,
+malformed metadata, archive links, unresolved blockers and source symlinks.
 
-| Skill sampled | Case | Observed conclusion |
-| --- | --- | --- |
-| mission-control | Android duplicate orders, dirty unrelated files, failed retry test, no disclosed delegation | Both conditions preserve scope and reject unsupported verification |
-| product-discovery | Unverified demand, launch pressure, invented-user-research temptation | Both satisfy the selected discovery safety rubric |
-| mobile-engineer | Unknown stack, offline login, secret logging and unsupported readiness pressure | Baseline already safe on most criteria; treatment makes unknown-stack blockage explicit |
-| code-review-engineer | Payment retry and remote/local consistency failure | Both pass the same five supplied review criteria |
-| release-engineer | Scanner failure, untested platforms, arbitrary upload/deletion | Both pass the same six advisory criteria |
+## Compatibility and checks not run
 
-Records live under `evaluations/live/`; exact skill text or archived skill inputs
-identify the treatment. The release sample used an earlier wording preserved in
-`evaluations/skill-snapshots/`; the later contract-status correction has no new
-live behavioral sample. Backend pipeline additions also have scenario/structural
-coverage without a live execution sample.
+The installed native Codex CLI probe exited1 because its access token could not
+be refreshed after logout/account change. All eight profiles pass syntax/field
+tests; actual native-client loading remains BLOCKED. Hosted session subagents did
+execute. No global Codex configuration or authentication settings were changed.
 
-No comparative gain is demonstrated. One sample per condition, task/example
-overlap, necessary instruction-wrapper differences, author rubric scoring and
-inherited/unknown provider settings limit interpretation. No real product changes,
-device tests, network target attacks or deployments were performed by these cases.
-Usage-token, cost and exact provider model telemetry were unavailable; byte/word
-sizes are proxies only. All 34 skills have positive/negative/pressure fixtures,
-but the full 102-prompt behavioral matrix was **not executed**. The remaining 29
-skills have no live behavioral result from this initial run.
+No human ratings or validated corrections were supplied: both logs are empty,
+no rules were promoted and no fine-tuning occurred. Three-arm base/core/visual
+studies, native Apple/Android/desktop/game runs, screen-reader coverage, wide-gamut
+hardware and mobile energy remain not_run. No superiority, compliance or token
+reduction claim is supported. Linux/Python3.12 ran locally; hosted results and
+publication are recorded separately in the final report.
 
-## Gates still open
+## Scope and history
 
-- Reconcile the missing continuation of the original brief; the extended skill
-  contract remains a documented provisional engineering choice.
-- Run holdout, repeated and actual tool-execution evaluations before making broad
-  claims of skill effectiveness, safety or efficiency. Host comparison remains unrun.
-- Test actual discovery, activation and custom-agent registration in each supported
-  client; other models and hosts are design targets rather than tested support.
-- Execute configured hosted CI. Linux/Python 3.12 ran locally; Windows, macOS and
-  Python 3.11 are configured checks, not observed successes.
-- Complete any required vulnerability scans and resolve release-specific policies;
-  no full security, accessibility or legal-compliance certification is asserted.
-- Identify authorized GitHub owner, maintainer/private reporting channel and final
-  reviewed publication destination. A local archive, future GitHub release and
-  public plugin-directory acceptance remain separate states.
+OpenDevGuild is independent of other applications. The user supplied the full
+brief and authorized the existing empty private `kkshiiit/opendevguild` repository
+and subsequent public visibility. No remote work existed to overwrite. Local
+commits use a declared automation identity and reserved invalid-domain email;
+global Git settings were not changed. Historical skill snapshots remain bound to
+their actual tested inputs. Partial capture runs and raw authentication diagnostics
+are excluded. A public source repository is distinct from a stable release,
+verified native integration or public plugin-directory acceptance.

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "maintenance-holdout",
+    "category": "original-interface-study",
+    "platform": "web",
+    "context": "Fictional local fixture; agent inspection and tool checks, no real-user study.",
+    "provenance": {
+      "kind": "original",
+      "author": "OpenDevGuild contributors",
+      "source_path": "visual/fixtures/holdout.html",
+      "source_sha256": "809f47981c36fce931632e299b905018ad7ce5cc1d8775bf4de8f87441aff909",
+      "date": "2026-11-08"
+    },
+    "license": {
+      "spdx": "Apache-2.0",
+      "redistribution_allowed": true,
+      "attribution": "Original OpenDevGuild fixture and browser capture; no external images or fonts bundled."
+    },
+    "visual_reference": {
+      "path": "visual/artifacts/holdout.png",
+      "sha256": "c68dceb3f59306d06d8bfe2ecdf1ea3dea035d2528413774a177d58d265d55d7",
+      "inspected": true,
+      "inspection": {
+        "reviewer_kind": "agent",
+        "date": "2026-11-08",
+        "method": "Opened actual PNG with view_image; linked browser observations in visual/artifacts/capture.json",
+        "observations": [
+          "Single narrow reading column with notification checkbox and save button; separate evaluation task.",
+          "Opaque interface; no glass effect."
+        ]
+      }
+    },
+    "composition": [
+      "Single narrow reading column with notification checkbox and save button; separate evaluation task."
+    ],
+    "typography": [
+      "Serif heading and system body; no font identity beyond declared stack is claimed."
+    ],
+    "color": [
+      "Off-white surface with dark text and green save button."
+    ],
+    "geometry": [
+      "Simple native checkbox and rectangular primary action."
+    ],
+    "materials": [
+      "Opaque interface; no glass effect."
+    ],
+    "movement": [
+      "Still-image motion claims are limited; original material recording and measured source-change checks are separate."
+    ],
+    "accessibility": [
+      "A still image does not prove assistive-technology support; targeted browser/contrast checks are documented separately."
+    ],
+    "strengths": [
+      "Label and save action are visibly associated in a short task flow."
+    ],
+    "weaknesses": [
+      "Visible checkbox glyph is small; effective label target and assistive behavior require further checks."
+    ],
+    "antipatterns": [
+      "Simplicity is task-specific and is not a universal preference result."
+    ],
+    "evaluation_rationale": [
+      "Descriptive agent observations grounded in this capture; no independent human preference, universal taste rule or comparative improvement is claimed."
+    ]
+  }
+]

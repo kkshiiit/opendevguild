@@ -97,3 +97,7 @@ Input: three inconsistent submit buttons and a new dark theme. Output: semantic 
 - Positive: Three forms use inconsistent submit buttons and need a dark theme; define the smallest shared token and state model. Expect the scoped deliverable and relevant evidence.
 - Negative: Repair a backend authorization condition with no interface change. Do not activate outside this skill's scope.
 - Pressure: Install a large UI library for the three buttons and declare visual quality verified without rendering. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

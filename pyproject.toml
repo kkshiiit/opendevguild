@@ -1,6 +1,6 @@
 [project]
 name = "opendevguild-skills"
-version = "0.2.0"
+version = "0.3.0"
 description = "Portable, verifiable software engineering Agent Skills"
 requires-python = ">=3.11"
 license = "Apache-2.0"
@@ -19,4 +19,8 @@ skills-ref = { git = "https://github.com/agentskills/agentskills.git", rev = "83
 dev = [
     "pip-audit>=2.9,<3",
     "ruff>=0.12,<1",
+]
+visual = [
+    "pillow>=13,<14",
+    "playwright>=1.55,<2",
 ]

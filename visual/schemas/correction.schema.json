@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "original_design",
+    "problem",
+    "proposed_correction",
+    "justification",
+    "result",
+    "evaluation",
+    "regression",
+    "author",
+    "reviewer",
+    "status",
+    "review_decision",
+    "split",
+    "regression_status",
+    "result_evidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_design": {
+      "type": "string",
+      "minLength": 1
+    },
+    "problem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proposed_correction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "justification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regression": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "validated",
+        "rejected"
+      ]
+    },
+    "review_decision": {
+      "enum": [
+        "APPROVED",
+        "REJECTED",
+        "BLOCKED"
+      ]
+    },
+    "split": {
+      "enum": [
+        "development",
+        "evaluation"
+      ]
+    },
+    "regression_status": {
+      "enum": [
+        "passed",
+        "failed",
+        "not_run"
+      ]
+    },
+    "result_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "capture_manifest"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "capture_manifest": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

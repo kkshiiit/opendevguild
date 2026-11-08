@@ -1403,6 +1403,334 @@
       ],
       "mode": "FAST",
       "readiness": "ready"
+    },
+    {
+      "id": "visual-art-director-positive",
+      "skills": [
+        "visual-art-director"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-art-director-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-art-director-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "visual-art-director-multiple",
+      "skills": [
+        "visual-art-director",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-art-director-single",
+      "skills": [
+        "visual-art-director"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-reference-analyst-positive",
+      "skills": [
+        "visual-reference-analyst"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-reference-analyst-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-reference-analyst-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "visual-reference-analyst-multiple",
+      "skills": [
+        "visual-reference-analyst",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-reference-analyst-single",
+      "skills": [
+        "visual-reference-analyst"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "color-science-engineer-positive",
+      "skills": [
+        "color-science-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "color-science-engineer-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "color-science-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "color-science-engineer-multiple",
+      "skills": [
+        "color-science-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "color-science-engineer-single",
+      "skills": [
+        "color-science-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "typography-composition-engineer-positive",
+      "skills": [
+        "typography-composition-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "typography-composition-engineer-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "typography-composition-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "typography-composition-engineer-multiple",
+      "skills": [
+        "typography-composition-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "typography-composition-engineer-single",
+      "skills": [
+        "typography-composition-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "material-rendering-engineer-positive",
+      "skills": [
+        "material-rendering-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "material-rendering-engineer-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "material-rendering-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "material-rendering-engineer-multiple",
+      "skills": [
+        "material-rendering-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "material-rendering-engineer-single",
+      "skills": [
+        "material-rendering-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "motion-interaction-engineer-positive",
+      "skills": [
+        "motion-interaction-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "motion-interaction-engineer-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "motion-interaction-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "motion-interaction-engineer-multiple",
+      "skills": [
+        "motion-interaction-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "motion-interaction-engineer-single",
+      "skills": [
+        "motion-interaction-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "design-to-code-engineer-positive",
+      "skills": [
+        "design-to-code-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "design-to-code-engineer-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "design-to-code-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "design-to-code-engineer-multiple",
+      "skills": [
+        "design-to-code-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "design-to-code-engineer-single",
+      "skills": [
+        "design-to-code-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-qa-auditor-positive",
+      "skills": [
+        "visual-qa-auditor"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-qa-auditor-negative",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-qa-auditor-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "visual-qa-auditor-multiple",
+      "skills": [
+        "visual-qa-auditor",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "visual-qa-auditor-single",
+      "skills": [
+        "visual-qa-auditor"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
     }
   ]
 }

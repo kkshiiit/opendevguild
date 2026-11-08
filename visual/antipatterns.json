@@ -1,0 +1,86 @@
+[
+  {
+    "id": "unjustified-dashboard",
+    "signal": "Repeated KPI dashboard regardless of user task",
+    "evidence_required": "Observed unused metrics and task path, screenshot region and user goal",
+    "task_impact": "Extra navigation can hide the primary action",
+    "legitimate_use": "A monitoring task legitimately needs multiple indicators."
+  },
+  {
+    "id": "identity-free-gradient",
+    "signal": "Decorative gradient has no stated brand, hierarchy or semantic role",
+    "evidence_required": "Capture and design brief showing absence of a role; compare a solid alternative",
+    "task_impact": "Noise can compete with labels",
+    "legitimate_use": "A brand-led or data-encoded gradient may be justified."
+  },
+  {
+    "id": "unnecessary-cards",
+    "signal": "Every row is boxed without meaningful grouping",
+    "evidence_required": "Screenshot regions, grouping rationale and scan comparison",
+    "task_impact": "Repeated boundaries can slow scanning",
+    "legitimate_use": "Separate actionable records may benefit from cards."
+  },
+  {
+    "id": "weak-hierarchy",
+    "signal": "Primary and secondary information compete or reading order conflicts",
+    "evidence_required": "Task goal, screenshot and measured type/spacing hierarchy",
+    "task_impact": "Users may miss the action or essential status",
+    "legitimate_use": "Dense expert interfaces may intentionally equalize some controls."
+  },
+  {
+    "id": "indiscriminate-rounding",
+    "signal": "One large radius applied to unrelated roles",
+    "evidence_required": "Computed radii and captures tied to component semantics",
+    "task_impact": "Controls may lose distinct affordances",
+    "legitimate_use": "A coherent rounded identity with clear states can work."
+  },
+  {
+    "id": "glass-overuse",
+    "signal": "Glass applied over variable content without task value",
+    "evidence_required": "Light/dark/busy background captures and contrast samples",
+    "task_impact": "Readability and GPU cost can deteriorate",
+    "legitimate_use": "A restrained navigation layer can justify translucent separation."
+  },
+  {
+    "id": "inconsistent-type",
+    "signal": "Unexplained variations across equivalent text roles",
+    "evidence_required": "Computed families/weights/sizes and named roles",
+    "task_impact": "Hierarchy and comprehension become unreliable",
+    "legitimate_use": "Editorial contrast across genuinely different roles can be deliberate."
+  },
+  {
+    "id": "arbitrary-spacing",
+    "signal": "Related distances have no content or token rationale",
+    "evidence_required": "Bounding boxes, token mapping and responsive captures",
+    "task_impact": "Grouping and rhythm may become unclear",
+    "legitimate_use": "Optical alignment sometimes needs explicit exceptions."
+  },
+  {
+    "id": "ambiguous-controls",
+    "signal": "Appearance or wording does not reveal action or state",
+    "evidence_required": "Keyboard interaction, accessible names and task observation",
+    "task_impact": "Errors increase when action consequences are unclear",
+    "legitimate_use": "Novel controls can be valid when tested and explained."
+  },
+  {
+    "id": "purposeless-motion",
+    "signal": "Animation lacks feedback, continuity, explanation or orientation",
+    "evidence_required": "Real recording, reduced-motion behavior and interaction purpose",
+    "task_impact": "Distraction, discomfort or extra energy use",
+    "legitimate_use": "A meaningful transition or educational animation may help."
+  },
+  {
+    "id": "task-subordinated-style",
+    "signal": "A visual effect obstructs task completion",
+    "evidence_required": "Measured task errors, keyboard path and rendered obstruction",
+    "task_impact": "Aesthetic intent cannot excuse blocked function",
+    "legitimate_use": "Expressive experience surfaces may intentionally prioritize exploration."
+  },
+  {
+    "id": "superficial-copy",
+    "signal": "Famous application surface copied without domain rationale",
+    "evidence_required": "Source provenance, compared composition and independent problem constraints",
+    "task_impact": "Confuses identity and may import wrong interaction assumptions",
+    "legitimate_use": "Conventional platform patterns are shared usability knowledge."
+  }
+]

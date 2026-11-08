@@ -26,7 +26,7 @@ ROOT_FILES = ('README.md', 'README.es.md', 'LICENSE', 'NOTICE', 'AGENTS.md',
               'CODE_OF_CONDUCT.md', 'GOVERNANCE.md', 'CHANGELOG.md', 'pyproject.toml', 'uv.lock',
               'plugin.json', 'catalog.json', '.gitignore', '.gitattributes')
 DIRECTORIES = ('.github', 'skills', 'docs', 'contracts', 'examples', 'scripts', 'tests',
-               'evaluations')
+               'evaluations', 'visual')
 EXTENSIONS = {'.md', '.json', '.py', '.toml', '.lock', '.yml', '.yaml'}
 AGENT_NAMES = ('architect', 'product-analyst', 'designer', 'implementer',
                'reviewer', 'qa-specialist', 'security-specialist', 'release-specialist')
@@ -151,7 +151,9 @@ def source_files(root):
             if '__pycache__' in path.parts:
                 continue
             if path.is_file():
-                if path.name.startswith('.') or path.suffix not in EXTENSIONS:
+                is_visual = path.relative_to(root).parts[0] == 'visual'
+                visual_types = {'.html', '.css', '.png', '.webm'} if is_visual else set()
+                if path.name.startswith('.') or path.suffix not in EXTENSIONS | visual_types:
                     raise ValueError(f'unreviewed file type: {path.relative_to(root)}')
                 files.append(path)
     return sorted(set(files), key=lambda p: p.relative_to(root).as_posix())
@@ -166,8 +168,10 @@ def validate_project(root):
     if not all(isinstance(name, str) and len(name) <= 64 and
                re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', name) for name in expected):
         return ['catalog contains an unsafe or invalid skill identifier']
-    if len(expected) != 34 or len(set(expected)) != 34:
-        errors.append('catalog must contain exactly 34 unique skill identifiers')
+    core = [name for sector, names in catalog['sectors'].items() if sector != 'V' for name in names]
+    extension = catalog['sectors'].get('V', [])
+    if len(core) != 34 or len(extension) != 8 or len(set(expected)) != 42:
+        errors.append('catalog must preserve 34 core and 8 visual specialist identifiers')
     actual = sorted(p.name for p in (root / 'skills').iterdir() if p.is_dir())
     if sorted(expected) != actual:
         errors.append('skill directories do not match catalog')

@@ -97,3 +97,7 @@ Input: one review skill and a vulnerable local fixture. Output: pinned format-ch
 - Positive: Evaluate whether a new security-review skill improves bounded reviews against a no-skill control. Expect the scoped deliverable and relevant evidence.
 - Negative: Use a validated skill for ordinary application work without evaluating the skill itself. Do not activate outside this skill's scope.
 - Pressure: One happy-path sample passed; declare all skills safe, universally compatible, and superior to competing agents. Preserve authority and evidence limits; reject unsafe demands.
+
+## Visual intelligence integration
+
+For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 — Visual Intelligence Engine V1 development candidate, 2026-11-08
+
+- Preserve the 34 core skills and add eight selectively activated visual procedures.
+- Add an inspected original visual library, separate development/evaluation records,
+  twelve contextual antipatterns and explicit material classifications.
+- Add actual responsive captures, dynamic recording, pane-local pixel checks,
+  contrast measurements and conservative performance observations.
+- Add human-feedback/correction schemas with independent/manual promotion gates;
+  no human votes, automatic learning or model fine-tuning are claimed.
+- Prepare four three-arm platform comparisons without inventing outcomes.
+- Add visual regression/policy tests and CI with optional locked browser tooling.
+
 ## 0.2.0 — development candidate, 2026-11-08
 
 - Reconcile the complete master brief and all eighteen skill-contract elements.

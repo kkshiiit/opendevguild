@@ -1,0 +1,197 @@
+[
+  {
+    "id": "field-editorial-a",
+    "category": "original-interface-study",
+    "platform": "web",
+    "context": "Fictional local fixture; agent inspection and tool checks, no real-user study.",
+    "provenance": {
+      "kind": "original",
+      "author": "OpenDevGuild contributors",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "date": "2026-11-08"
+    },
+    "license": {
+      "spdx": "Apache-2.0",
+      "redistribution_allowed": true,
+      "attribution": "Original OpenDevGuild fixture and browser capture; no external images or fonts bundled."
+    },
+    "visual_reference": {
+      "path": "visual/artifacts/direction-a-1360.png",
+      "sha256": "b2f6aed4ce5ded1bc33fb801a084b4bb6327844e499aa390d1ab8c1f945bf1f3",
+      "inspected": true,
+      "inspection": {
+        "reviewer_kind": "agent",
+        "date": "2026-11-08",
+        "method": "Opened actual PNG with view_image; linked browser observations in visual/artifacts/capture.json",
+        "observations": [
+          "Two-column session list and booking form; rules and whitespace separate rows without enclosing each row.",
+          "Lower material study shows blurred stripes through a styled translucent inset; no physical refraction claim."
+        ]
+      }
+    },
+    "composition": [
+      "Two-column session list and booking form; rules and whitespace separate rows without enclosing each row."
+    ],
+    "typography": [
+      "Declared Georgia/serif display with system-sans body; actual installed font substitution not inventoried."
+    ],
+    "color": [
+      "Warm off-white surface, dark green text, green primary action."
+    ],
+    "geometry": [
+      "Mostly square controls and fine horizontal dividers."
+    ],
+    "materials": [
+      "Lower material study shows blurred stripes through a styled translucent inset; no physical refraction claim."
+    ],
+    "movement": [
+      "Still-image motion claims are limited; original material recording and measured source-change checks are separate."
+    ],
+    "accessibility": [
+      "A still image does not prove assistive-technology support; targeted browser/contrast checks are documented separately."
+    ],
+    "strengths": [
+      "Distinct heading and left-aligned session titles support a visible reading hierarchy."
+    ],
+    "weaknesses": [
+      "Mobile form moves below all sessions, potentially increasing action reach; user testing remains pending."
+    ],
+    "antipatterns": [
+      "Absence of cards is an alternative composition, not evidence that cards are always harmful."
+    ],
+    "evaluation_rationale": [
+      "Descriptive agent observations grounded in this capture; no independent human preference, universal taste rule or comparative improvement is claimed."
+    ]
+  },
+  {
+    "id": "field-card-b",
+    "category": "original-interface-study",
+    "platform": "web",
+    "context": "Fictional local fixture; agent inspection and tool checks, no real-user study.",
+    "provenance": {
+      "kind": "original",
+      "author": "OpenDevGuild contributors",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "date": "2026-11-08"
+    },
+    "license": {
+      "spdx": "Apache-2.0",
+      "redistribution_allowed": true,
+      "attribution": "Original OpenDevGuild fixture and browser capture; no external images or fonts bundled."
+    },
+    "visual_reference": {
+      "path": "visual/artifacts/direction-b-1360.png",
+      "sha256": "608f036cb39e0e78db6b7b8cf4fb7814eff6aae626d00bb5b6c2466caac304b6",
+      "inspected": true,
+      "inspection": {
+        "reviewer_kind": "agent",
+        "date": "2026-11-08",
+        "method": "Opened actual PNG with view_image; linked browser observations in visual/artifacts/capture.json",
+        "observations": [
+          "Same booking content organized into individually bordered rounded records, with a separate form panel.",
+          "Styled backdrop-blur demonstration remains a separate lower section."
+        ]
+      }
+    },
+    "composition": [
+      "Same booking content organized into individually bordered rounded records, with a separate form panel."
+    ],
+    "typography": [
+      "Bold sans display and body role differences are visible; no claim of superior readability."
+    ],
+    "color": [
+      "Pale lavender background with a saturated purple primary control."
+    ],
+    "geometry": [
+      "Rounded cards and pill buttons repeated across the composition."
+    ],
+    "materials": [
+      "Styled backdrop-blur demonstration remains a separate lower section."
+    ],
+    "movement": [
+      "Still-image motion claims are limited; original material recording and measured source-change checks are separate."
+    ],
+    "accessibility": [
+      "A still image does not prove assistive-technology support; targeted browser/contrast checks are documented separately."
+    ],
+    "strengths": [
+      "Separate records make grouping explicit while preserving the original task."
+    ],
+    "weaknesses": [
+      "Repeated boxes add boundaries and density; no measured task penalty has been established."
+    ],
+    "antipatterns": [
+      "Candidate unnecessary-card/rounding concerns require task evidence; grouping distinct visits is a legitimate counterexample."
+    ],
+    "evaluation_rationale": [
+      "Descriptive agent observations grounded in this capture; no independent human preference, universal taste rule or comparative improvement is claimed."
+    ]
+  },
+  {
+    "id": "sampled-material-study",
+    "category": "original-interface-study",
+    "platform": "web",
+    "context": "Fictional local fixture; agent inspection and tool checks, no real-user study.",
+    "provenance": {
+      "kind": "original",
+      "author": "OpenDevGuild contributors",
+      "source_path": "visual/fixtures/interface.html",
+      "source_sha256": "1c4e231bed33f53b7c8a87ef8051cbfc8dc6dc632d928d99d739724cb1f9a054",
+      "date": "2026-11-08"
+    },
+    "license": {
+      "spdx": "Apache-2.0",
+      "redistribution_allowed": true,
+      "attribution": "Original OpenDevGuild fixture and browser capture; no external images or fonts bundled."
+    },
+    "visual_reference": {
+      "path": "visual/artifacts/simulated-material.png",
+      "sha256": "d88f04d9151633fbd04e19b7a69cb018c84422cd84a5c99434d6dbb76b2e87c4",
+      "inspected": true,
+      "inspection": {
+        "reviewer_kind": "agent",
+        "date": "2026-11-08",
+        "method": "Opened actual PNG with view_image; linked browser observations in visual/artifacts/capture.json",
+        "observations": [
+          "A labeled material inset is isolated below the functional booking flow.",
+          "Canvas2D sampled displacement, blur and synthetic highlights; this is an approximation without a physical Fresnel/refraction solver."
+        ]
+      }
+    },
+    "composition": [
+      "A labeled material inset is isolated below the functional booking flow."
+    ],
+    "typography": [
+      "Caption explicitly names simulated dynamic glass and excludes native Apple support."
+    ],
+    "color": [
+      "Green/gold source stripes remain visible through the sampled panel."
+    ],
+    "geometry": [
+      "A rounded bounded pane bends stripe positions near its vertical region."
+    ],
+    "materials": [
+      "Canvas2D sampled displacement, blur and synthetic highlights; this is an approximation without a physical Fresnel/refraction solver."
+    ],
+    "movement": [
+      "Still-image motion claims are limited; original material recording and measured source-change checks are separate."
+    ],
+    "accessibility": [
+      "A still image does not prove assistive-technology support; targeted browser/contrast checks are documented separately."
+    ],
+    "strengths": [
+      "The visible stripe curvature distinguishes this example from simple flat alpha/blur."
+    ],
+    "weaknesses": [
+      "No real-device energy measurements, native fidelity or subjective material approval are available."
+    ],
+    "antipatterns": [
+      "Glass belongs to a clearly isolated study; applying it across task-critical controls would require new readability and performance evidence."
+    ],
+    "evaluation_rationale": [
+      "Descriptive agent observations grounded in this capture; no independent human preference, universal taste rule or comparative improvement is claimed."
+    ]
+  }
+]

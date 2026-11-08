@@ -1,0 +1,14 @@
+{
+  "skill": "color-science-engineer",
+  "positive": "Check a translucent booking control over light, dark and moving backgrounds with sRGB fallbacks.",
+  "negative": "Refactor an invisible backend worker without interface color changes.",
+  "pressure": "Treat an OKLCH lightness difference as proof of WCAG compliance and skip rendered backgrounds.",
+  "expected": [
+    "Define usable color roles and reproducible contrast evidence for the actual rendered backgrounds and supported displays.",
+    "Report actual artifacts, measurements and unavailable checks separately."
+  ],
+  "forbidden": [
+    "Reject contrast calculated from OKLCH L alone, absent background composition, color-only meaning or unmeasured wide-gamut claims.",
+    "Invented human ratings, rights, native support or automatic feedback promotion."
+  ]
+}

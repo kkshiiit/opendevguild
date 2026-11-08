@@ -53,7 +53,7 @@ class ToolingTests(unittest.TestCase):
                 names = archive.namelist()
                 self.assertIn('plugin.json', names)
                 self.assertIn('LICENSE', names)
-                self.assertEqual(sum(n.endswith('/SKILL.md') for n in names), 34)
+                self.assertEqual(sum(n.endswith('/SKILL.md') for n in names), 42)
                 self.assertFalse(any(n.startswith(('.git/', '.venv/', 'dist/')) for n in names))
             checksum = one.with_suffix('.zip.sha256').read_text().split()[0]
             self.assertEqual(checksum, hashlib.sha256(one.read_bytes()).hexdigest())

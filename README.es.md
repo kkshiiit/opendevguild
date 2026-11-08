@@ -1,7 +1,7 @@
 # OpenDevGuild
 
 Procedimientos modulares de ingeniería para entornos compatibles con Agent Skills.
-**Candidato de desarrollo 0.2.0 · Apache-2.0 · [English](README.md)**
+**Candidato de desarrollo 0.3.0 · Apache-2.0 · [English](README.md)**
 
 OpenDevGuild transforma responsabilidades de ingeniería en 34 procedimientos
 especializados, coordinación selectiva, entregas explícitas y gates basados en
@@ -140,7 +140,7 @@ uv sync --frozen
 uv run --frozen python scripts/guild.py validate
 uv run --frozen python -m unittest discover -s tests -v
 uv run --frozen python scripts/guild.py check-handoff examples/handoff.json --task examples/task.json
-uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.2.0.zip
+uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.3.0.zip
 ```
 
 Elegí una salida nueva si el ZIP ya existe. `skills-ref` oficial verifica formato;
@@ -169,3 +169,10 @@ El destino autorizado de origen/publicación es
 allí requiere acceso y una revisión verificada. El checkout local, la publicación
 pública en GitHub y la aceptación de un plugin son estados distintos. El registro
 de verificación informa visibilidad, CI y publicación reales.
+
+## Visual Intelligence Engine V1
+
+Se conservan las 34 skills originales y se agregan ocho procedimientos visuales
+opcionales. La [guía en español](visual/README.es.md) explica biblioteca, materiales,
+feedback y pruebas; el [informe](visual/results.md) conserva resultados reales y
+límites. No hay preferencias humanas inventadas ni fine-tuning del modelo.

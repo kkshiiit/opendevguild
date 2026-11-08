@@ -1,0 +1,126 @@
+{
+  "protocol": "Randomize blinded pair order; block by task/platform; retain ties, neither and dissent; keep evaluation data out of rule promotion. Predeclare outcomes and report all failures. No arbitrary aggregate beauty score.",
+  "cases": [
+    {
+      "id": "visual-android",
+      "platform": "android",
+      "task": "Offline visit list with readable state and reduced motion",
+      "arms": [
+        "base-agent",
+        "opendevguild-core",
+        "opendevguild-visual"
+      ],
+      "same_inputs": [
+        "fixture revision",
+        "tools and permissions",
+        "time budget",
+        "viewport/device",
+        "functional acceptance",
+        "font and rendering environment"
+      ],
+      "metrics": [
+        "functional pass/fail",
+        "evidenced visual defects",
+        "human paired preferences with reasons",
+        "accessibility findings",
+        "measured frame/CPU latency",
+        "wall time",
+        "actual tokens if exposed"
+      ],
+      "execution": "not_run",
+      "results": [],
+      "limits": "Platform-native execution and matched agent trials are required; web viewport emulation is not native Android evidence."
+    },
+    {
+      "id": "visual-web",
+      "platform": "web",
+      "task": "Responsive visit request flow with a clear primary action",
+      "arms": [
+        "base-agent",
+        "opendevguild-core",
+        "opendevguild-visual"
+      ],
+      "same_inputs": [
+        "fixture revision",
+        "tools and permissions",
+        "time budget",
+        "viewport/device",
+        "functional acceptance",
+        "font and rendering environment"
+      ],
+      "metrics": [
+        "functional pass/fail",
+        "evidenced visual defects",
+        "human paired preferences with reasons",
+        "accessibility findings",
+        "measured frame/CPU latency",
+        "wall time",
+        "actual tokens if exposed"
+      ],
+      "execution": "not_run",
+      "results": [],
+      "limits": "Platform-native execution and matched agent trials are required; web viewport emulation is not native Android evidence."
+    },
+    {
+      "id": "visual-desktop",
+      "platform": "desktop",
+      "task": "Keyboard-first maintenance settings at enlarged text",
+      "arms": [
+        "base-agent",
+        "opendevguild-core",
+        "opendevguild-visual"
+      ],
+      "same_inputs": [
+        "fixture revision",
+        "tools and permissions",
+        "time budget",
+        "viewport/device",
+        "functional acceptance",
+        "font and rendering environment"
+      ],
+      "metrics": [
+        "functional pass/fail",
+        "evidenced visual defects",
+        "human paired preferences with reasons",
+        "accessibility findings",
+        "measured frame/CPU latency",
+        "wall time",
+        "actual tokens if exposed"
+      ],
+      "execution": "not_run",
+      "results": [],
+      "limits": "Platform-native execution and matched agent trials are required; web viewport emulation is not native Android evidence."
+    },
+    {
+      "id": "visual-game",
+      "platform": "game",
+      "task": "Readable pause menu over a moving game scene",
+      "arms": [
+        "base-agent",
+        "opendevguild-core",
+        "opendevguild-visual"
+      ],
+      "same_inputs": [
+        "fixture revision",
+        "tools and permissions",
+        "time budget",
+        "viewport/device",
+        "functional acceptance",
+        "font and rendering environment"
+      ],
+      "metrics": [
+        "functional pass/fail",
+        "evidenced visual defects",
+        "human paired preferences with reasons",
+        "accessibility findings",
+        "measured frame/CPU latency",
+        "wall time",
+        "actual tokens if exposed"
+      ],
+      "execution": "not_run",
+      "results": [],
+      "limits": "Platform-native execution and matched agent trials are required; web viewport emulation is not native Android evidence."
+    }
+  ],
+  "human_ratings": []
+}

@@ -44,3 +44,16 @@ Data engineering uses database-engineer, backend-engineer, privacy-engineer and
 observability-engineer for modeling, ingestion, transformations, lineage, quality,
 retention and operations; it does not add an unrequested 35th identifier.
 See [workflows](workflows.md) for conditional selection.
+
+## Optional Visual Intelligence extension
+
+The original 34 identifiers above are preserved. Select only the visual responsibility needed.
+
+- [visual-art-director](../skills/visual-art-director/SKILL.md)
+- [visual-reference-analyst](../skills/visual-reference-analyst/SKILL.md)
+- [color-science-engineer](../skills/color-science-engineer/SKILL.md)
+- [typography-composition-engineer](../skills/typography-composition-engineer/SKILL.md)
+- [material-rendering-engineer](../skills/material-rendering-engineer/SKILL.md)
+- [motion-interaction-engineer](../skills/motion-interaction-engineer/SKILL.md)
+- [design-to-code-engineer](../skills/design-to-code-engineer/SKILL.md)
+- [visual-qa-auditor](../skills/visual-qa-auditor/SKILL.md)

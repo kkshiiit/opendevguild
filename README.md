@@ -1,7 +1,7 @@
 # OpenDevGuild
 
 Modular software engineering procedures for Agent Skills compatible hosts.
-**0.2.0 development candidate · Apache-2.0 · [Español](README.es.md)**
+**0.3.0 development candidate · Apache-2.0 · [Español](README.es.md)**
 
 OpenDevGuild turns engineering responsibilities into 34 bounded specialist
 procedures, selective coordination, explicit handoffs and evidence-based quality
@@ -139,7 +139,7 @@ uv sync --frozen
 uv run --frozen python scripts/guild.py validate
 uv run --frozen python -m unittest discover -s tests -v
 uv run --frozen python scripts/guild.py check-handoff examples/handoff.json --task examples/task.json
-uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.2.0.zip
+uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.3.0.zip
 ```
 
 Use a new output path if the archive already exists. Official `skills-ref`
@@ -168,3 +168,11 @@ The authorized source/publication destination is
 from it requires the appropriate access and a reviewed revision. A local checkout,
 a public GitHub publication and an accepted public plugin remain separate states;
 consult the verification record for actual visibility, publication and CI evidence.
+
+## Visual Intelligence Engine V1
+
+The original 34 specialists are preserved. Eight optional visual procedures add
+inspected references, differentiated directions, color/type/material/motion work,
+design-to-code and independent visual QA. Read the [visual guide](visual/README.md)
+and [actual results](visual/results.md). Human preferences and three-arm agent
+benchmarks remain unexecuted; no aesthetic superiority or fine-tuning is claimed.

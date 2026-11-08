@@ -11,8 +11,8 @@ python scripts/evaluate.py /absolute/path/to/predictions.json --cases evaluation
 
 ## Fixture and observation records
 
-The compact fixture contains shared `defaults` plus 170 cases: positive, negative,
-ambiguous, multiple-specialist and single-specialist cases for **each of 34 skills**.
+The compact fixture contains shared `defaults` plus 210 cases: positive, negative,
+ambiguous, multiple-specialist and single-specialist cases for **each of 42 skills**.
 Each case supplies `id`, `target`, `category`, a contextual `request`, triage overrides,
 `expected`, `forbidden`, `mode` and `readiness`. Merge defaults and overrides before
 calling the router. The request is explanatory data; the deterministic router does
@@ -35,7 +35,7 @@ Observation format:
 }
 ```
 
-This single record illustrates the format; the default suite requires all 170
+This single record illustrates the format; the default suite requires all 210
 unique case IDs. `host-observations` is a second accepted provenance label for
 actual recorded host selections. The evaluator does not attest that a caller's
 label or observation is truthful. Preserve host/model, exact inputs, tool availability,
@@ -96,7 +96,7 @@ python scripts/evaluate.py "$odg_predictions_path" --cases evaluations/routing.j
 
 This produces deterministic procedure observations only. The evaluator reads
 them; it does not generate fake model responses. The unit suite exercises all
-170 cases and additionally corrupts a prediction to prove that extra/missing
+210 cases and additionally corrupts a prediction to prove that extra/missing
 activations lower precision/recall and produce a mismatch:
 
 ```bash
@@ -105,7 +105,7 @@ uv run --frozen python -m unittest discover -s tests -p test_routing.py -v
 
 ## Español
 
-El ejecutor compara predicciones observadas con 170 casos: cinco categorías de
+El ejecutor compara predicciones observadas con 210 casos: cinco categorías de
 activación por cada skill. Rechaza registros faltantes, duplicados o inválidos.
 Mide coincidencias exactas, activaciones innecesarias, omisiones, selecciones
 prohibidas, precisión y recuperación. Un denominador vacío devuelve `null`.
