@@ -173,4 +173,3 @@ are runnable; native recipe commands are not misrepresented as executed runs.
   A reproducible local0.3.0 candidate ZIP and SHA-256 are separate deliverables.
 - Delivery documentation follows the tested implementation in a separate commit;
   the exact checkout revision is available through `git rev-parse HEAD`.
-

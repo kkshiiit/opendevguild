@@ -27,7 +27,7 @@ styled glass and simulated sampled glass. The recording is
 | Frozen-pane negative experiment | 0 pane pixels changed while 49,936 surrounding pixels changed | The revised pane metric rejects the original full-page false positive |
 | Local request interaction | Status changed; no external request sent | The supplied local form interaction executed |
 | Reduced motion | Animation remained stopped | The tested preference path preserves a stable state |
-| Recorded dynamics | 36 Canvas draw calls observed during recording phase | Actual updating occurred; not a GPU/energy benchmark |
+| Recorded dynamics | 34 Canvas draw calls observed during recording phase | Actual updating occurred; not a GPU/energy benchmark |
 | Selected text/control token pairs | Six ratios 5.752–14.480, threshold 4.5 | Those opaque sRGB pairs pass that threshold |
 | Canvas draw-call timing | Median 0.100 ms over 32 samples | CPU API-call timing on this run only |
 
