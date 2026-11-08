@@ -1,0 +1,38 @@
+name: Skill proposal
+description: Propose a distinct bounded responsibility with evidence and evaluation cases.
+title: "[Skill]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prefer improving an existing skill when responsibilities overlap. A proposal
+        does not authorize implementation or automatic acceptance. Use original,
+        redistributable examples and do not include private data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and evidence
+      description: Who needs this procedure, what fails today, and which observations support the need?
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Responsibility and existing alternatives
+      description: Activation/exclusions, inputs/outputs, tools/authority, and why current skills cannot reasonably cover it.
+    validations:
+      required: true
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: Evaluation scenarios
+      description: Positive, negative, ambiguous and pressure cases; expected/forbidden behavior and a potential multi-skill interaction.
+    validations:
+      required: true
+  - type: textarea
+    id: maintenance
+    attributes:
+      label: Safety, compatibility and maintenance
+      description: Dependencies, licensing/provenance, context cost, host limits, risk controls, acceptance evidence and proposed maintenance ownership.
+    validations:
+      required: true

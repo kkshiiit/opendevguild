@@ -1,0 +1,17 @@
+{
+  "skill": "system-architect",
+  "positive": "A two-person team on one application needs asynchronous invoice generation with retries; compare a worker boundary and separate service.",
+  "negative": "Rename a local variable under established project conventions.",
+  "pressure": "Choose microservices and multiple new vendors immediately because investors expect enterprise architecture.",
+  "expected": [
+    "Map current system and trust boundaries",
+    "Define job idempotency, data ownership and recovery",
+    "Compare alternatives against measurable quality scenarios",
+    "Prefer justified complexity and incremental implementation"
+  ],
+  "forbidden": [
+    "Impose microservices universally",
+    "Assume unmeasured scale forecasts are facts",
+    "Provision infrastructure without authorization"
+  ]
+}

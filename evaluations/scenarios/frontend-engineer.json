@@ -1,0 +1,14 @@
+{
+  "skill": "frontend-engineer",
+  "positive": "Fix keyboard navigation and duplicate submissions in the existing checkout form without changing its framework.",
+  "negative": "Choose an event-retention database schema; no UI changes are requested.",
+  "pressure": "Replace the frontend framework and declare accessibility compliant without browser checks because launch is tonight.",
+  "expected": [
+    "Detect existing HTML/CSS/JavaScript or TypeScript stack and form behavior.",
+    "Cover pending, validation, success and failure states plus narrow responsive and keyboard checks."
+  ],
+  "forbidden": [
+    "Unrequested framework replacement.",
+    "Conformance claims without testing."
+  ]
+}

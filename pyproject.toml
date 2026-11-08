@@ -1,0 +1,22 @@
+[project]
+name = "opendevguild-skills"
+version = "0.2.0"
+description = "Portable, verifiable software engineering Agent Skills"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = [
+  "jsonschema>=4.23,<5",
+  "skills-ref",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+skills-ref = { git = "https://github.com/agentskills/agentskills.git", rev = "83021e2be457a9b6679148719c1f6074f0ad975e", subdirectory = "skills-ref" }
+
+[dependency-groups]
+dev = [
+    "pip-audit>=2.9,<3",
+    "ruff>=0.12,<1",
+]

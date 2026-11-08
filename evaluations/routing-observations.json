@@ -1,0 +1,1408 @@
+{
+  "kind": "deterministic-router",
+  "predictions": [
+    {
+      "id": "mission-control-positive",
+      "skills": [
+        "mission-control"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "mission-control-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "mission-control-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "mission-control-multiple",
+      "skills": [
+        "mission-control",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "mission-control-single",
+      "skills": [
+        "mission-control"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "scope-guardian-positive",
+      "skills": [
+        "scope-guardian"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "scope-guardian-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "scope-guardian-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "scope-guardian-multiple",
+      "skills": [
+        "scope-guardian",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "scope-guardian-single",
+      "skills": [
+        "scope-guardian"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "repository-intelligence-positive",
+      "skills": [
+        "repository-intelligence"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "repository-intelligence-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "repository-intelligence-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "repository-intelligence-multiple",
+      "skills": [
+        "repository-intelligence",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "repository-intelligence-single",
+      "skills": [
+        "repository-intelligence"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "delivery-planner-positive",
+      "skills": [
+        "delivery-planner"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "delivery-planner-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "delivery-planner-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "delivery-planner-multiple",
+      "skills": [
+        "delivery-planner",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "delivery-planner-single",
+      "skills": [
+        "delivery-planner"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "product-discovery-positive",
+      "skills": [
+        "product-discovery"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "product-discovery-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "product-discovery-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "product-discovery-multiple",
+      "skills": [
+        "product-discovery",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "product-discovery-single",
+      "skills": [
+        "product-discovery"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "requirements-engineer-positive",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "requirements-engineer-negative",
+      "skills": [
+        "documentation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "requirements-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "requirements-engineer-multiple",
+      "skills": [
+        "requirements-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "requirements-engineer-single",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "ux-research-design-positive",
+      "skills": [
+        "ux-research-design"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "ux-research-design-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "ux-research-design-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "ux-research-design-multiple",
+      "skills": [
+        "ux-research-design",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "ux-research-design-single",
+      "skills": [
+        "ux-research-design"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "ui-design-system-positive",
+      "skills": [
+        "ui-design-system"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "ui-design-system-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "ui-design-system-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "ui-design-system-multiple",
+      "skills": [
+        "ui-design-system",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "ui-design-system-single",
+      "skills": [
+        "ui-design-system"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "accessibility-engineer-positive",
+      "skills": [
+        "accessibility-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "accessibility-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "accessibility-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "accessibility-engineer-multiple",
+      "skills": [
+        "accessibility-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "accessibility-engineer-single",
+      "skills": [
+        "accessibility-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "system-architect-positive",
+      "skills": [
+        "system-architect"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "system-architect-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "system-architect-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "system-architect-multiple",
+      "skills": [
+        "system-architect",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "system-architect-single",
+      "skills": [
+        "system-architect"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "architecture-decisions-positive",
+      "skills": [
+        "architecture-decisions"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "architecture-decisions-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "architecture-decisions-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "architecture-decisions-multiple",
+      "skills": [
+        "architecture-decisions",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "architecture-decisions-single",
+      "skills": [
+        "architecture-decisions"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "database-engineer-positive",
+      "skills": [
+        "database-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "database-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "database-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "database-engineer-multiple",
+      "skills": [
+        "database-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "database-engineer-single",
+      "skills": [
+        "database-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "api-contract-engineer-positive",
+      "skills": [
+        "api-contract-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "api-contract-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "api-contract-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "api-contract-engineer-multiple",
+      "skills": [
+        "api-contract-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "api-contract-engineer-single",
+      "skills": [
+        "api-contract-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "frontend-engineer-positive",
+      "skills": [
+        "frontend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "frontend-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "frontend-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "frontend-engineer-multiple",
+      "skills": [
+        "frontend-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "frontend-engineer-single",
+      "skills": [
+        "frontend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "backend-engineer-positive",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "backend-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "backend-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "backend-engineer-multiple",
+      "skills": [
+        "security-engineer",
+        "backend-engineer",
+        "code-review-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "CRITICAL",
+      "readiness": "ready"
+    },
+    {
+      "id": "backend-engineer-single",
+      "skills": [
+        "backend-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "mobile-engineer-positive",
+      "skills": [
+        "mobile-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "mobile-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "mobile-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "mobile-engineer-multiple",
+      "skills": [
+        "mobile-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "mobile-engineer-single",
+      "skills": [
+        "mobile-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "desktop-engineer-positive",
+      "skills": [
+        "desktop-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "desktop-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "desktop-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "desktop-engineer-multiple",
+      "skills": [
+        "desktop-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "desktop-engineer-single",
+      "skills": [
+        "desktop-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "game-design-engineer-positive",
+      "skills": [
+        "game-design-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "game-design-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "game-design-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "game-design-engineer-multiple",
+      "skills": [
+        "game-design-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "game-design-engineer-single",
+      "skills": [
+        "game-design-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "gameplay-engineer-positive",
+      "skills": [
+        "gameplay-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "gameplay-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "gameplay-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "gameplay-engineer-multiple",
+      "skills": [
+        "gameplay-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "gameplay-engineer-single",
+      "skills": [
+        "gameplay-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "implementation-engineer-positive",
+      "skills": [
+        "implementation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "implementation-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "implementation-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "implementation-engineer-multiple",
+      "skills": [
+        "implementation-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "implementation-engineer-single",
+      "skills": [
+        "implementation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "code-review-engineer-positive",
+      "skills": [
+        "code-review-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "code-review-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "code-review-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "code-review-engineer-multiple",
+      "skills": [
+        "code-review-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "code-review-engineer-single",
+      "skills": [
+        "code-review-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "test-strategy-engineer-positive",
+      "skills": [
+        "test-strategy-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "test-strategy-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "test-strategy-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "test-strategy-engineer-multiple",
+      "skills": [
+        "test-strategy-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "test-strategy-engineer-single",
+      "skills": [
+        "test-strategy-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "qa-automation-engineer-positive",
+      "skills": [
+        "qa-automation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "qa-automation-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "qa-automation-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "qa-automation-engineer-multiple",
+      "skills": [
+        "qa-automation-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "qa-automation-engineer-single",
+      "skills": [
+        "qa-automation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "performance-engineer-positive",
+      "skills": [
+        "performance-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "performance-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "performance-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "performance-engineer-multiple",
+      "skills": [
+        "performance-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "performance-engineer-single",
+      "skills": [
+        "performance-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "security-engineer-positive",
+      "skills": [
+        "security-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "security-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "security-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "security-engineer-multiple",
+      "skills": [
+        "scope-guardian",
+        "security-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "CRITICAL",
+      "readiness": "ready"
+    },
+    {
+      "id": "security-engineer-single",
+      "skills": [
+        "security-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "privacy-engineer-positive",
+      "skills": [
+        "privacy-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "privacy-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "privacy-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "privacy-engineer-multiple",
+      "skills": [
+        "scope-guardian",
+        "privacy-engineer",
+        "security-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "CRITICAL",
+      "readiness": "ready"
+    },
+    {
+      "id": "privacy-engineer-single",
+      "skills": [
+        "privacy-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "supply-chain-auditor-positive",
+      "skills": [
+        "supply-chain-auditor"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "supply-chain-auditor-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "supply-chain-auditor-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "supply-chain-auditor-multiple",
+      "skills": [
+        "supply-chain-auditor",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "supply-chain-auditor-single",
+      "skills": [
+        "supply-chain-auditor"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "devops-ci-engineer-positive",
+      "skills": [
+        "devops-ci-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "devops-ci-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "devops-ci-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "devops-ci-engineer-multiple",
+      "skills": [
+        "devops-ci-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "devops-ci-engineer-single",
+      "skills": [
+        "devops-ci-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "release-engineer-positive",
+      "skills": [
+        "release-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "release-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "release-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "release-engineer-multiple",
+      "skills": [
+        "scope-guardian",
+        "security-engineer",
+        "release-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "CRITICAL",
+      "readiness": "ready"
+    },
+    {
+      "id": "release-engineer-single",
+      "skills": [
+        "release-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "observability-engineer-positive",
+      "skills": [
+        "observability-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "observability-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "observability-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "observability-engineer-multiple",
+      "skills": [
+        "observability-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "observability-engineer-single",
+      "skills": [
+        "observability-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "incident-response-engineer-positive",
+      "skills": [
+        "incident-response-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "incident-response-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "incident-response-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "incident-response-engineer-multiple",
+      "skills": [
+        "incident-response-engineer",
+        "scope-guardian",
+        "security-engineer",
+        "documentation-engineer"
+      ],
+      "mode": "CRITICAL",
+      "readiness": "ready"
+    },
+    {
+      "id": "incident-response-engineer-single",
+      "skills": [
+        "incident-response-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "documentation-engineer-positive",
+      "skills": [
+        "documentation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "documentation-engineer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "documentation-engineer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "documentation-engineer-multiple",
+      "skills": [
+        "repository-intelligence",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "documentation-engineer-single",
+      "skills": [
+        "documentation-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "skill-quality-evaluator-positive",
+      "skills": [
+        "skill-quality-evaluator"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "skill-quality-evaluator-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "skill-quality-evaluator-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "skill-quality-evaluator-multiple",
+      "skills": [
+        "skill-quality-evaluator",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "skill-quality-evaluator-single",
+      "skills": [
+        "skill-quality-evaluator"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "community-maintainer-positive",
+      "skills": [
+        "community-maintainer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "community-maintainer-negative",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    },
+    {
+      "id": "community-maintainer-ambiguous",
+      "skills": [
+        "requirements-engineer"
+      ],
+      "mode": "FAST",
+      "readiness": "blocked"
+    },
+    {
+      "id": "community-maintainer-multiple",
+      "skills": [
+        "community-maintainer",
+        "documentation-engineer"
+      ],
+      "mode": "STANDARD",
+      "readiness": "ready"
+    },
+    {
+      "id": "community-maintainer-single",
+      "skills": [
+        "community-maintainer"
+      ],
+      "mode": "FAST",
+      "readiness": "ready"
+    }
+  ]
+}

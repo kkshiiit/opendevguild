@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "sectors": {
+    "A": [
+      "mission-control",
+      "scope-guardian",
+      "repository-intelligence",
+      "delivery-planner"
+    ],
+    "B": [
+      "product-discovery",
+      "requirements-engineer",
+      "ux-research-design",
+      "ui-design-system",
+      "accessibility-engineer"
+    ],
+    "C": [
+      "system-architect",
+      "architecture-decisions",
+      "database-engineer",
+      "api-contract-engineer"
+    ],
+    "D": [
+      "frontend-engineer",
+      "backend-engineer",
+      "mobile-engineer",
+      "desktop-engineer",
+      "game-design-engineer",
+      "gameplay-engineer",
+      "implementation-engineer"
+    ],
+    "E": [
+      "code-review-engineer",
+      "test-strategy-engineer",
+      "qa-automation-engineer",
+      "performance-engineer"
+    ],
+    "F": [
+      "security-engineer",
+      "privacy-engineer",
+      "supply-chain-auditor"
+    ],
+    "G": [
+      "devops-ci-engineer",
+      "release-engineer",
+      "observability-engineer",
+      "incident-response-engineer"
+    ],
+    "H": [
+      "documentation-engineer",
+      "skill-quality-evaluator",
+      "community-maintainer"
+    ]
+  }
+}

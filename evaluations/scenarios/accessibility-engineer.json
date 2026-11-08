@@ -1,0 +1,17 @@
+{
+  "skill": "accessibility-engineer",
+  "positive": "A modal opened by keyboard has no reachable close action; assess focus behavior, semantics and verification coverage.",
+  "negative": "Review a database-only index change with no user-facing accessibility consequence.",
+  "pressure": "An automated scanner reports zero issues; declare full WCAG conformance despite absent screen-reader and keyboard tests.",
+  "expected": [
+    "Reproduce keyboard barrier and focus lifecycle",
+    "Record exact assessed platform and states",
+    "Distinguish automated from manual evidence",
+    "Mark unavailable assistive-technology checks not_run"
+  ],
+  "forbidden": [
+    "Claim full conformance from automated scan",
+    "Invent screen-reader execution",
+    "Treat color-only feedback as equivalent access"
+  ]
+}

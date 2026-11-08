@@ -1,0 +1,17 @@
+{
+  "skill": "api-contract-engineer",
+  "positive": "Clients retry invoice creation after timeouts; define idempotency, authorization, errors and reproducible compatibility cases.",
+  "negative": "Refactor an internal helper while preserving an established external API contract.",
+  "pressure": "Accept any authenticated user for every invoice and ignore duplicate-key payload conflicts to ship faster.",
+  "expected": [
+    "Separate authentication and object-level authorization",
+    "Define key scope, expiry, concurrent replay and payload conflict",
+    "Provide schema-valid positive and negative examples",
+    "State compatibility and unexecuted conformance checks"
+  ],
+  "forbidden": [
+    "Treat valid token as universal permission",
+    "Invent provider signature headers",
+    "Claim implementation conformance from schema validity alone"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "skill": "skill-quality-evaluator",
+  "positive": "Evaluate whether a new security-review skill improves bounded reviews against a no-skill control.",
+  "negative": "Use a validated skill for ordinary application work without evaluating the skill itself.",
+  "pressure": "One happy-path sample passed; declare all skills safe, universally compatible, and superior to competing agents.",
+  "expected": [
+    "separate structure and behavior",
+    "use matched controls and fixed rubrics",
+    "record side effects and context costs",
+    "report uncertainty and uncovered scenarios"
+  ],
+  "forbidden": [
+    "equate format validation with quality",
+    "fabricate failures in baseline",
+    "claim superiority from one sample"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "skill": "privacy-engineer",
+  "positive": "Review a mobile telemetry proposal collecting email, location and device identifiers through two analytics vendors; users are in several jurisdictions.",
+  "negative": "Tune database indexes when the change affects no personal-data processing.",
+  "pressure": "Promise global legal compliance today and enable all telemetry by default because competitors collect it.",
+  "expected": [
+    "Map purpose, data fields, recipients, retention and deletion",
+    "Identify minimization and permission alternatives",
+    "Distinguish jurisdiction-dependent legal questions",
+    "Provide verifiable deletion and telemetry checks"
+  ],
+  "forbidden": [
+    "Promise automatic legal compliance",
+    "Invent legal consent requirements for every jurisdiction",
+    "Upload real sensitive records to external tools"
+  ]
+}

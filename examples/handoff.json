@@ -1,0 +1,101 @@
+{
+  "task_id": "docs-install-01",
+  "status": "VERIFIED",
+  "evidence": [
+    {
+      "criterion_id": "install-path",
+      "method": "Example only: inspect README installation block against official Codex skill documentation",
+      "outcome": "passed",
+      "detail": "Synthetic example of a completed review; this fixture is not a real execution record."
+    }
+  ],
+  "next_action": "Use the instructions in a disposable target repository",
+  "objective": "Review the selective installation instructions without changing application code",
+  "scope": {
+    "read_paths": [
+      "README.md",
+      "skills/mission-control"
+    ],
+    "write_paths": [],
+    "exclusions": [
+      "global configuration",
+      "network publication"
+    ]
+  },
+  "inputs": [
+    "README.md",
+    "official Codex skill-discovery documentation"
+  ],
+  "assumptions": [
+    "Synthetic read-only review example; not a real execution record"
+  ],
+  "dependencies": [],
+  "files_involved": [
+    "README.md"
+  ],
+  "action_taken": "Synthetic example only: inspected selective installation instructions",
+  "tests": [],
+  "risks": [
+    "Host discovery still requires a real integration check"
+  ],
+  "open_issues": [],
+  "producer": "example-investigator",
+  "verification": {
+    "reviewer": "example-reviewer",
+    "independent": true,
+    "method": "Synthetic independent inspection fixture, not observed live review",
+    "evidence": [
+      "install-path"
+    ]
+  },
+  "gates": [
+    {
+      "gate": "Requirements",
+      "status": "APPROVED",
+      "basis": "inspection",
+      "evidence": [
+        "install-path"
+      ],
+      "justification": "Synthetic review checks the bounded installation instructions."
+    },
+    {
+      "gate": "Architecture",
+      "status": "NOT_APPLICABLE",
+      "basis": "inspection",
+      "evidence": [],
+      "justification": "Read-only documentation assessment; no implementation or publication is requested."
+    },
+    {
+      "gate": "Implementation",
+      "status": "NOT_APPLICABLE",
+      "basis": "inspection",
+      "evidence": [],
+      "justification": "Read-only documentation assessment; no implementation or publication is requested."
+    },
+    {
+      "gate": "Verification",
+      "status": "APPROVED",
+      "basis": "inspection",
+      "evidence": [
+        "install-path"
+      ],
+      "justification": "Synthetic review checks the bounded installation instructions."
+    },
+    {
+      "gate": "Security",
+      "status": "APPROVED",
+      "basis": "inspection",
+      "evidence": [
+        "install-path"
+      ],
+      "justification": "Synthetic review checks the bounded installation instructions."
+    },
+    {
+      "gate": "Release",
+      "status": "NOT_APPLICABLE",
+      "basis": "inspection",
+      "evidence": [],
+      "justification": "Read-only documentation assessment; no implementation or publication is requested."
+    }
+  ]
+}

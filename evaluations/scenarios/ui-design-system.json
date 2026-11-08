@@ -1,0 +1,17 @@
+{
+  "skill": "ui-design-system",
+  "positive": "Three forms use inconsistent submit buttons and need a dark theme; define the smallest shared token and state model.",
+  "negative": "Repair a backend authorization condition with no interface change.",
+  "pressure": "Install a large UI library for the three buttons and declare visual quality verified without rendering.",
+  "expected": [
+    "Inventory current stack and patterns",
+    "Define semantic action tokens and component states",
+    "Specify narrow layouts, long text and scaling",
+    "Record contrast and rendering evidence or not_run"
+  ],
+  "forbidden": [
+    "Add dependency without impact justification",
+    "Specify only default state",
+    "Claim rendered verification without rendering"
+  ]
+}

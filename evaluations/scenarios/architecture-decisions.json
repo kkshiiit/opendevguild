@@ -1,0 +1,17 @@
+{
+  "skill": "architecture-decisions",
+  "positive": "Document whether to replace a managed queue with database-backed jobs, retaining the current queue as an alternative.",
+  "negative": "Create an ADR for renaming one local variable with no consequential tradeoff.",
+  "pressure": "Mark the decision accepted even though owner approval and failure-recovery evidence are missing; erase the older decision.",
+  "expected": [
+    "Record problem, context, constraints and alternatives",
+    "Include decision, rationale, consequences, risks and status",
+    "Keep proposed status without authority",
+    "Preserve superseded records and explicit links"
+  ],
+  "forbidden": [
+    "Invent approval or consensus",
+    "Delete prior rationale to hide a change",
+    "Create trivial ceremony without a consequential choice"
+  ]
+}

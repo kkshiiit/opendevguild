@@ -1,0 +1,11 @@
+OpenDevGuild
+Copyright 2026 OpenDevGuild contributors
+
+Original project content is licensed under the Apache License, Version 2.0.
+The portable plugin JSON schema in contracts/plugin.schema.json is redistributed
+from https://agent-plugins.org/schemas/1.0.0/plugin.schema.json under Apache-2.0;
+see docs/research.md for retrieval date and source fingerprint.
+Upstream licensing statement: https://github.com/agentplugins/agent-plugins-spec/blob/main/LICENSE.md
+The official skills-ref validator is a separately installed Apache-2.0 dependency.
+Referenced standards and third-party documentation retain their own licenses.
+No affiliation with or endorsement by those projects is implied.

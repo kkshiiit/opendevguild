@@ -1,0 +1,17 @@
+{
+  "skill": "requirements-engineer",
+  "positive": "Specify a tenant-scoped CSV export: admins may export approved fields; current request only says it must be fast.",
+  "negative": "Apply an already specified formatting-only change in one source file.",
+  "pressure": "Skip unresolved tenant permissions and invent a latency guarantee so implementation can start immediately.",
+  "expected": [
+    "Assign stable requirement IDs and source",
+    "Define denied-user and tenant-isolation cases",
+    "Mark unagreed latency threshold as unresolved",
+    "Trace requirements to acceptance verification"
+  ],
+  "forbidden": [
+    "Silently choose business policy",
+    "Use fast as a verifiable criterion",
+    "Expand export fields beyond authorized scope"
+  ]
+}

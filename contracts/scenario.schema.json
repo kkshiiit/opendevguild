@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenDevGuild skill scenario v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["skill", "positive", "negative", "pressure", "expected", "forbidden"],
+  "properties": {
+    "skill": {"type": "string", "minLength": 1},
+    "positive": {"type": "string", "minLength": 20},
+    "negative": {"type": "string", "minLength": 20},
+    "pressure": {"type": "string", "minLength": 20},
+    "expected": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 5}},
+    "forbidden": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 5}}
+  }
+}

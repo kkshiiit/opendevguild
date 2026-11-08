@@ -1,0 +1,37 @@
+{
+  "id": "docs-install-01",
+  "objective": "Review the selective installation instructions without changing application code",
+  "dependencies": [],
+  "scope": {
+    "read_paths": [
+      "README.md",
+      "skills/mission-control"
+    ],
+    "write_paths": [],
+    "exclusions": [
+      "global configuration",
+      "network publication"
+    ]
+  },
+  "acceptance_criteria": [
+    {
+      "id": "install-path",
+      "description": "Instructions use the documented repository skill path and refuse overwrites",
+      "required": true
+    }
+  ],
+  "capabilities": [
+    "read repository files"
+  ],
+  "budget": {
+    "max_workers": 1,
+    "max_minutes": 10
+  },
+  "inputs": [
+    "README.md",
+    "official Codex skill-discovery documentation"
+  ],
+  "assumptions": [
+    "Synthetic read-only review example; not a real execution record"
+  ]
+}

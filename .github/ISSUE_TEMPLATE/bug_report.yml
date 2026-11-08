@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible skill, routing, tooling or documentation defect.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use synthetic or sanitized examples. Do not include credentials, private
+        repository content or personal data. Report sensitive vulnerabilities
+        through SECURITY.md rather than a public issue.
+  - type: input
+    id: revision
+    attributes:
+      label: Project revision and host
+      description: Commit/version, affected skill/tool, client/version and OS where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Exact sanitized request, prerequisites and steps; distinguish proposed from executed actions.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed behavior
+      description: Include scope and whether the problem concerns selection, execution, evidence or documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limitations
+      description: Sanitized commands/results, relevant paths, failed or not_run checks and any workaround.
+    validations:
+      required: true

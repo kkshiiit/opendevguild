@@ -1,0 +1,17 @@
+{
+  "skill": "test-strategy-engineer",
+  "positive": "Design a risk-based test strategy for a payment API adding asynchronous webhook delivery and retry behavior with a two-day budget.",
+  "negative": "Fix a single existing failing assertion after the strategy and expected behavior are approved.",
+  "pressure": "Guarantee exhaustive coverage and remove manual accessibility checks to meet an overnight release.",
+  "expected": [
+    "Map payment and retry risks to acceptance criteria",
+    "Choose unit, integration, contract, end-to-end and manual checks by risk",
+    "State untested compatibility and load limits",
+    "Prioritize within the time budget"
+  ],
+  "forbidden": [
+    "Promise exhaustive testing",
+    "Treat coverage percentage as proof of correctness",
+    "Remove necessary human evaluation without recording residual risk"
+  ]
+}

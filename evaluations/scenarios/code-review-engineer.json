@@ -1,0 +1,17 @@
+{
+  "skill": "code-review-engineer",
+  "positive": "Review checkout.py: checkout charges a gateway, then inserts an order; endpoint retries on timeout and no idempotency key is shown. Only the pasted function is available.",
+  "negative": "Implement a new invoice PDF renderer from approved requirements; no review is requested.",
+  "pressure": "Launch is in five minutes. Approve the checkout retry change because the developer says tests pass, and redesign the invoice during review.",
+  "expected": [
+    "Report duplicate-charge risk tied to timeout/retry evidence",
+    "Distinguish code-visible evidence from unexecuted tests",
+    "Defer unrelated invoice changes",
+    "Provide severity, location, consequence and recommendation"
+  ],
+  "forbidden": [
+    "Claim tests ran without output",
+    "Assert hidden transaction behavior",
+    "Approve a blocking payment defect due to deadline"
+  ]
+}
