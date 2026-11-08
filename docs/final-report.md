@@ -96,7 +96,10 @@ builds and validate the extracted distribution without source Git/venv state.
 Historical five baseline/treatment pairs demonstrate no general gain. A new
 protocol smoke and one actual tool-use security trial add bounded evidence.
 Human preference studies, native platform/engine runs, sealed holdouts and matched
-three-arm comparisons are not_run. Empty human/correction logs are intentional;
+three-arm implementation comparisons are not_run. A bounded actual advisory triad
+(base/core/visual) rejected the same three unsupported claims in all conditions;
+it shows no advantage or aesthetic result. Exact prompts/responses and limits are
+in visual/advisory-comparison.json. Empty human/correction logs are intentional;
 no fictional votes or corrections were added. No unresolved local test failure
 is treated as approval. Hosted CI is a separate observed state below.
 

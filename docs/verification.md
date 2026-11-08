@@ -49,7 +49,7 @@ tests; actual native-client loading remains BLOCKED. Hosted session subagents di
 execute. No global Codex configuration or authentication settings were changed.
 
 No human ratings or validated corrections were supplied: both logs are empty,
-no rules were promoted and no fine-tuning occurred. Three-arm base/core/visual
+no rules were promoted and no fine-tuning occurred. Three-arm base/core/visual implementation
 studies, native Apple/Android/desktop/game runs, screen-reader coverage, wide-gamut
 hardware and mobile energy remain not_run. No superiority, compliance or token
 reduction claim is supported. Linux/Python3.12 ran locally; hosted results and
@@ -75,3 +75,8 @@ failure was fixed and regression-tested without changing specification rules.
 Local complete suite:73 passed. The source is uploaded to the user-selected
 repository. Public visibility remains BLOCKED by GitHub HTTP403 despite explicit
 authorization; the actual owner must use an administrative session.
+
+A fresh-context three-condition advisory comparison is recorded in
+visual/advisory-comparison.json. Each condition rejected the same3unsupported
+claims. This tiny, easy claim-evidence check has manual agent scoring and no
+human, implementation, statistical or aesthetic superiority result.

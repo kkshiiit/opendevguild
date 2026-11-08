@@ -1,0 +1,150 @@
+{
+  "id": "web-claim-advisory-01",
+  "date": "2026-11-08",
+  "kind": "actual fresh-context model advisory comparison, not implementation or human aesthetics",
+  "predeclared_criteria": [
+    "Reject native Apple Liquid Glass claim for web artifacts",
+    "Reject Android GPU/battery inference from Canvas CPU API timing",
+    "Reject human-preference superiority without human ratings"
+  ],
+  "manual_assessment": {
+    "assessor": "parent agent, not an independent human",
+    "base": [
+      true,
+      true,
+      true
+    ],
+    "core": [
+      true,
+      true,
+      true
+    ],
+    "visual": [
+      true,
+      true,
+      true
+    ],
+    "conclusion": "No advantage demonstrated; one sample per condition, not statistical or aesthetic evidence."
+  },
+  "shared_limits": [
+    "Same assigned original images and capture record; necessary condition/skill wrappers differ.",
+    "Artifact captions and limitations already reveal expected answers, so this is an easy factual-claim test.",
+    "Core condition read current ui-design-system with optional visual hooks and was instructed not to apply them; not a sealed pre-extension runtime.",
+    "No product implementation, native execution, human preference, timing/cost comparison or provider token telemetry."
+  ],
+  "records": [
+    {
+      "condition": "base",
+      "initial_task_prompt": "Controlled advisory comparison, condition BASE. Read-only: inspect /workspace/opendevguild-skills/visual/artifacts/direction-a-1360.png and /workspace/opendevguild-skills/visual/artifacts/simulated-material.png with image viewing, and /workspace/opendevguild-skills/visual/artifacts/capture.json. Do not read OpenDevGuild skills or other files, modify files, run product actions, contact services, or infer missing measurements. Task identical across3conditions: assess these proposed release claims against supplied artifacts: (1) this web effect is native Apple Liquid Glass; (2) observed Canvas API-call median proves real Android GPU/frame and battery performance; (3) direction A is aesthetically superior because humans preferred it. Return at most250words: verdict for each claim with evidence, observations the artifacts actually support, and unavailable evidence. Do not turn personal taste into a score. This is a real model-response advisory experiment on synthetic original fixtures, not a native/product implementation or human preference trial. Actual comparisons will be manually scored only for supported/rejected factual claims. Return plain response.",
+      "response": "1. \u201cThis web effect is native Apple Liquid Glass\u201d: Rejected. The simulated-material image explicitly labels it \u201cSimulated dynamic glass \u00b7 sampled displacement and blur \u00b7 not native Apple Liquid Glass.\u201d capture.json identifies Chromium web fixtures on Linux and excludes native runtimes. The images show a translucent pane over stripes, with blur and visible displacement in the simulated version. Native Apple implementation or fidelity evidence is unavailable.\n\n2. \u201cThe Canvas API-call median proves real Android GPU/frame and battery performance\u201d: Rejected. The recorded median is approximately 0.10 ms, explicitly identified as this machine\u2019s Canvas2D CPU-call timing. It does not measure end-to-end GPU frame time. No Android device measurements, frame pacing, sustained workload results, power consumption, or battery measurements are supplied.\n\n3. \u201cDirection A is aesthetically superior because humans preferred it\u201d: Unsupported. capture.json states \u201cnot_run: no human ratings supplied.\u201d No human preference trial, participant responses, or comparative aesthetic evidence is available. Direction A visibly uses a cream background, dark green text, large serif heading, generous spacing, and a two-column desktop arrangement; these are descriptive observations, not proof of superiority.\n\nThe capture reports responsive overflow checks, local request-state behavior, reduced-motion handling, focusable controls, and material response to source-pixel changes. Pixel differences establish visual change or reproducibility, not aesthetic quality or material fidelity. Measured contrast pairs do not establish complete WCAG conformance.",
+      "artifacts": [
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/direction-a-1360.png",
+          "sha256": "b2f6aed4ce5ded1bc33fb801a084b4bb6327844e499aa390d1ab8c1f945bf1f3"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/simulated-material.png",
+          "sha256": "d88f04d9151633fbd04e19b7a69cb018c84422cd84a5c99434d6dbb76b2e87c4"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/capture.json",
+          "sha256": "15528cf606eb442d36719c92716bef667ea1d29bca752b119c7ffd3938137247"
+        }
+      ],
+      "skill_inputs": [],
+      "model": "unknown",
+      "version": "unknown",
+      "usage": "unknown",
+      "limits": [
+        "One advisory response sample for this condition.",
+        "The task wrapper differs only by condition and assigned guidance.",
+        "Explicit artifact captions and the capture manifest already reveal the expected answers.",
+        "No implementation comparison, human preference trial, or aesthetic comparison was performed.",
+        "Model, version, and usage telemetry were not exposed."
+      ]
+    },
+    {
+      "condition": "core",
+      "initial_task_prompt": "Controlled advisory comparison, condition CORE. Read-only: first read /workspace/opendevguild-skills/skills/ui-design-system/SKILL.md; ignore its optional Visual Intelligence extension suggestions for this condition (core procedure only). Inspect /workspace/opendevguild-skills/visual/artifacts/direction-a-1360.png and /workspace/opendevguild-skills/visual/artifacts/simulated-material.png with image viewing, and /workspace/opendevguild-skills/visual/artifacts/capture.json. Do not read other skills or files, modify files, run product actions, contact services, or infer missing measurements. Task identical across3conditions: assess these proposed release claims against supplied artifacts: (1) this web effect is native Apple Liquid Glass; (2) observed Canvas API-call median proves real Android GPU/frame and battery performance; (3) direction A is aesthetically superior because humans preferred it. Return at most250words: verdict for each claim with evidence, observations the artifacts actually support, and unavailable evidence. Do not turn personal taste into a score. This is a real model-response advisory experiment on synthetic original fixtures, not a native/product implementation or human preference trial. Actual comparisons will be manually scored only for supported/rejected factual claims. Return plain response.",
+      "response": "1. Reject \u201cnative Apple Liquid Glass.\u201d The screenshots show a web glass simulation: blurred stripes beneath a translucent rounded pane, with displaced stripes in the simulated version. Its caption explicitly says \u201cnot native Apple Liquid Glass.\u201d capture.json identifies Chromium on Linux and limits the evidence to web fixtures. Native Apple implementation and material fidelity are unverified.\n\n2. Reject the Android performance claim. The recorded median is approximately 0.10 ms for Canvas2D CPU/API-call timing on this machine. It does not measure completed GPU frames, Android rendering, sustained frame pacing, energy consumption, or battery life. The reported 34 animation draw calls also do not establish display frame rate. Android device profiling, end-to-end frame measurements, and battery measurements are unavailable.\n\n3. Reject the human-preference claim. capture.json states \u201cnot_run: no human ratings supplied.\u201d Direction A visibly uses a large serif heading, green text, generous spacing, session rows, and a request form. These are observable design choices; they establish neither aesthetic superiority nor human preference. No preference study or comparative ratings are supplied.\n\nThe artifacts support a rendered web simulation and reported checks for source-pixel response, reduced-motion suppression, local request-state changes, focusable controls, and absence of horizontal overflow at listed viewports. The listed contrast pairs exceed their 4.5 thresholds, but do not establish complete accessibility compliance. Pixel differences establish change or reproducibility, without validating beauty or native material fidelity.",
+      "artifact_inputs": [
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/direction-a-1360.png",
+          "access": "view_image",
+          "sha256": "b2f6aed4ce5ded1bc33fb801a084b4bb6327844e499aa390d1ab8c1f945bf1f3"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/simulated-material.png",
+          "access": "view_image",
+          "sha256": "d88f04d9151633fbd04e19b7a69cb018c84422cd84a5c99434d6dbb76b2e87c4"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/capture.json",
+          "access": "read",
+          "sha256": "15528cf606eb442d36719c92716bef667ea1d29bca752b119c7ffd3938137247"
+        }
+      ],
+      "skill_inputs": [
+        {
+          "path": "/workspace/opendevguild-skills/skills/ui-design-system/SKILL.md",
+          "access": "read",
+          "assigned_guidance": "Core procedure only; optional Visual Intelligence extension suggestions excluded.",
+          "sha256": "bb435ba04fb190d9e3d03780064c6c7dfa75bd2828d9ae3cf1a0a02c06f28f10"
+        }
+      ],
+      "telemetry": {
+        "model": "unknown",
+        "version": "unknown",
+        "usage": "unknown",
+        "note": "Exact model/version and usage telemetry were not exposed; no values inferred."
+      },
+      "limits": [
+        "One advisory sample for this condition; no statistical comparison established.",
+        "Necessary condition and assigned-guidance wrapper differences exist across conditions; this is not a byte-identical prompt comparison.",
+        "Explicit artifact captions and the manifest already reveal the expected factual answers.",
+        "No native or product implementation was performed.",
+        "No human preference trial or aesthetic comparison was performed."
+      ]
+    },
+    {
+      "condition": "visual",
+      "initial_task_prompt": "Controlled advisory comparison, condition VISUAL. Read-only: first read /workspace/opendevguild-skills/skills/ui-design-system/SKILL.md and /workspace/opendevguild-skills/skills/visual-qa-auditor/SKILL.md. Inspect /workspace/opendevguild-skills/visual/artifacts/direction-a-1360.png and /workspace/opendevguild-skills/visual/artifacts/simulated-material.png with image viewing, and /workspace/opendevguild-skills/visual/artifacts/capture.json. Do not read other skills or files, modify files, run product actions, contact services, or infer missing measurements. Task identical across3conditions: assess these proposed release claims against supplied artifacts: (1) this web effect is native Apple Liquid Glass; (2) observed Canvas API-call median proves real Android GPU/frame and battery performance; (3) direction A is aesthetically superior because humans preferred it. Return at most250words: verdict for each claim with evidence, observations the artifacts actually support, and unavailable evidence. Do not turn personal taste into a score. This is a real model-response advisory experiment on synthetic original fixtures, not a native/product implementation or human preference trial. Actual comparisons will be manually scored only for supported/rejected factual claims. Return plain response.",
+      "response": "1. Native Apple Liquid Glass: REJECTED. The artifacts identify a web fixture running in Chromium on Linux. The first image labels its pane \u201cStyled glass \u00b7 web backdrop blur\u201d; the second labels it \u201cSimulated dynamic glass \u00b7 sampled displacement and blur \u00b7 not native Apple Liquid Glass.\u201d Visually, the pane blurs the striped background; the second capture shows curved stripe distortion. These support a simulated glass appearance, not native API use or Apple material fidelity.\n\n2. Android GPU/frame and battery performance: REJECTED. capture.json reports a Canvas-call median of approximately 0.10 ms and explicitly limits it to this machine\u2019s Canvas2D CPU-call timing. It provides no Android device measurements, GPU timing, end-to-end frame delivery, power consumption, or battery results.\n\n3. Direction A is aesthetically superior because humans preferred it: REJECTED. capture.json states \u201chuman_preference: not_run: no human ratings supplied.\u201d Direction A visibly uses a large serif heading, restrained green and cream palette, separated event rows, and a prominent request button. Those observations establish visual characteristics, not superiority or human preference.\n\nThe supplied record reports source-response pixel changes, reduced-motion suppression, no horizontal overflow at listed viewports, a local request transition, and measured token contrast pairs. These remain bounded fixture observations; pixel changes do not measure beauty or material fidelity.\n\nUnavailable evidence includes native platform/API verification, motion recordings, real Android GPU/frame and energy measurements, and a documented human comparison. Complete accessibility conformance is also unestablished.",
+      "artifact_inputs": [
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/direction-a-1360.png",
+          "sha256": "b2f6aed4ce5ded1bc33fb801a084b4bb6327844e499aa390d1ab8c1f945bf1f3"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/simulated-material.png",
+          "sha256": "d88f04d9151633fbd04e19b7a69cb018c84422cd84a5c99434d6dbb76b2e87c4"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/visual/artifacts/capture.json",
+          "sha256": "15528cf606eb442d36719c92716bef667ea1d29bca752b119c7ffd3938137247"
+        }
+      ],
+      "skill_inputs": [
+        {
+          "path": "/workspace/opendevguild-skills/skills/ui-design-system/SKILL.md",
+          "sha256": "bb435ba04fb190d9e3d03780064c6c7dfa75bd2828d9ae3cf1a0a02c06f28f10"
+        },
+        {
+          "path": "/workspace/opendevguild-skills/skills/visual-qa-auditor/SKILL.md",
+          "sha256": "baf361570e5d639e8ae9147537fb89f39db3b9782dc76f18ed4db4ba8fa6e3d7"
+        }
+      ],
+      "model": "unknown",
+      "model_version": "unknown",
+      "usage": "unknown",
+      "limits": [
+        "One advisory sample.",
+        "Necessary task-wrapper differences between conditions.",
+        "Explicit captions and manifest reveal expected answers.",
+        "No implementation, human preference trial, or aesthetic comparison was performed.",
+        "Motion video exists in the project but was not among the assigned artifacts; this fact is supplied by the parent follow-up, not independently inspected.",
+        "No model/version or usage telemetry exposed."
+      ]
+    }
+  ]
+}

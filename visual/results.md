@@ -66,8 +66,7 @@ reviewed procedural change, never automatic incorporation or model fine-tuning.
 
 ## Unexecuted comparisons
 
-The four [three-arm scenarios](BENCHMARKS.md) are prepared. No matched base/core/
-visual agent comparison, native Android/Apple/desktop/game run, blinded human
+The four [three-arm scenarios](BENCHMARKS.md) are prepared. No matched three-arm implementation comparison, native Android/Apple/desktop/game run, blinded human
 preference study, mobile battery measurement or model-token comparison was run.
 The two authored web directions are engineering fixtures, not model-generated
 benchmark arms. No improved aesthetics, superiority or token reduction is claimed.
@@ -76,3 +75,16 @@ Español: hay capturas, grabación y mediciones reales, con cuatro fallos de
 validación corregidos mediante regresiones. No hay votos humanos ni correcciones
 promovidas. Las comparaciones entre agentes y las pruebas nativas siguen sin
 ejecutar. Ninguna medición de píxeles se presenta como una prueba de belleza.
+
+## Bounded three-condition advisory sample
+
+[Exact records](advisory-comparison.json) contain one fresh-context response each
+for a base agent, current core UI guidance and core plus visual QA guidance. All
+received the same two images and capture record; only assigned guidance/condition
+wrappers differed. The three predeclared factual checks concerned unsupported
+native Apple, Android performance and human-preference claims. All three
+conditions rejected all three claims. Parent-agent manual scoring supports no
+advantage, statistical inference or aesthetic conclusion. Captions already reveal
+expected answers, and core guidance contains optional extension hooks that were
+instructed not to be used. This is an advisory sanity check, not any of the four
+implementation benchmarks, an independent human study or a quality ranking.

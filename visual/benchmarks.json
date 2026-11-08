@@ -122,5 +122,12 @@
       "limits": "Platform-native execution and matched agent trials are required; web viewport emulation is not native Android evidence."
     }
   ],
-  "human_ratings": []
+  "human_ratings": [],
+  "advisory_comparison": {
+    "record": "visual/advisory-comparison.json",
+    "conditions": 3,
+    "samples_per_condition": 1,
+    "scope": "Factual claim assessment only; original implementation arms remain not_run.",
+    "conclusion": "All conditions reject the same3unsupportedclaims; no demonstrated gain."
+  }
 }
