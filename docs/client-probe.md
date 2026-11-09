@@ -18,6 +18,16 @@ system aliases `/var` → `/private/var` and `/tmp` → `/private/tmp` are permi
 Added links, including dangling links, count as fixture changes. These checks
 assume a local directory without concurrent writers; they are not an OS sandbox.
 
+Preparation validates all payloads before creating the destination: at most
+1,000 files, 1 MiB per file, 16 MiB of payload, 2,000 fixture entries (including
+directories), and 256 KiB of manifest JSON. Source walks are bounded to 2,000
+entries per selected skill and do not follow links/junctions. Special files
+(such as FIFOs), duplicate JSON keys and non-object manifests are rejected.
+Checks enforce the same payload/manifest limits. Invalid or over-budget input
+returns structured `ERROR` and exit 2; changed bytes/added files or links return
+`CHANGED` and exit 1; unchanged registered file bytes return exit 0. I/O failure
+during writes can leave a partial new fixture; inspect it and choose a new path.
+
 The fixture contains two complete Agent Skills (scope-guardian and
 code-review-engineer) in .agents/skills, an optional reviewer profile in
 .codex/agents, a synthetic Python defect, three prompts in scenarios.json, and

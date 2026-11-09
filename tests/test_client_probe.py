@@ -1,8 +1,13 @@
 """Offline fixture integrity tests; not live Codex skill evaluations."""
 import importlib.util
+import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "client_probe.py"
 spec = importlib.util.spec_from_file_location("odg_probe", SCRIPT)
@@ -128,6 +133,132 @@ class ProbeTests(unittest.TestCase):
             self.skipTest("symlinks unavailable on this platform")
         with self.assertRaisesRegex(ValueError, "symlink"):
             probe.check(alias / "trial")
+
+    def test_malformed_manifest_has_controlled_cli_error(self):
+        probe.prepare(self.destination, root=self.source)
+        for value in ([], None, 42, "manifest"):
+            with self.subTest(value=value):
+                (self.destination / "manifest.json").write_text(json.dumps(value))
+                result = subprocess.run(
+                    [sys.executable, str(SCRIPT), "check", "--fixture", str(self.destination)],
+                    capture_output=True, text=True,
+                )
+                self.assertEqual(result.returncode, 2)
+                self.assertEqual(json.loads(result.stderr)["status"], "ERROR")
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_deep_manifest_has_controlled_cli_error(self):
+        probe.prepare(self.destination, root=self.source)
+        (self.destination / "manifest.json").write_text("[" * 50000 + "0" + "]" * 50000)
+        result = subprocess.run(
+            [sys.executable, str(SCRIPT), "check", "--fixture", str(self.destination)],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(json.loads(result.stderr)["status"], "ERROR")
+        self.assertNotIn("Traceback", result.stderr)
+
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "FIFO files unavailable")
+    def test_source_special_entry_rejected_before_writing(self):
+        os.mkfifo(self.source / "skills" / probe.SKILLS[0] / "pipe")
+        with self.assertRaisesRegex(ValueError, "regular"):
+            probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
+    def test_oversized_source_rejected_before_writing(self):
+        with patch.object(probe, "MAX_FILE_BYTES", 64):
+            (self.source / "skills" / probe.SKILLS[0] / "large.md").write_bytes(b"x" * 65)
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
+    def test_source_total_budget_rejected_before_writing(self):
+        with patch.object(probe, "MAX_TOTAL_BYTES", 1):
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
+    def test_source_file_count_budget_rejected_before_writing(self):
+        with patch.object(probe, "MAX_FILES", 1):
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
+    def test_source_entry_budget_includes_empty_directories(self):
+        with patch.object(probe, "MAX_ENTRIES", 1):
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
+    def test_rejects_oversized_manifest_before_parsing(self):
+        probe.prepare(self.destination, root=self.source)
+        with patch.object(probe, "MAX_MANIFEST_BYTES", 1):
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.check(self.destination)
+
+    def test_rejects_duplicate_manifest_keys(self):
+        probe.prepare(self.destination, root=self.source)
+        manifest = self.destination / "manifest.json"
+        text = manifest.read_text().replace('"kind":', '"kind":"forged", "kind":', 1)
+        manifest.write_text(text)
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            probe.check(self.destination)
+
+    def test_manifest_budget_preflight_does_not_create_output(self):
+        with patch.object(probe, "MAX_MANIFEST_BYTES", 1):
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
+    def test_rejects_oversized_registered_file_when_checking(self):
+        probe.prepare(self.destination, root=self.source)
+        (self.destination / "buggy.py").write_bytes(b"x" * (probe.MAX_FILE_BYTES + 1))
+        with self.assertRaisesRegex(ValueError, "budget"):
+            probe.check(self.destination)
+
+    def test_check_total_and_entry_budgets(self):
+        probe.prepare(self.destination, root=self.source)
+        for name in ("MAX_TOTAL_BYTES", "MAX_ENTRIES", "MAX_FILES"):
+            with self.subTest(name=name), patch.object(probe, name, 1):
+                with self.assertRaisesRegex(ValueError, "budget"):
+                    probe.check(self.destination)
+
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "FIFO files unavailable")
+    def test_nonregular_manifest_is_rejected_without_reading(self):
+        probe.prepare(self.destination, root=self.source)
+        manifest = self.destination / "manifest.json"
+        manifest.unlink()
+        os.mkfifo(manifest)
+        with self.assertRaisesRegex(ValueError, "regular"):
+            probe.check(self.destination)
+
+    def test_added_directory_link_is_reported_without_descending(self):
+        probe.prepare(self.destination, root=self.source)
+        outside = self.base / "outside"
+        outside.mkdir()
+        (outside / "not-part-of-fixture.txt").write_text("synthetic external file")
+        try:
+            (self.destination / "alias").symlink_to(outside, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest("symlinks unavailable on this platform")
+        evidence = probe.check(self.destination)
+        self.assertEqual(evidence["additional"], ["alias"])
+
+    @unittest.skipUnless(os.name == "nt", "requires native Windows junctions")
+    def test_windows_junction_ancestor_is_rejected(self):
+        outside = self.base / "outside"
+        (outside / "nested").mkdir(parents=True)
+        alias = self.base / "junction"
+        result = subprocess.run(
+            ["cmd", "/c", "mklink", "/J", str(alias), str(outside)],
+            capture_output=True, text=True,
+        )
+        if result.returncode:
+            self.skipTest("junction creation unavailable")
+        self.addCleanup(alias.rmdir)
+        with self.assertRaisesRegex(ValueError, "junction"):
+            probe.prepare(alias / "nested" / "trial", root=self.source)
+        self.assertFalse((outside / "nested" / "trial").exists())
 
 
 if __name__ == "__main__":
