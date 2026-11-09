@@ -139,6 +139,11 @@ no significan que se hayan probado todos los clientes/plataformas:
 | Claude Code | `.claude/skills/` | `~/.claude/skills/`; Windows `$env:USERPROFILE\.claude\skills` | `/scope-guardian` |
 | Gemini CLI | `.gemini/skills/` o alias `.agents/skills/` | `~/.gemini/skills/` o alias `~/.agents/skills/` | `/skills list`, tarea en lenguaje natural; `/skills reload` |
 
+Para el plugin nativo de Claude incorporado después de v0.4.1, usá el checkout y
+la [guía de Claude](claude-code.es.md). Sus skills usan `/opendevguild:nombre` y
+su único revisor es Markdown nativo; los ocho perfiles de Codex no se cargan como
+configuración de Claude. El ZIP publicado de 0.4.1 no contiene este adaptador.
+
 Si Codex ofrece `$skill-installer` oficial, indicá URL, revisión y rutas elegidas
 que hayas revisado. No asumas que está disponible ni instales todo por defecto.
 Gemini documenta `gemini skills install <source>`; comprobá alcance/consentimiento

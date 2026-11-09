@@ -39,6 +39,11 @@ prerrequisitos.
 [Uso rápido](docs/quickstart.es.md) · [Compatibilidad comprobada y documentada](docs/client-compatibility.md)
 · [Ocho ejemplos copiables](docs/usage-examples.md).
 
+Para el **plugin nativo de Claude Code** desde el checkout, seguí la
+[guía de Claude](docs/claude-code.es.md). Reutiliza las skills y agrega un único
+revisor opcional de lectura. La validación offline no demuestra activación;
+el ZIP existente de v0.4.1 es anterior a este adaptador.
+
 ## Qué incluye
 
 | Capa | Responsabilidad |

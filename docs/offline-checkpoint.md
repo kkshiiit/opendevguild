@@ -148,3 +148,50 @@ Next: verify this separate PR/main CI and preserve its source/destination
 regression. Any later defect needs a new reproduction and bounded scope. CLI
 authentication and model/subagent behavior remain `BLOCKED_BY_AUTH`; no login
 retry or activation benchmark was attempted. No release or dependency change.
+
+## Native Claude Code adapter after v0.4.1
+
+Base: `c0fbda9157bd1bfd6f6ce90a4cb601b8157b949e` (public v0.4.1);
+remote main matched before work. Branch: `feat/claude-code-native-plugin`.
+The user requested native Claude integration, independently of Codex CLI.
+No Codex CLI/authentication command, credential inspection or global config edit
+was performed. Existing tags/releases, 42 skills and eight Codex profiles remain
+unchanged. The published v0.4.1 ZIP predates this adapter.
+
+Implemented: native `.claude-plugin/plugin.json`, existing `skills/` discovery,
+one optional Markdown reviewer with `Read, Grep, Glob` and inherited model.
+No hooks, MCP, shell/edit/delegation tools, skills preloading or marketplace.
+Packaging admits only the two reviewed native files; private `.claude/` state
+and arbitrary `.claude-plugin/` local state stay excluded. Project policy rejects
+unreviewed capabilities, path escape, links, special files and ignored permission
+overrides; it is not Anthropic's authoritative native validator.
+
+Initial offline adapter tests failed before implementation. The full suite then
+exposed three source fixtures missing the new required files; copying the explicit
+public adapter files fixed the fixture setup without weakening validation.
+Independent review identified FIFO reads that could block validation; special
+entries are now rejected before content reads, with a negative regression.
+The focused independent check passed all seven initial adapter methods. A further
+regression reproduced auto-discovered hooks/MCP/settings/commands bypassing the
+minimal manifest policy; those standard locations are now rejected too.
+
+Local full suite: 188 tests, 186 passed, zero failed, two platform skips
+(PowerShell unavailable locally, Windows-only junction test). Official skill/
+project/profile and visual validation, fatal lint, conservative source audit and
+whitespace checks passed. Two development archives were identical; the extracted
+adapter/project validation and all eight adapter tests passed, with 42 shared
+skills, eight original profiles and one native reviewer. Hosted CI results belong
+to the associated PR; no new release is authorized by this adapter work.
+
+Native evidence: `claude` was unavailable on PATH and no Claude connector was
+exposed. Claude version/authentication is not established. Official native
+validation, discovery, instruction activation, behavior, child invocation and
+actual enforcement are **NOT_RUN / CLIENT_UNAVAILABLE**, not Codex HTTP 401.
+Sources were current official pages via Firecrawl; direct fetch was HTTP 403.
+See the [EN](claude-code.md)/[ES](claude-code.es.md) guide for exact paths,
+namespaces, supported fields, evidence collection and host-permission limits.
+
+Next: in a real Claude client, run its own offline `plugin validate`, then one
+fresh read-only scope case with discovery/read/tool/file evidence. Only afterward
+evaluate an optional reviewer invocation separately. Do not use Codex, copy
+credentials, confuse text availability with activation, or alter global settings.

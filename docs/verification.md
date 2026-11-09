@@ -4,6 +4,21 @@ Date: 2026-11-09. Baseline a1998b4 was clean, public, synchronized and had a
 successful five-job CI run. No published tags/releases existed at initial audit.
 The sole authorized repository remains https://github.com/kkshiiit/opendevguild.
 
+## Claude-native source adapter after v0.4.1
+
+Implemented: `.claude-plugin/plugin.json`, reused `skills/` and one native
+`agents/reviewer.md` with `Read, Grep, Glob` and inherited model. Codex profiles
+and existing releases remain unchanged. Local policy/negative tests and extracted
+distribution checks are offline evidence, not Anthropic's authoritative validator.
+
+No `claude` executable or Claude connector was exposed in the authoring session.
+Official native validation, plugin discovery, skill activation, behavior and
+reviewer dispatch are **NOT_RUN / CLIENT_UNAVAILABLE**. Claude authentication is
+not established and is not inferred from Codex's separate HTTP 401. No Codex CLI
+command, credential inspection or global configuration change was used for this
+adapter. See the [EN](claude-code.md) / [ES](claude-code.es.md) guide and its
+native evidence protocol. No new release or vendor-directory acceptance claimed.
+
 ## Offline continuation after 44d1450
 
 The [development checkpoint](offline-checkpoint.md) records incremental fixture

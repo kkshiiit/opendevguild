@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — native Claude Code adapter
+
+- Add `.claude-plugin/plugin.json` using the existing 42 skill folders and one
+  native read-only reviewer; preserve the eight Codex profiles and generic manifest.
+- Extend explicit packaging and offline policy checks without including private
+  Claude settings/state or adding hooks, MCP servers, dependencies or global config.
+- Document EN/ES loading and evidence collection. Official Claude validation,
+  discovery, activation and child execution remain NOT_RUN: client unavailable.
+- This source change does not modify the published v0.4.1 tag or assets.
+
 ## 0.4.1 — maintenance prerelease, 2026-11-09
 
 - Include merged PRs #3–#9 that were absent from the 0.4.0 bundle.

@@ -1,0 +1,9 @@
+{
+  "name": "opendevguild",
+  "version": "0.4.1",
+  "description": "Selective software engineering skills and an optional read-only reviewer for Claude Code",
+  "author": { "name": "OpenDevGuild contributors" },
+  "repository": "https://github.com/kkshiiit/opendevguild",
+  "license": "Apache-2.0",
+  "agents": ["./agents/reviewer.md"]
+}
