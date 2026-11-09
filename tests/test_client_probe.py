@@ -33,6 +33,7 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(info["scenarios"], 3)
         self.assertEqual(probe.check(self.destination)["status"], "UNCHANGED")
         self.assertIn("+ discount", (self.destination / "buggy.py").read_text())
+        self.assertNotIn("# BUG", (self.destination / "buggy.py").read_text())
 
     def test_rejects_existing_destination_without_replacing(self):
         self.destination.mkdir()
