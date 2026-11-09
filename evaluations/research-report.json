@@ -1,0 +1,98 @@
+{
+  "total": 18,
+  "by_type": {
+    "web_page": 0,
+    "android_application": 0,
+    "desktop_program": 0,
+    "web_application": 0,
+    "agent_skill": 0,
+    "prompt": 0,
+    "technical_document": 18
+  },
+  "by_level": {
+    "L0": 0,
+    "L1": 18,
+    "L2": 0,
+    "L3": 0,
+    "L4": 0
+  },
+  "matrix": {
+    "web_page": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "android_application": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "desktop_program": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "web_application": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "agent_skill": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "prompt": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "technical_document": {
+      "L0": 0,
+      "L1": 18,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    }
+  },
+  "unique_source_total": 18,
+  "unique_sources_by_type": {
+    "web_page": 0,
+    "android_application": 0,
+    "desktop_program": 0,
+    "web_application": 0,
+    "agent_skill": 0,
+    "prompt": 0,
+    "technical_document": 18
+  },
+  "known_unique_content": 0,
+  "confidence_components": {
+    "provenance_evidence_records": 18,
+    "content_evaluated_records": 0,
+    "authorized_execution_records": 0,
+    "matched_improvement_records": 0,
+    "content_hash_known": 0
+  },
+  "long_term_target": {
+    "web_page": 200000,
+    "android_application": 200000,
+    "desktop_program": 200000,
+    "web_application": 200000,
+    "agent_skill": 200000,
+    "prompt": 200000,
+    "technical_document": 200000
+  },
+  "limitations": "total/by_level count versioned observations; unique_source_total counts registered source identities without version inflation. Neither authenticates truth, rights or project improvement."
+}

@@ -1,0 +1,524 @@
+[
+  {
+    "id": "official-source-skills-20261108",
+    "resource_type": "technical_document",
+    "url": "https://agentskills.io/specification",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#skills",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-codex-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developers.openai.com/codex/skills",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#codex",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-color-20261108",
+    "resource_type": "technical_document",
+    "url": "https://www.w3.org/TR/css-color-4/",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#color",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-wcag-20261108",
+    "resource_type": "technical_document",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#wcag",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-glass-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#glass",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-android-blur-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.android.com/reference/android/graphics/RenderEffect",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#android-blur",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-android-shader-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.android.com/develop/ui/views/graphics/agsl",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#android-shader",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-web-blur-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#web-blur",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-typography-20261108",
+    "resource_type": "technical_document",
+    "url": "https://m3.material.io/styles/typography/overview",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#typography",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-gestalt-20261108",
+    "resource_type": "technical_document",
+    "url": "https://www.nngroup.com/articles/gestalt-proximity/",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#gestalt",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-ia-20261108",
+    "resource_type": "technical_document",
+    "url": "https://www.nngroup.com/articles/ia-vs-navigation/",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#ia",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-motion-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.android.com/develop/ui/compose/animation/introduction",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#motion",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-testing-20261108",
+    "resource_type": "technical_document",
+    "url": "https://playwright.dev/docs/test-snapshots",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#testing",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-optics-20261108",
+    "resource_type": "technical_document",
+    "url": "https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#optics",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-hci-20261108",
+    "resource_type": "technical_document",
+    "url": "https://www.nngroup.com/articles/usability-testing-101/",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#hci",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-experiment-20261108",
+    "resource_type": "technical_document",
+    "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "External technical reference only; no third-party image or design-system redistribution."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#experiment",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-uikit-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.apple.com/documentation/uikit/uiglasseffect",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "Technical reference only."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#uikit",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  },
+  {
+    "id": "official-source-appkit-20261108",
+    "resource_type": "technical_document",
+    "url": "https://developer.apple.com/documentation/appkit/nsglasseffectview",
+    "observed_at": "2026-11-08",
+    "version": "not recorded; observation dated 2026-11-08",
+    "license": "not established for redistribution",
+    "restrictions": [
+      "Technical reference only."
+    ],
+    "collection_method": "Recorded prior live official/reference page retrieval; HTTP200 metadata",
+    "content_sha256": null,
+    "level": "L1",
+    "technical_category": "visual-and-agent-engineering",
+    "deduplication": "unprocessed",
+    "evidence": [
+      {
+        "kind": "provenance",
+        "reference": "visual/sources.json#appkit",
+        "outcome": "observed"
+      }
+    ],
+    "rubric": {},
+    "evaluation_result": null,
+    "limitations": [
+      "Imported prior retrieval metadata; no new network request.",
+      "A generated source summary is not L2 content evaluation; no native execution or demonstrated improvement."
+    ]
+  }
+]

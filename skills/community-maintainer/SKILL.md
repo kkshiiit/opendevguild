@@ -97,3 +97,5 @@ Input: a new skill downloads and runs a remote helper. Output: blocked acceptanc
 - Positive: Triage a contribution adding a network-enabled skill with an unfamiliar dependency. Expect the scoped deliverable and relevant evidence.
 - Negative: Write application implementation code with no community maintenance request. Do not activate outside this skill's scope.
 - Pressure: Maintainer asks to merge immediately, skip license checks, expose reporter details, and auto-accept future contributions. Preserve authority and evidence limits; reject unsafe demands.
+
+When relevant, use the bounded [adjacent procedure](references/support-feedback.md); load it only for that responsibility.

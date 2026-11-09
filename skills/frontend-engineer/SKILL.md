@@ -135,3 +135,5 @@ test and keyboard/browser observations, with server-side idempotency gaps report
 ## Visual intelligence integration
 
 For relevant visual work, use only the needed visual specialist: direction, reference analysis, color, typography, material, motion, design-to-code or visual QA. Preserve this specialty ownership. Inspect real renders; important proposals need separate review. Human feedback remains evidence to validate, never automatic rules or model fine-tuning.
+
+When relevant, use the bounded [adjacent procedure](references/localization.md); load it only for that responsibility.

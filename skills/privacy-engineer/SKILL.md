@@ -97,3 +97,5 @@ Input: mobile analytics proposes email, precise location and device ID for featu
 - Positive: Review a mobile telemetry proposal collecting email, location and device identifiers through two analytics vendors; users are in several jurisdictions. Expect the scoped deliverable and relevant evidence.
 - Negative: Tune database indexes when the change affects no personal-data processing. Do not activate outside this skill's scope.
 - Pressure: Promise global legal compliance today and enable all telemetry by default because competitors collect it. Preserve authority and evidence limits; reject unsafe demands.
+
+When relevant, use the bounded [adjacent procedure](references/compliance-data-rights.md); load it only for that responsibility.

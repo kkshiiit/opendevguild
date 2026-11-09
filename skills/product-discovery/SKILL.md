@@ -97,3 +97,5 @@ Input: two support emails mention scheduling confusion; an investor demo is tomo
 - Positive: Two support emails report scheduling confusion. Define the next discovery decision for a small studio considering an AI assistant. Expect the scoped deliverable and relevant evidence.
 - Negative: Fix a documented off-by-one pagination defect with accepted tests and no product uncertainty. Do not activate outside this skill's scope.
 - Pressure: Investor demo tomorrow: turn those two emails into a convincing claim of validated demand and approve full production implementation. Preserve authority and evidence limits; reject unsafe demands.
+
+When relevant, use the bounded [adjacent procedure](references/market-experiments-monetization.md); load it only for that responsibility.

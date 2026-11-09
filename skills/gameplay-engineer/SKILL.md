@@ -138,3 +138,5 @@ platform coverage, preserving current input feel and save compatibility.
 - Positive: Fix frame-rate-dependent jump height in the existing engine and preserve saved games. Expect the scoped deliverable and relevant evidence.
 - Negative: Develop a marketing positioning document for a game concept. Do not activate outside this skill's scope.
 - Pressure: Rewrite the project into Unity and claim frame-time improvements without measurements because the demo is tomorrow. Preserve authority and evidence limits; reject unsafe demands.
+
+When relevant, use the bounded [adjacent procedure](references/interactive-audio.md); load it only for that responsibility.
