@@ -37,6 +37,10 @@ class ImpactTests(unittest.TestCase):
         self.assertEqual(result["tests"], ["test_impact.py", "test_installation.py"])
         self.assertEqual(len(result["commands"]), 2)
 
+    def test_client_probe_has_targeted_offline_tests(self):
+        result = impact.select_tests(["scripts/client_probe.py"], AVAILABLE | {"test_client_probe.py"})
+        self.assertEqual(result["tests"], ["test_client_probe.py"])
+
     def test_unknown_change_fails_closed_to_full_suite(self):
         result = impact.select_tests(["unrecognized/new-thing.go"], AVAILABLE)
         self.assertTrue(result["full_suite"])

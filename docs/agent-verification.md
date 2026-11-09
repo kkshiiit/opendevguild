@@ -105,3 +105,12 @@ A fresh temporary project contained only the selected mission-control skill unde
 .agents/skills. The documented ephemeral read-only Codex command exited1 with
 expired-token refresh failure. No native discovery or loading success is inferred.
 No credentials were requested/read or global configuration changed.
+
+## Offline, reproducible activation fixture
+
+Before spending model tokens, prepare a bounded two-skill smoke fixture with the
+[offline preparation guide](client-probe.md) ([Español](client-probe.es.md)).
+It copies only selected local skills and a synthetic defect, checks file hashes,
+and records **PREPARED_NOT_RUN**. It never authenticates or calls Codex. Actual
+runtime discovery, positive/negative behavior and optional subagent execution
+remain separate, observable client tests once authorization works.
