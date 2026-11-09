@@ -73,6 +73,7 @@ def tests_for_path(path: str) -> tuple[set[str], str]:
         name = path.removeprefix("scripts/")
         pairs = {
             "impact.py": {"test_impact.py"},
+            "client_probe.py": {"test_client_probe.py"},
             "install.py": {"test_installation.py"},
             "research.py": {"test_research.py"},
             "visual.py": {"test_visual.py"},
