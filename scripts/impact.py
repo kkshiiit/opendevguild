@@ -20,7 +20,7 @@ def changed_since(base: str, root: Path = ROOT) -> list[str]:
     if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_./~^@{}+\-]*", base) or base.endswith("/"):
         raise ValueError("invalid base revision")
     result = subprocess.run(
-        ["git", "diff", "--name-only", "-z", base, "--"],
+        ["git", "diff", "--no-renames", "--name-only", "-z", base, "--"],
         cwd=root, capture_output=True, check=False,
     )
     if result.returncode:
