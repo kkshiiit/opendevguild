@@ -12,6 +12,11 @@ From the OpenDevGuild repository root, choose a **new** directory:
 
 On Windows PowerShell, use a new path such as $env:TEMP\odg-smoke-001.
 The destination must not already exist; the tool refuses overwrites.
+Source, destination and fixture paths reject symbolic links in every ancestor
+and Windows junctions where exposed by the Python runtime. The exact macOS
+system aliases `/var` → `/private/var` and `/tmp` → `/private/tmp` are permitted.
+Added links, including dangling links, count as fixture changes. These checks
+assume a local directory without concurrent writers; they are not an OS sandbox.
 
 The fixture contains two complete Agent Skills (scope-guardian and
 code-review-engineer) in .agents/skills, an optional reviewer profile in
