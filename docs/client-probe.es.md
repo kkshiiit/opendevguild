@@ -2,6 +2,10 @@
 
 [English](client-probe.md) · [Verificación de agentes](agent-verification.md)
 
+Para comparar base/sin skills, versión publicada y candidato, usá el
+[protocolo de casos equivalentes](client-comparison.md#español). Reutiliza el
+defecto sintético y separa las comprobaciones offline de resultados de modelos.
+
 Esta herramienta **prepara un entorno aislado y comprueba su integridad**, pero no
 evalúa todavía el comportamiento del modelo. Es útil mientras Codex CLI remoto
 falla con HTTP 401.

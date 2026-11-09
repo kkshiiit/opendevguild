@@ -4,6 +4,14 @@ Date: 2026-11-09. Baseline a1998b4 was clean, public, synchronized and had a
 successful five-job CI run. No published tags/releases existed at initial audit.
 The sole authorized repository remains https://github.com/kkshiiit/opendevguild.
 
+## Offline continuation after 44d1450
+
+The [development checkpoint](offline-checkpoint.md) records incremental fixture
+hardening, exact local/hosted evidence and the next bounded task. The
+[matched client cases](client-comparison.md) are prepared development inputs,
+not executed model results. No authentication retry, release replacement or
+catalog expansion is implied. Runtime activation remains `BLOCKED_BY_AUTH`.
+
 ## Scope and evidence matrix
 
 | Area | Implemented | Demonstrated | Limits |
