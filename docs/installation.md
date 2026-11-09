@@ -58,9 +58,9 @@ if ($actual -ne $expected) { throw 'SHA-256 mismatch: do not install' }
 'SHA-256 matches'
 ```
 
-Checksum recipes use the native utilities for each platform. The release-event
-CI downloads the actual public ZIP and sidecar on Linux, macOS and Windows and
-records available native utility results. Consult the final release report for
+Checksum recipes use the native utilities for each platform. The publication workflow
+downloads the actual public ZIP and sidecar on Linux, macOS and Windows and
+requires a passing native utility result for each platform. Consult the final release report for
 the observed run; copying alone never proves integrity. Stop on a mismatch.
 
 ## 2. Install one skill into a project

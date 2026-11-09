@@ -56,8 +56,8 @@ if ($actual -ne $expected) { throw 'SHA-256 incorrecto: no instalar' }
 'SHA-256 coincide'
 ```
 
-El CI de la release descarga el ZIP y su checksum públicos en Linux, macOS y
-Windows y registra los resultados de sus utilidades nativas. No confundas copia
+El workflow de publicación descarga el ZIP y su checksum públicos en Linux, macOS y
+Windows y exige resultados aprobados de sus utilidades nativas. No confundas copia
 con integridad. La comprobación del ZIP realmente publicado
 pertenece al informe de entrega. Detenete si el hash no coincide.
 
