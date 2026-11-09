@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 — installation and evidence infrastructure, 2026-11-09
+
+- Preserve42 skills and8profiles; audit each against18 documented criteria.
+- Add bilingual beginner installation/quick-start/troubleshooting and client evidence matrix.
+- Add optional local selective install/update/uninstall/rollback with dry-run and user-change protection.
+- Add bounded SQLite provenance registry, deduplication, stratified sampling and L0–L4 evidence gates; initial18documents at L1 only.
+- Cover36 adjacent responsibilities through a matrix and8 on-demand procedures, not36newskills.
+- Verify reproducible public release downloads and native checksum utilities across CI platforms.
+- No model fine-tuning, broad agent-effectiveness gain or completed mass-resource quota is claimed.
+
 ## 0.3.0 — Visual Intelligence Engine V1 development candidate, 2026-11-08
 
 - Preserve the 34 core skills and add eight selectively activated visual procedures.

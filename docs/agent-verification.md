@@ -98,3 +98,10 @@ requiere una revisión independiente antes de declarar `VERIFIED`. Si el entorno
 no admite subagentes, el mismo procedimiento se ejecuta en secuencia. Una prueba
 real del cliente debe registrar su resultado y sus límites sin leer secretos ni
 modificar la configuración global.
+
+## 2026-11-09 repeat discovery check
+
+A fresh temporary project contained only the selected mission-control skill under
+.agents/skills. The documented ephemeral read-only Codex command exited1 with
+expired-token refresh failure. No native discovery or loading success is inferred.
+No credentials were requested/read or global configuration changed.

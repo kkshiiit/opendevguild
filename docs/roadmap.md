@@ -28,3 +28,12 @@ Español: primero cerrá contradicciones, controles esenciales y límites de
 integración. Después ampliá escenarios reales y comparaciones reproducibles.
 Publicación, soporte multiplataforma y ahorro de recursos necesitan evidencia
 propia; no se deducen del tamaño del repositorio ni de pruebas de formato.
+
+## 0.4.0 closure
+
+Implemented: bilingual onboarding, local managed installation, individual42skill
+audit,36responsibility mapping with8references, and bounded provenance registry.
+Demonstrated tooling outcomes belong in verification.md and hosted CI. Next: restore
+native client authentication, collect consented human/holdout evidence and run
+actual native fixtures. The1,400,000resource target remains a separate long-term
+program, never a completed quota or an immediate release blocker.

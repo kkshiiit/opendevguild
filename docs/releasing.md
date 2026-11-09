@@ -11,7 +11,7 @@ be recorded after execution; naming the target here does not publish it.
    [verification gaps](verification.md), intended support claims and release owner.
    Classify the work FAST, STANDARD or CRITICAL by risk, not desired publicity.
 2. Keep versions aligned in pyproject.toml, plugin.json, catalog.json, README
-   examples and changelog. Candidate 0.2.0 changes the earlier provisional exchange
+   examples and changelog. The earlier 0.2.0 candidate changed provisional exchange
    conventions to the complete lifecycle and gate contract. Preserve 0.1.0 history;
    do not reinterpret its old handoffs as new-format VERIFIED results. Document
    migration and refresh the lockfile intentionally when metadata/dependencies change.
@@ -29,7 +29,7 @@ be recorded after execution; naming the target here does not publish it.
 5. Build a new artifact path using the documented command:
 
    ```bash
-   uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.2.0.zip
+   uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.0.zip
    ```
 
    Repeat to a second new path and compare ZIP SHA-256 values. Inspect names,
@@ -40,9 +40,8 @@ be recorded after execution; naming the target here does not publish it.
    isolated target. Verify collision refusal, selected skill discovery and retained
    local modifications during update/uninstall. Test each claimed platform/client
    or narrow the claim; one host's tests do not establish universal compatibility.
-7. For authorized GitHub publication, identify the owner and proposed name, inspect
-   for collisions, confirm visibility and rights to publish. If the name exists,
-   propose a distinct available name without replacing the existing project. Set
+7. For this authorized release use only the existing public kkshiiit/opendevguild
+   repository. Do not change visibility, create alternatives or replace history. Set
    maintainers, a confidential security-report path and appropriate review controls.
    Use the [official source-import guide](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 8. Create the intended remote/release only when authorized for the concrete reviewed

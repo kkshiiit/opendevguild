@@ -49,3 +49,20 @@ not duplicated here; consult the verification record.
 Español: esta matriz cubre el prompt completo. Vincula obligaciones con artefactos
 y métodos de comprobación; no convierte su existencia en aprobación. El registro
 de verificación conserva pruebas reales, fallos, límites y estado de publicación.
+
+## 0.4.0 finalization scope
+
+The November9 finalization brief supersedes the former publication blocker: the
+existing repository is public and is the only authorized destination. Beginner
+[installation](installation.md), [Spanish installation](installation.es.md),
+[client evidence](client-compatibility.md), [individual audit](specialist-audit.md),
+[responsibility coverage](responsibility-coverage.md) and the bounded
+[research program](research-program.md) supply the new acceptance evidence.
+Mass-resource targets are future program goals. Real-client authentication and
+native/human evaluation limits remain explicit; format alone is not behavior.
+
+The eight copyable usage scenarios and manual/optional managed install paths are
+covered by documentation/installer tests; client activation stays distinct from
+filesystem presence. Public ZIP and SHA are verified after release publication on
+Linux, macOS and Windows using native tools where available. L0–L4 corpus counts
+come from the registry report, not the number of local skills or screenshots.
