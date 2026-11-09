@@ -10,6 +10,7 @@ import subprocess
 import tempfile
 import urllib.request
 import zipfile
+WINDOWS=os.name=='nt'
 
 
 def verify_pair(archive,checksum):
@@ -28,15 +29,18 @@ def verify_pair(archive,checksum):
     checks=[]
     native_path=archive.resolve().as_posix()
     for name,args in [('sha256sum',['sha256sum',native_path]),('shasum',['shasum','-a','256',native_path])]:
-        if not shutil.which(name):checks.append({'tool':name,'outcome':'not_run'});continue
+        executable=None if WINDOWS else shutil.which(name)
+        if not executable:checks.append({'tool':name,'outcome':'not_run'});continue
+        args[0]=executable
         value=subprocess.check_output(args,text=True).split()[0].lower()
         if value!=digest:raise ValueError(f'{name} differs from published checksum')
         checks.append({'tool':name,'outcome':'passed'})
-    if shutil.which('pwsh'):
+    powershell=shutil.which('pwsh') or (shutil.which('powershell') if WINDOWS else None)
+    if powershell:
         with tempfile.TemporaryDirectory() as temporary:
             script=Path(temporary)/'checksum.ps1'
             script.write_text('param([string]$Artifact)\n(Get-FileHash -LiteralPath $Artifact -Algorithm SHA256).Hash.ToLowerInvariant()\n')
-            value=subprocess.check_output(['pwsh','-NoProfile','-NonInteractive','-File',str(script),'-Artifact',str(archive.resolve())],text=True).strip()
+            value=subprocess.check_output([powershell,'-NoProfile','-NonInteractive','-File',str(script),'-Artifact',str(archive.resolve())],text=True).strip()
             if value!=digest:raise ValueError('PowerShell Get-FileHash mismatch')
         checks.append({'tool':'PowerShell Get-FileHash','outcome':'passed'})
     else:checks.append({'tool':'PowerShell Get-FileHash','outcome':'not_run'})

@@ -3,6 +3,7 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -43,6 +44,13 @@ class ReleaseVerificationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             archive,checksum=self.fixture(Path(temporary),'../escape')
             with self.assertRaises(ValueError):self.module().verify_pair(archive,checksum)
+
+    def test_windows_does_not_launch_posix_script_shims(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            archive,checksum=self.fixture(Path(temporary));module=self.module()
+            with mock.patch.object(module,'WINDOWS',True),mock.patch.object(module.shutil,'which',return_value=None),mock.patch.object(module.subprocess,'check_output') as command:
+                self.assertTrue(module.verify_pair(archive,checksum)['verified'])
+                command.assert_not_called()
 
 
 if __name__=='__main__':unittest.main()
