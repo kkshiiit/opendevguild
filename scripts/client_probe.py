@@ -88,12 +88,13 @@ def prepare(output: Path, root: Path = ROOT) -> dict:
         }, indent=2) + "\n",
     }
     for rel, content in text_files.items():
-        (output / rel).write_text(content, encoding="utf-8")
-        records[rel] = digest(content.encode("utf-8"))
+        data = content.encode("utf-8")
+        (output / rel).write_bytes(data)
+        records[rel] = digest(data)
     manifest = {"kind": "prepared-client-fixture", "status": "PREPARED_NOT_RUN",
                 "files": dict(sorted(records.items())),
                 "limitations": "Hashes document fixture integrity, not client discovery, activation or behavior."}
-    (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    (output / "manifest.json").write_bytes((json.dumps(manifest, indent=2) + "\n").encode("utf-8"))
     return {"status": "PREPARED_NOT_RUN", "path": str(output),
             "files": len(records), "scenarios": len(SCENARIOS)}
 
