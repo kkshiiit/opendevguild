@@ -1,0 +1,69 @@
+name: Publish verified 0.4.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: publish-v0.4.0
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          path: automation
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          ref: v0.4.0
+          path: source
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Require the reviewed source revision
+        working-directory: source
+        run: test "$(git rev-parse HEAD)" = 6abd610afaaa376c014aad409723fc976fd721f4
+      - run: python -m pip install uv==0.13.5
+      - name: Reconstruct and verify the exact reviewed archive
+        working-directory: source
+        run: |
+          uv sync --frozen
+          uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.0.zip
+          echo 'd44f69effd2ea8c3784352006b8fdc8d40e1ac384d4cfb6b5c6affd2d9191a4a  dist/opendevguild-0.4.0.zip' | sha256sum -c -
+          python scripts/verify_release.py --zip dist/opendevguild-0.4.0.zip --checksum dist/opendevguild-0.4.0.zip.sha256
+      - name: Publish development prerelease with the repository token
+        working-directory: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create v0.4.0
+          dist/opendevguild-0.4.0.zip dist/opendevguild-0.4.0.zip.sha256
+          --repo "$GITHUB_REPOSITORY" --verify-tag
+          --title 'OpenDevGuild 0.4.0 — Installation and Evidence Infrastructure'
+          --notes-file ../automation/.github/release-notes/v0.4.0.md --prerelease
+  public-integrity:
+    needs: publish
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    env:
+      ODG_RELEASE_TAG: v0.4.0
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          ref: v0.4.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      # GITHUB_TOKEN publication does not trigger another release-event workflow.
+      # Verify actual anonymous downloads explicitly in this manual workflow.
+      - run: python scripts/verify_release.py --output release-verification
