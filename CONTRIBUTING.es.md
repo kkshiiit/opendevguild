@@ -34,6 +34,9 @@ Los problemas privados siguen [SECURITY.md](SECURITY.md).
    La tarea pasa por NEEDS_REVIEW antes de VERIFIED. El verificador decide gates
    con APPROVED, REJECTED, BLOCKED o NOT_APPLICABLE justificado.
 
+Para obtener una señal **local** rápida antes de la batería completa, usá el [selector de pruebas de solo lectura](docs/impact-testing.es.md).
+Recomienda tests según los cambios, pero no los ejecuta ni reemplaza CI.
+
 El mantenimiento revisa corrección, seguridad, alcance, compatibilidad, contexto,
 licencias y evidencia. Ningún aporte se acepta automáticamente. No debilites
 controles para ocultar fallos ni afirmes soporte no probado. Actualizar issues,
