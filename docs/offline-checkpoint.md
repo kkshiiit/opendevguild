@@ -17,15 +17,37 @@ Local evidence: 11 targeted tests passed; the full suite ran 134 tests, with
 133 passed and one skipped because local PowerShell is unavailable. Official
 format/project validation, visual metadata validation, fatal-error lint and
 diff whitespace checks passed. Independent focused review found no blocker.
-Native OS and hosted acceptance results must be read from the associated PR/CI;
-this local checkpoint does not predict them.
+Merged as [PR #5](https://github.com/kkshiiit/opendevguild/pull/5), main commit
+`9c9c051ac94bd2fa2f61540bb3a5f684da0d75e8`. All five hosted validation/Chromium
+jobs passed on the [PR](https://github.com/kkshiiit/opendevguild/actions/runs/42560497079)
+and [merged main](https://github.com/kkshiiit/opendevguild/actions/runs/42560608854).
 
 Remaining limitations: no concurrent-writer or OS sandbox guarantee; unsigned
 manifests do not authenticate history. Real model activation and reviewer-child
 execution remain `BLOCKED_BY_AUTH`; preparing/checking fixtures never upgrades
 that status. No new release or token/quality improvement claim.
 
-Next bounded cycle: malformed manifest JSON currently has an uncontrolled error
-path, source special entries are silently omitted, and reads lack resource
-bounds. Reproduce these offline, add negative tests, then harden parsing and
-bounded regular-file inventory without changing the fixture's evidence meaning.
+## Cycle 2: bounded regular-file inventory and manifest errors
+
+Reproduced malformed top-level JSON causing an uncontrolled `AttributeError` and
+source FIFOs silently omitted from the copied inventory. Added byte/file/entry
+budgets, regular-file checks, no-follow traversal, duplicate-key detection and
+controlled parser errors. Relative paths are limited to 32 components and
+4,096 UTF-8 bytes before constructing ancestor checks. Preparation preflights payloads and serialized metadata
+before creating output. The exact bounds and failure semantics are in the
+[English](client-probe.md) and [Spanish](client-probe.es.md) user guides.
+
+Independent review identified an additional deeply nested JSON failure; the fix
+translates it to structured `ERROR`/exit 2 and a real CLI regression covers it.
+The previous actual repository fixture still passes `UNCHANGED`, preserving
+compatibility with existing generated manifests. The focused suite has 28 tests;
+27 passed locally, one native-Windows junction test skipped. Native Windows
+and full hosted acceptance must be recorded from this cycle's PR/CI.
+
+Next priority: prepare frozen, matched base/no-skill, released OpenDevGuild and
+candidate conditions using existing client/scenario assets. Include success,
+failure, hostile third-party instructions, scope preservation and unnecessary
+activation, with identical prompts/tools/budgets and no invented model outputs.
+Keep actual model runs `BLOCKED_BY_AUTH`; no retry is needed until the environment
+changes. Do not turn fixture integrity or a deterministic router into a live
+behavior benchmark. No new release is needed for these isolated tool corrections.

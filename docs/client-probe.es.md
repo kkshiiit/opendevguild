@@ -19,6 +19,17 @@ los alias del sistema macOS `/var` → `/private/var` y `/tmp` → `/private/tmp
 Los enlaces agregados, incluso rotos, cuentan como cambios. Estos controles
 suponen una carpeta local sin escrituras concurrentes; no son un sandbox del SO.
 
+Antes de crear el destino, valida todos los archivos: máximo 1.000 archivos,
+1 MiB por archivo, 16 MiB de contenido, 2.000 entradas del entorno (incluidas
+carpetas) y 256 KiB de JSON del manifiesto. Recorre como máximo 2.000 entradas
+por skill de origen, sin seguir enlaces ni junctions. Rechaza archivos especiales
+(como FIFO), claves JSON duplicadas y manifiestos que no sean objetos.
+Las rutas relativas admiten hasta 32 componentes y 4.096 bytes UTF-8.
+La comprobación aplica los mismos límites. Una entrada inválida o excesiva devuelve
+`ERROR` estructurado y código 2; cambios de bytes/archivos o enlaces agregados, `CHANGED` y
+código 1; bytes registrados sin cambios, código 0. Un fallo de escritura puede
+dejar un entorno nuevo incompleto: revisalo y elegí otra ruta.
+
 Crea dos skills completas (scope-guardian y code-review-engineer) en
 .agents/skills, el perfil opcional reviewer en .codex/agents, un archivo Python
 con un error intencional, tres casos en scenarios.json y hashes SHA-256 en

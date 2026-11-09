@@ -8,12 +8,22 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path, PurePosixPath
+import re
+import stat
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ("scope-guardian", "code-review-engineer")
 PROFILE = "reviewer.toml"
+MAX_FILES = 1000
+MAX_ENTRIES = 2000
+MAX_FILE_BYTES = 1024 * 1024
+MAX_TOTAL_BYTES = 16 * 1024 * 1024
+MAX_MANIFEST_BYTES = 256 * 1024
+MAX_DEPTH = 32
+MAX_PATH_BYTES = 4096
 BUGGY = '''"""Deliberately flawed, synthetic review fixture."""\n\ndef total_after_discount(total, discount):\n    """Return nonnegative total after discount."""\n    if total < 0 or discount < 0:\n        raise ValueError("nonnegative values required")\n    return max(0, total + discount)\n'''
 SCENARIOS = [
     {"id": "A-scope", "skill": "scope-guardian", "prompt":
@@ -32,9 +42,12 @@ SCENARIOS = [
 
 
 def safe_relative(path: str) -> bool:
+    if len(path.encode("utf-8")) > MAX_PATH_BYTES:
+        return False
     rel = PurePosixPath(path)
     return bool(path) and not rel.is_absolute() and '..' not in rel.parts \
-        and '\\' not in path and ':' not in path and path == rel.as_posix()
+        and '\\' not in path and ':' not in path and path == rel.as_posix() \
+        and 0 < len(rel.parts) <= MAX_DEPTH
 
 
 def no_links(path: Path) -> Path:
@@ -53,6 +66,40 @@ def no_links(path: Path) -> Path:
     return path
 
 
+def entries(directory: Path):
+    """Bound metadata traversal and never descend into links or junctions."""
+    pending = [directory]
+    count = 0
+    while pending:
+        with os.scandir(pending.pop()) as children:
+            for child in children:
+                count += 1
+                if count > MAX_ENTRIES:
+                    raise ValueError("fixture entry budget exceeded")
+                path = Path(child.path)
+                if (len(path.relative_to(directory).parts) > MAX_DEPTH or
+                        len(path.relative_to(directory).as_posix().encode("utf-8")) > MAX_PATH_BYTES):
+                    raise ValueError("fixture path budget exceeded")
+                yield path
+                linked = path.is_symlink() or getattr(path, "is_junction", lambda: False)()
+                if not linked and child.is_dir(follow_symlinks=False):
+                    pending.append(path)
+
+
+def read_regular(path: Path, limit: int) -> bytes:
+    """Preflight file type/size, then bound the actual read as well."""
+    info = path.lstat()
+    if not stat.S_ISREG(info.st_mode):
+        raise ValueError("non-regular fixture file rejected")
+    if info.st_size > limit:
+        raise ValueError("fixture byte budget exceeded")
+    with path.open("rb") as stream:
+        data = stream.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError("fixture byte budget exceeded")
+    return data
+
+
 def source_files(root: Path) -> list[tuple[Path, str]]:
     root = no_links(root)
     paths: list[tuple[Path, str]] = []
@@ -61,12 +108,18 @@ def source_files(root: Path) -> list[tuple[Path, str]]:
         no_links(base)
         if (root / "skills").is_symlink() or base.is_symlink() or not (base / "SKILL.md").is_file():
             raise ValueError(f"missing or linked skill: {skill}")
-        for path in sorted(base.rglob("*")):
+        for path in entries(base):
             if path.is_symlink() or getattr(path, "is_junction", lambda: False)():
                 raise ValueError(f"source symlink rejected: {skill}")
             if path.is_file():
                 rel = (Path(".agents") / "skills" / skill / path.relative_to(base)).as_posix()
+                if not safe_relative(rel):
+                    raise ValueError("fixture path budget exceeded")
                 paths.append((path, rel))
+                if len(paths) > MAX_FILES:
+                    raise ValueError("fixture file budget exceeded")
+            elif not path.is_dir():
+                raise ValueError("non-regular source entry rejected")
     profile = root / ".codex" / "agents" / PROFILE
     no_links(profile)
     if (root / ".codex").is_symlink() or profile.parent.is_symlink() or profile.is_symlink() or not profile.is_file():
@@ -87,14 +140,13 @@ def prepare(output: Path, root: Path = ROOT) -> dict:
         raise ValueError("output exists; choose a new empty destination")
     if not output.parent.is_dir():
         raise ValueError("output parent does not exist")
-    output.mkdir()
-    records: dict[str, str] = {}
+    # Read/validate all bounded inputs and serialized metadata before any writes.
+    payloads: dict[str, bytes] = {}
+    total = 0
     for source, rel in sources:
-        dest = output / rel
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        data = source.read_bytes()
-        dest.write_bytes(data)
-        records[rel] = digest(data)
+        data = read_regular(source, min(MAX_FILE_BYTES, MAX_TOTAL_BYTES - total))
+        total += len(data)
+        payloads[rel] = data
     text_files = {
         "buggy.py": BUGGY,
         "scenarios.json": json.dumps({
@@ -106,13 +158,28 @@ def prepare(output: Path, root: Path = ROOT) -> dict:
         }, indent=2) + "\n",
     }
     for rel, content in text_files.items():
-        data = content.encode("utf-8")
-        (output / rel).write_bytes(data)
-        records[rel] = digest(data)
+        payloads[rel] = content.encode("utf-8")
+    if (len(payloads) > MAX_FILES or sum(map(len, payloads.values())) > MAX_TOTAL_BYTES or
+            any(len(data) > MAX_FILE_BYTES for data in payloads.values())):
+        raise ValueError("fixture payload budget exceeded")
+    inventory = set(payloads) | {"manifest.json"}
+    for rel in payloads:
+        inventory.update(str(p) for p in PurePosixPath(rel).parents if p != PurePosixPath("."))
+    if len(inventory) > MAX_ENTRIES:
+        raise ValueError("fixture entry budget exceeded")
+    records = {rel: digest(data) for rel, data in payloads.items()}
     manifest = {"kind": "prepared-client-fixture", "status": "PREPARED_NOT_RUN",
                 "files": dict(sorted(records.items())),
                 "limitations": "Hashes document fixture integrity, not client discovery, activation or behavior."}
-    (output / "manifest.json").write_bytes((json.dumps(manifest, indent=2) + "\n").encode("utf-8"))
+    metadata = (json.dumps(manifest, indent=2) + "\n").encode("utf-8")
+    if len(metadata) > MAX_MANIFEST_BYTES:
+        raise ValueError("fixture manifest budget exceeded")
+    output.mkdir()
+    for rel, data in payloads.items():
+        dest = output / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(data)
+    (output / "manifest.json").write_bytes(metadata)
     return {"status": "PREPARED_NOT_RUN", "path": str(output),
             "files": len(records), "scenarios": len(SCENARIOS)}
 
@@ -120,23 +187,43 @@ def prepare(output: Path, root: Path = ROOT) -> dict:
 def check(output: Path) -> dict:
     output = no_links(output)
     no_links(output / "manifest.json")
-    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
-    if manifest.get("kind") != "prepared-client-fixture" or not isinstance(manifest.get("files"), dict):
+    def unique_keys(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError("duplicate manifest key")
+            result[key] = value
+        return result
+
+    data = read_regular(output / "manifest.json", MAX_MANIFEST_BYTES)
+    try:
+        manifest = json.loads(data.decode("utf-8"), object_pairs_hook=unique_keys)
+    except RecursionError as error:
+        raise ValueError("manifest nesting budget exceeded") from error
+    if (not isinstance(manifest, dict) or manifest.get("kind") != "prepared-client-fixture" or
+            not isinstance(manifest.get("files"), dict)):
         raise ValueError("invalid manifest")
     registered = manifest["files"]
     if not registered or any(not safe_relative(p) for p in registered):
         raise ValueError("unsafe or empty fixture entries")
+    if len(registered) > MAX_FILES:
+        raise ValueError("fixture file budget exceeded")
     changed: list[str] = []
+    total = 0
     for rel, expected in sorted(registered.items()):
         path = output / rel
         if (any(parent.is_symlink() or getattr(parent, "is_junction", lambda: False)()
                 for parent in (path, *path.parents[:len(PurePosixPath(rel).parts) - 1])) or
                 not path.resolve().is_relative_to(output.resolve()) or not path.is_file() or
-                not isinstance(expected, str) or len(expected) != 64 or
-                digest(path.read_bytes()) != expected):
+                not isinstance(expected, str) or not re.fullmatch(r"[0-9a-f]{64}", expected)):
+            changed.append(rel)
+            continue
+        content = read_regular(path, min(MAX_FILE_BYTES, MAX_TOTAL_BYTES - total))
+        total += len(content)
+        if digest(content) != expected:
             changed.append(rel)
     known = set(registered) | {"manifest.json"}
-    additional = sorted(p.relative_to(output).as_posix() for p in output.rglob("*")
+    additional = sorted(p.relative_to(output).as_posix() for p in entries(output)
                         if (p.is_symlink() or getattr(p, "is_junction", lambda: False)() or
                             not p.is_dir()) and p.relative_to(output).as_posix() not in known)
     return {"status": "CHANGED" if changed or additional else "UNCHANGED",
