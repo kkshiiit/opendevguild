@@ -34,6 +34,9 @@ unclear rights. Report private security findings through [SECURITY.md](SECURITY.
    The lifecycle reaches NEEDS_REVIEW before VERIFIED. A reviewer decides applicable
    gates using APPROVED, REJECTED, BLOCKED or justified NOT_APPLICABLE.
 
+For fast **local** feedback before the full suite, use the [read-only impact planner](docs/impact-testing.md).
+It suggests tests from changed files but does not run them or replace CI.
+
 Maintainers assess correctness, safety, scope, compatibility, context cost,
 licensing and evidence. No contribution is accepted automatically. Do not weaken
 checks to hide a failure or claim untested platforms. External issue updates,
