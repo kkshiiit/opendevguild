@@ -78,3 +78,53 @@ and obtain independent grading. While blocked, audit another concrete high-impac
 procedure boundary against the existing contract; do not expand the catalog or
 retry login. The roadmap, frozen snapshots and historic results remain preserved.
 No new release is needed for these isolated changes.
+
+## Cycle 4: installer transaction safety
+
+Baseline: `a2e6de30408eff183430197784dbb732a7a9fe29`; remote main matched
+before changes. Branch: `fix/transactional-skill-installer`. Scope is the optional
+installer, its tests and necessary EN/ES documentation. Skills, profiles,
+dependencies and immutable release `v0.4.0` are unchanged.
+
+Six new regressions failed on the old implementation before it was modified:
+partial replacement copy, second-skill copy failure and manifest publication
+failure for install/update/uninstall/rollback. They demonstrated altered/missing
+installed bytes alongside the old manifest. All are now passing.
+
+The whole batch is staged and hash checked; the next manifest is prepared before
+originals move into retained backups. Publication is the commit point. Pre-commit
+errors compensate the batch with renames and preserve exact old manifest bytes.
+Failed compensation preserves originals and a delete-last pending marker that
+blocks new operations. `recover` validates the entire recorded batch before
+moving anything and resumes compensation or committed cleanup as appropriate.
+See [English/Spanish recovery](installer-reference.md#transaction-failures-and-recovery).
+
+Local evidence: 39 installer methods passed, including four-action multi-skill
+publication faults, partial copy/write, promotion/retirement/restoration failures,
+restoration retry, partial cleanup, tampered journals/backups, user edits, budgets,
+first-install retry and a synthetic Python interruption. Full local suite:
+179 methods, 177 passed, two platform skips (PowerShell and native Windows
+junction). Official format/project and visual validation, fatal Python lint
+and whitespace checks passed. Independent inspection/focused review found no
+scoped blocker. Hosted native CI and final integration must be observed in the
+associated PR/main workflow; local checks do not predict those results.
+
+Hosted evidence: [PR #8](https://github.com/kkshiiit/opendevguild/pull/8)
+at implementation commit `a5fc04f53217558fb031f085d2026c4c79b3948f` passed
+[all five CI jobs](https://github.com/kkshiiit/opendevguild/actions/runs/42586466111):
+Linux/Python 3.11 and 3.12, Windows/Python 3.12, macOS/Python 3.12 and Chromium.
+Release integrity is intentionally skipped because no release is published.
+The PR records final integration and merged-main workflow evidence; the extra
+checkpoint-only commit does not alter the tested installer implementation.
+
+Limits: pending state invalidates ordinary manifest loading; visible directory
+swaps are not isolated. No power-loss/fsync, arbitrary filesystem, hostile-race
+or concurrent-writer guarantee. Journals are bounded but unsigned; damaged state
+or persistent restoration errors can require reviewed manual recovery. The tests
+do not establish real power-cut durability. Empty generated parents may remain.
+Rollback consumes history rather than providing redo; documentation now agrees.
+
+Next: confirm final PR and merged-main native CI, then keep the recovery protocol
+and retained fault cases as the checkpoint. Any later offline defect should be
+reproduced and scoped separately. CLI authentication and model/subagent behavior
+remain `BLOCKED_BY_AUTH`; no login retry or activation benchmark was attempted.

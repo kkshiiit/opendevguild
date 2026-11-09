@@ -176,6 +176,9 @@ Manual update/uninstall/rollback was simulated with a synthetic local edit and
 retained it. This is file lifecycle evidence, not native-client proof. The optional
 installer refuses conflicting edits and supplies a managed rollback path; follow
 its [reference](installer-reference.md), including dry-run before changes.
+For the installer code after `v0.4.0`, a pending transaction blocks ordinary
+operations: review [transaction recovery](installer-reference.md#transaction-failures-and-recovery)
+and use `recover` for the whole recorded batch. The published 0.4.0 ZIP is unchanged.
 
 ## Optional subagents
 

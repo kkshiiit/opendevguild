@@ -172,6 +172,9 @@ Se simuló este ciclo con un cambio local sintético y se conservó. Es evidenci
 archivos, no prueba de ejecución de un cliente. El instalador opcional rechaza
 ediciones en conflicto; seguí su [referencia](installer-reference.md) y empezá
 por dry-run antes de cambiar archivos.
+En el instalador posterior a `v0.4.0`, una transacción pendiente bloquea nuevas
+operaciones: revisá la [recuperación](installer-reference.md#recuperación-y-límites)
+y usá `recover` para el lote completo. El ZIP publicado de 0.4.0 no cambió.
 
 ## Perfiles opcionales de subagentes
 
