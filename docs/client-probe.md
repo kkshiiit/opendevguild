@@ -2,6 +2,10 @@
 
 [Español](client-probe.es.md) · [Agent verification](agent-verification.md)
 
+For frozen no-skill/released/candidate comparisons, see the
+[matched case protocol](client-comparison.md). It reuses this synthetic defect
+and keeps unexecuted model results explicitly separate from offline checks.
+
 This is an **offline preparation and integrity tool**, not a model benchmark. It
 is useful while the remote Codex CLI is blocked by HTTP 401 authentication.
 

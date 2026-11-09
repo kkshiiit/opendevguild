@@ -42,12 +42,39 @@ translates it to structured `ERROR`/exit 2 and a real CLI regression covers it.
 The previous actual repository fixture still passes `UNCHANGED`, preserving
 compatibility with existing generated manifests. The focused suite has 28 tests;
 27 passed locally, one native-Windows junction test skipped. Native Windows
-and full hosted acceptance must be recorded from this cycle's PR/CI.
+and full hosted acceptance passed in
+[PR #6 CI](https://github.com/kkshiiit/opendevguild/actions/runs/42561177866).
+Merged main is `7f44d17b8a6fce07e1ffa60d0cd3c7b50f4838d6`;
+[main CI](https://github.com/kkshiiit/opendevguild/actions/runs/42561379809)
+also passed all five validation/Chromium jobs. Local full suite: 151 tests,
+149 passed, two skipped (PowerShell and native Windows). Native job success
+does not imply every optional check ran; retain each tool's skip conditions.
 
-Next priority: prepare frozen, matched base/no-skill, released OpenDevGuild and
-candidate conditions using existing client/scenario assets. Include success,
-failure, hostile third-party instructions, scope preservation and unnecessary
-activation, with identical prompts/tools/budgets and no invented model outputs.
-Keep actual model runs `BLOCKED_BY_AUTH`; no retry is needed until the environment
-changes. Do not turn fixture integrity or a deterministic router into a live
-behavior benchmark. No new release is needed for these isolated tool corrections.
+## Cycle 3: scope authority and matched comparison inputs
+
+`scope-guardian` now requires approval provenance and rejects third-party claims
+of owner authorization without discarding applicable host-recognized instructions.
+Its scenario expectations include this boundary. Existing positive, negative,
+input/output and rejection criteria remain; no new skill or permanent agent.
+
+Prepared [five matched cases](client-comparison.md) for no-skill, immutable
+0.4.0 instruction snapshots and candidate conditions. Prompts, app bytes, budgets,
+tool policy and rubric are shared. The arithmetic fixture reuses `client_probe`.
+Hash tests and isolated materialization check the inputs; **no model runs occurred**.
+The public cases are development fixtures, not hidden holdouts. Runtime identity
+and candidate commit remain unset until a real run can freeze them. Outcomes stay
+`NOT_RUN` / `BLOCKED_BY_AUTH`; proposed instruction benefit is not demonstrated.
+Local validation: 156 tests, 154 passed and two skipped (local PowerShell and
+native Windows junction); all five comparison-input tests passed. Official
+format/project and visual metadata checks, fatal Python lint and conservative
+public-source audit passed. Independent review confirmed the released snapshot
+bytes and no blocker; its contamination-control recommendation is in the
+operator protocol. Branch: `feat/scope-authority-comparison-cases`; consult its
+PR/main workflow evidence for hosted acceptance and the final merge commit.
+
+Next: when client authentication changes, freeze runtime/candidate identities,
+execute the same cases in fresh contexts with actual read/tool/side-effect logs,
+and obtain independent grading. While blocked, audit another concrete high-impact
+procedure boundary against the existing contract; do not expand the catalog or
+retry login. The roadmap, frozen snapshots and historic results remain preserved.
+No new release is needed for these isolated changes.
