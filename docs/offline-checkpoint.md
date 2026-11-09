@@ -109,6 +109,14 @@ and whitespace checks passed. Independent inspection/focused review found no
 scoped blocker. Hosted native CI and final integration must be observed in the
 associated PR/main workflow; local checks do not predict those results.
 
+Hosted evidence: [PR #8](https://github.com/kkshiiit/opendevguild/pull/8)
+at implementation commit `a5fc04f53217558fb031f085d2026c4c79b3948f` passed
+[all five CI jobs](https://github.com/kkshiiit/opendevguild/actions/runs/42586466111):
+Linux/Python 3.11 and 3.12, Windows/Python 3.12, macOS/Python 3.12 and Chromium.
+Release integrity is intentionally skipped because no release is published.
+The PR records final integration and merged-main workflow evidence; the extra
+checkpoint-only commit does not alter the tested installer implementation.
+
 Limits: pending state invalidates ordinary manifest loading; visible directory
 swaps are not isolated. No power-loss/fsync, arbitrary filesystem, hostile-race
 or concurrent-writer guarantee. Journals are bounded but unsigned; damaged state
@@ -116,7 +124,7 @@ or persistent restoration errors can require reviewed manual recovery. The tests
 do not establish real power-cut durability. Empty generated parents may remain.
 Rollback consumes history rather than providing redo; documentation now agrees.
 
-Next: verify PR and merged-main native CI, then keep the recovery protocol and
-retained fault cases as the checkpoint. Any later offline defect should be
+Next: confirm final PR and merged-main native CI, then keep the recovery protocol
+and retained fault cases as the checkpoint. Any later offline defect should be
 reproduced and scoped separately. CLI authentication and model/subagent behavior
 remain `BLOCKED_BY_AUTH`; no login retry or activation benchmark was attempted.
