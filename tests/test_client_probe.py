@@ -87,6 +87,48 @@ class ProbeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "symlink"):
             probe.prepare(link / "trial", root=self.source)
 
+    def test_rejects_output_ancestor_symlink_before_writing(self):
+        outside = self.base / "outside"
+        (outside / "nested").mkdir(parents=True)
+        alias = self.base / "alias"
+        try:
+            alias.symlink_to(outside, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest("symlinks unavailable on this platform")
+        with self.assertRaisesRegex(ValueError, "symlink"):
+            probe.prepare(alias / "nested" / "trial", root=self.source)
+        self.assertFalse((outside / "nested" / "trial").exists())
+
+    def test_rejects_source_ancestor_symlink_before_writing(self):
+        alias = self.base / "alias"
+        try:
+            alias.symlink_to(self.base, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest("symlinks unavailable on this platform")
+        with self.assertRaisesRegex(ValueError, "symlink"):
+            probe.prepare(self.destination, root=alias / "source")
+        self.assertFalse(self.destination.exists())
+
+    def test_detects_added_dangling_symlink(self):
+        probe.prepare(self.destination, root=self.source)
+        try:
+            (self.destination / "unexpected-link").symlink_to(self.base / "missing")
+        except (OSError, NotImplementedError):
+            self.skipTest("symlinks unavailable on this platform")
+        evidence = probe.check(self.destination)
+        self.assertEqual(evidence["status"], "CHANGED")
+        self.assertEqual(evidence["additional"], ["unexpected-link"])
+
+    def test_rejects_fixture_ancestor_symlink(self):
+        probe.prepare(self.destination, root=self.source)
+        alias = self.base / "alias"
+        try:
+            alias.symlink_to(self.base, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest("symlinks unavailable on this platform")
+        with self.assertRaisesRegex(ValueError, "symlink"):
+            probe.check(alias / "trial")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -13,6 +13,11 @@ Desde la raíz del repositorio OpenDevGuild, elegí una carpeta **nueva**:
 
 En Windows PowerShell usá una ruta nueva como $env:TEMP\odg-smoke-001.
 El programa no sobrescribe carpetas existentes.
+Rechaza enlaces simbólicos en cualquier antecesor del origen, destino y entorno,
+y junctions de Windows cuando Python permite identificarlos. Admite únicamente
+los alias del sistema macOS `/var` → `/private/var` y `/tmp` → `/private/tmp`.
+Los enlaces agregados, incluso rotos, cuentan como cambios. Estos controles
+suponen una carpeta local sin escrituras concurrentes; no son un sandbox del SO.
 
 Crea dos skills completas (scope-guardian y code-review-engineer) en
 .agents/skills, el perfil opcional reviewer en .codex/agents, un archivo Python

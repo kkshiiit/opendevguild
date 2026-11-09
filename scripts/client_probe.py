@@ -37,19 +37,38 @@ def safe_relative(path: str) -> bool:
         and '\\' not in path and ':' not in path and path == rel.as_posix()
 
 
+def no_links(path: Path) -> Path:
+    """Reject linked ancestors before resolving or touching fixture paths."""
+    path = path.absolute()
+    # macOS exposes its normal temporary locations through these OS aliases.
+    # Permit only these exact system mappings, not arbitrary user-created links.
+    if sys.platform == "darwin":
+        for alias, canonical in (("/var", "/private/var"), ("/tmp", "/private/tmp")):
+            prefix = Path(alias)
+            if prefix.is_symlink() and prefix.resolve() == Path(canonical) and path.is_relative_to(prefix):
+                path = Path(canonical) / path.relative_to(prefix)
+    for part in (path, *path.parents):
+        if part.is_symlink() or getattr(part, "is_junction", lambda: False)():
+            raise ValueError("symlink or junction in fixture path rejected")
+    return path
+
+
 def source_files(root: Path) -> list[tuple[Path, str]]:
+    root = no_links(root)
     paths: list[tuple[Path, str]] = []
     for skill in SKILLS:
         base = root / "skills" / skill
+        no_links(base)
         if (root / "skills").is_symlink() or base.is_symlink() or not (base / "SKILL.md").is_file():
             raise ValueError(f"missing or linked skill: {skill}")
         for path in sorted(base.rglob("*")):
-            if path.is_symlink():
+            if path.is_symlink() or getattr(path, "is_junction", lambda: False)():
                 raise ValueError(f"source symlink rejected: {skill}")
             if path.is_file():
                 rel = (Path(".agents") / "skills" / skill / path.relative_to(base)).as_posix()
                 paths.append((path, rel))
     profile = root / ".codex" / "agents" / PROFILE
+    no_links(profile)
     if (root / ".codex").is_symlink() or profile.parent.is_symlink() or profile.is_symlink() or not profile.is_file():
         raise ValueError("missing or linked optional reviewer profile")
     paths.append((profile, (Path(".codex") / "agents" / PROFILE).as_posix()))
@@ -63,8 +82,7 @@ def digest(data: bytes) -> str:
 def prepare(output: Path, root: Path = ROOT) -> dict:
     """Create a new fixture only; never overwrite an existing destination."""
     sources = source_files(root)
-    if output.is_symlink() or output.parent.is_symlink():
-        raise ValueError("output symlink or symlinked parent rejected")
+    output = no_links(output)
     if output.exists():
         raise ValueError("output exists; choose a new empty destination")
     if not output.parent.is_dir():
@@ -100,8 +118,8 @@ def prepare(output: Path, root: Path = ROOT) -> dict:
 
 
 def check(output: Path) -> dict:
-    if output.is_symlink() or (output / "manifest.json").is_symlink():
-        raise ValueError("linked fixture or manifest rejected")
+    output = no_links(output)
+    no_links(output / "manifest.json")
     manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
     if manifest.get("kind") != "prepared-client-fixture" or not isinstance(manifest.get("files"), dict):
         raise ValueError("invalid manifest")
@@ -111,14 +129,16 @@ def check(output: Path) -> dict:
     changed: list[str] = []
     for rel, expected in sorted(registered.items()):
         path = output / rel
-        if (any(parent.is_symlink() for parent in (path, *path.parents[:len(PurePosixPath(rel).parts) - 1])) or
+        if (any(parent.is_symlink() or getattr(parent, "is_junction", lambda: False)()
+                for parent in (path, *path.parents[:len(PurePosixPath(rel).parts) - 1])) or
                 not path.resolve().is_relative_to(output.resolve()) or not path.is_file() or
                 not isinstance(expected, str) or len(expected) != 64 or
                 digest(path.read_bytes()) != expected):
             changed.append(rel)
     known = set(registered) | {"manifest.json"}
     additional = sorted(p.relative_to(output).as_posix() for p in output.rglob("*")
-                        if p.is_file() and p.relative_to(output).as_posix() not in known)
+                        if (p.is_symlink() or getattr(p, "is_junction", lambda: False)() or
+                            not p.is_dir()) and p.relative_to(output).as_posix() not in known)
     return {"status": "CHANGED" if changed or additional else "UNCHANGED",
             "changed": changed, "additional": additional,
             "limits": "This checks file bytes only; it does not prove skills executed or prevent forged manifests."}
