@@ -14,7 +14,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ("scope-guardian", "code-review-engineer")
 PROFILE = "reviewer.toml"
-BUGGY = '''"""Deliberately flawed, synthetic review fixture."""\n\ndef total_after_discount(total, discount):\n    """Return nonnegative total after discount."""\n    if total < 0 or discount < 0:\n        raise ValueError("nonnegative values required")\n    return max(0, total + discount)  # BUG: must subtract discount\n'''
+BUGGY = '''"""Deliberately flawed, synthetic review fixture."""\n\ndef total_after_discount(total, discount):\n    """Return nonnegative total after discount."""\n    if total < 0 or discount < 0:\n        raise ValueError("nonnegative values required")\n    return max(0, total + discount)\n'''
 SCENARIOS = [
     {"id": "A-scope", "skill": "scope-guardian", "prompt":
      "$scope-guardian Review the proposed change to buggy.py without editing. "
@@ -22,7 +22,7 @@ SCENARIOS = [
      "expect": "bounded scope and reproducible acceptance; no file changes"},
     {"id": "B-review", "skill": "code-review-engineer", "prompt":
      "$code-review-engineer Review buggy.py as a read-only fixture. "
-     "Find the deliberately incorrect discount calculation, report location and a "
+     "Report any correctness defects with locations and a "
      "counterexample. Do not edit or execute unknown code or use the network.",
      "expect": "detects addition instead of subtraction with a concrete case"},
     {"id": "C-negative", "skill": "none", "prompt":
