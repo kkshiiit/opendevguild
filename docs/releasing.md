@@ -29,7 +29,7 @@ be recorded after execution; naming the target here does not publish it.
 5. Build a new artifact path using the documented command:
 
    ```bash
-   uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.0.zip
+   uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.1.zip
    ```
 
    Repeat to a second new path and compare ZIP SHA-256 values. Inspect names,
@@ -65,3 +65,40 @@ preparación puede verificarse aunque publicar siga bloqueado. Generá artefacto
 nuevos, comprobá contenido, hashes e instalación y limitá el soporte a lo probado.
 Publicar requiere dueño, destino y autorización reales. Conservá versiones y
 cambios locales para volver atrás sin borrar trabajo de la aplicación.
+
+## Maintenance prerelease 0.4.1
+
+Base: `b4bbb18523afd4be83937572c04457925cb95961`, including merged PRs #3–#9.
+Scope: aligned release metadata/lock, current EN/ES download/recovery guidance,
+changelog, notes and a separate publisher. Existing 0.4.0 tags, notes, workflow,
+artifacts and historical verification records must remain unchanged.
+
+Acceptance: full official/project/profile/visual validation, lint, unittest and
+source/dependency audit; independent review; green PR and merged-main CI;
+two byte-identical archives from the frozen source; extracted inventory and
+installer fault/recovery tests; actual anonymous downloads with native checks on
+Linux, Windows and macOS; public documentation URLs and preserved 0.4.0 identity.
+Real model/client/child activation is `NOT_RUN` / `BLOCKED_BY_AUTH`, not a gate
+silently approved by filesystem tests. No remote login retry is required.
+
+After reviewing/merging and observing main CI, create a NEW annotated `v0.4.1`
+tag at that exact commit, rebuild from its clean export and record the ZIP hash.
+Dispatch the new workflow **from the tag**, supplying the actual values:
+
+```text
+gh workflow run publish-v0.4.1.yml --repo kkshiiit/opendevguild --ref v0.4.1 -f source_sha=REVIEWED_40_HEX_COMMIT -f archive_sha256=VERIFIED_64_HEX_SHA256
+```
+
+The placeholders must be replaced; invalid values fail closed. The publisher
+requires the dispatch/tag/source commit to agree, successful main CI for that
+SHA, matching versions, two equal builds and the independently supplied hash.
+Both code and release notes come from the explicit reviewed commit. Publication
+uploads only the ZIP and checksum as a new prerelease; it never clobbers assets.
+Repository-token publication does not trigger another release-event workflow,
+so three explicit native jobs download anonymously and compare the expected hash.
+Record their actual results in the GitHub release; planned links are not evidence.
+
+Español: esta versión empaqueta realmente las correcciones de main. Congelá el
+commit aprobado, creá un tag nuevo y reconstruí desde ese tag. Ejecutá el workflow
+desde `v0.4.1` con SHA y hash reales; verifica las descargas sin sesión y los tres
+jobs nativos antes de declarar PUBLICADA. Conservá íntegra la versión anterior.

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.1 — maintenance prerelease, 2026-11-09
+
+- Include merged PRs #3–#9 that were absent from the 0.4.0 bundle.
+- Stage and verify installer batches before retirement; compensate recoverable I/O failures, retain pending recovery evidence and add whole-batch `recover` (PR #8).
+- Preserve source test coverage across Git renames in the conservative preflight planner (PR #9); selective planning began in PR #3.
+- Prepare bounded offline Codex fixtures (PR #4), reject linked ancestors/added links (PR #5), and bound regular-file/manifest reads and errors (PR #6).
+- Clarify scope authorization provenance and freeze matched development comparison inputs without claiming live outcomes (PR #7).
+- Refresh EN/ES download/recovery guides and publish from an explicitly reviewed tag/SHA with anchored archive checksum and anonymous native verification.
+- Preserve 42 skills, eight profiles, Visual Intelligence Engine V1 and the historical 0.4.0 release. No new dependency or runtime support claim.
+- Remote model/child execution remains NOT_RUN / BLOCKED_BY_AUTH; no power-loss, concurrent-writer, human-preference or token-saving guarantee.
+
 ## 0.4.0 — installation and evidence infrastructure, 2026-11-09
 
 - Preserve42 skills and8profiles; audit each against18 documented criteria.

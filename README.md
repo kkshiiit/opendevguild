@@ -2,11 +2,13 @@
 
 ## Quick start
 
-**0.4.0 development release · Apache-2.0 · [Español](README.es.md)**
+**0.4.1 maintenance prerelease · Apache-2.0 · [Español](README.es.md)**
 
 OpenDevGuild provides **34 engineering skills and eight visual specialists** for
 compatible AI clients. The client supplies the model, tools and permissions;
 copying a skill does not start agents, edit your app or grant access automatically.
+
+For the checksummed maintenance bundle, download **both** the [0.4.1 ZIP](https://github.com/kkshiiit/opendevguild/releases/download/v0.4.1/opendevguild-0.4.1.zip) and its [SHA-256](https://github.com/kkshiiit/opendevguild/releases/download/v0.4.1/opendevguild-0.4.1.zip.sha256). See the installation guide before copying. The older [0.4.0 release](https://github.com/kkshiiit/opendevguild/releases/tag/v0.4.0) remains available; its installer lacks the transaction fixes.
 
 1. [Download the repository ZIP](https://github.com/kkshiiit/opendevguild/archive/refs/heads/main.zip)
    using **Code → Download ZIP**, or clone:
@@ -82,7 +84,7 @@ uv sync --frozen
 uv run --frozen python scripts/guild.py validate
 uv run --frozen python -m unittest discover -s tests -v
 uv run --frozen python scripts/guild.py check-handoff examples/handoff.json --task examples/task.json
-uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.0.zip
+uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.1.zip
 ```
 
 Choose a new output path if it exists. Visual browser checks additionally require
