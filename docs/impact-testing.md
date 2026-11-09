@@ -29,6 +29,9 @@ specified existing revision. It excludes untracked files; include their paths
 using `--paths`. Neither option fetches branches from a remote. Do not pass an
 untrusted revision or invent a baseline. An empty diff prints no selected tests;
 it is not evidence that the repository is verified.
+Renames are read as deletion plus addition, regardless of Git's rename setting,
+so both the original component and destination contribute their checks. Moving
+`scripts/install.py` into `docs/` must not drop the installer regression suite.
 
 ## Guardrails
 

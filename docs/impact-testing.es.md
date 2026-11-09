@@ -31,6 +31,9 @@ stage, respecto de la revisión indicada. No incluye archivos nuevos aún sin
 seguimiento: pasalos explícitamente con `--paths`. No hay búsquedas remotas.
 Una diferencia vacía produce cero recomendaciones, pero **no significa que el
 proyecto esté verificado**.
+Los renombrados se leen como eliminación más incorporación, independientemente
+de la configuración de Git: origen y destino aportan sus pruebas. Mover
+`scripts/install.py` a `docs/` no debe omitir las regresiones del instalador.
 
 ## Límites y controles
 

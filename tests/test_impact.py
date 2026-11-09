@@ -86,6 +86,27 @@ class ImpactTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             impact.changed_since("--output=/tmp/exploit")
 
+    def test_git_rename_retains_old_path_checks_even_when_destination_is_docs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            work = Path(tmp)
+            (work / "scripts").mkdir(); (work / "docs").mkdir()
+            (work / "scripts/install.py").write_text("synthetic tracked content\n")
+            commands = [
+                ["git", "init", "-q"],
+                ["git", "config", "user.email", "test@example.invalid"],
+                ["git", "config", "user.name", "Test"],
+                ["git", "config", "diff.renames", "true"],
+                ["git", "add", "scripts/install.py"],
+                ["git", "commit", "-qm", "synthetic baseline"],
+                ["git", "mv", "scripts/install.py", "docs/install.py"],
+            ]
+            for command in commands:
+                subprocess.run(command, cwd=work, check=True, capture_output=True)
+            paths = impact.changed_since("HEAD", root=work)
+            self.assertEqual(paths, ["docs/install.py", "scripts/install.py"])
+            result = impact.select_tests(paths, AVAILABLE)
+            self.assertEqual(result["tests"], ["test_documentation.py", "test_installation.py"])
+
 
 if __name__ == "__main__":
     unittest.main()

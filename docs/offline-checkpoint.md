@@ -124,7 +124,27 @@ or persistent restoration errors can require reviewed manual recovery. The tests
 do not establish real power-cut durability. Empty generated parents may remain.
 Rollback consumes history rather than providing redo; documentation now agrees.
 
-Next: confirm final PR and merged-main native CI, then keep the recovery protocol
-and retained fault cases as the checkpoint. Any later offline defect should be
-reproduced and scoped separately. CLI authentication and model/subagent behavior
-remain `BLOCKED_BY_AUTH`; no login retry or activation benchmark was attempted.
+Integration: PR #8 merged as `e9beccda6fcd8a6ab4026722a66c2e571f6d98e3`.
+[Final PR CI](https://github.com/kkshiiit/opendevguild/actions/runs/42586808602)
+and [merged-main CI](https://github.com/kkshiiit/opendevguild/actions/runs/42586939376)
+passed all five validation/Chromium jobs. Release `v0.4.0` and its asset digests
+were checked unchanged. Keep the recovery protocol and retained fault cases.
+
+## Cycle 5: conservative preflight across Git renames
+
+After cycle 4 was merged and verified, a separate small Git fixture reproduced
+the test selector losing `scripts/install.py` when it was renamed to `docs/`.
+Git's default rename output contained only the destination, incorrectly dropping
+installer tests. One regression failed before the implementation changed.
+
+`changed_since` now requests `git diff --no-renames`, retaining both the tracked
+deletion and addition. Existing explicit-path and untracked-file rules stay the
+same; the planner still never executes its output or substitutes for full CI.
+EN/ES maintainer guides document the boundary. Branch:
+`fix/impact-renamed-source-coverage`; changes are limited to the planner, its
+regression, guides and this checkpoint. Local focused suite: 14 tests passed.
+
+Next: verify this separate PR/main CI and preserve its source/destination
+regression. Any later defect needs a new reproduction and bounded scope. CLI
+authentication and model/subagent behavior remain `BLOCKED_BY_AUTH`; no login
+retry or activation benchmark was attempted. No release or dependency change.
