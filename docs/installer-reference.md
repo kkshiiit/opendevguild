@@ -185,5 +185,5 @@ y cambios del usuario antes de elegir un estado consistente. Separá los archivo
 en conflicto; no elimines originales ni edites manifiestos para eludir controles.
 Un journal incompleto/corrupto o errores persistentes requieren recuperación manual
 revisada. El estado no está firmado; no autentica cambios maliciosos de quien puede
-reescribirlo entero. La release 0.4.0 conserva su comportamiento original: estas
-correcciones corresponden al código posterior en main.
+reescribirlo entero. La release 0.4.0 conserva su comportamiento original; estas
+correcciones están incluidas en la prerelease 0.4.1.

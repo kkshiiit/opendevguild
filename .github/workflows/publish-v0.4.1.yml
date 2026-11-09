@@ -1,0 +1,113 @@
+name: Publish verified 0.4.1
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Reviewed main commit with successful full CI (40 lowercase hex)
+        required: true
+        type: string
+      archive_sha256:
+        description: Independently rebuilt archive SHA-256 (64 lowercase hex)
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: publish-v0.4.1
+  cancel-in-progress: false
+env:
+  PYTHONUTF8: '1'
+  SOURCE_SHA: ${{ inputs.source_sha }}
+  EXPECTED_SHA256: ${{ inputs.archive_sha256 }}
+  ODG_RELEASE_TAG: v0.4.1
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Require the reviewed immutable dispatch context
+        shell: bash
+        run: |
+          [[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$EXPECTED_SHA256" =~ ^[0-9a-f]{64}$ ]]
+          test "$GITHUB_REPOSITORY" = kkshiiit/opendevguild
+          test "$GITHUB_REF" = refs/tags/v0.4.1
+          test "$GITHUB_SHA" = "$SOURCE_SHA"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.source_sha }}
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check tag identity and successful main CI for the exact source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          git fetch --no-tags origin refs/tags/v0.4.1:refs/tags/v0.4.1
+          test "$(git rev-parse 'v0.4.1^{}')" = "$SOURCE_SHA"
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/ci.yml/runs?branch=main&event=push&status=success&per_page=100" > "$RUNNER_TEMP/ci-proof.json"
+          python -c "import json,os,pathlib; runs=json.loads((pathlib.Path(os.environ['RUNNER_TEMP'])/'ci-proof.json').read_text())['workflow_runs']; assert any(r['head_sha']==os.environ['SOURCE_SHA'] and r['head_branch']=='main' and r['conclusion']=='success' for r in runs), 'Reviewed source lacks successful main CI'"
+      - run: python -m pip install uv==0.13.5
+      - name: Require release versions in source and lock metadata
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib, tomllib
+          root = pathlib.Path('.')
+          assert tomllib.loads((root/'pyproject.toml').read_text())['project']['version'] == '0.4.1'
+          for name in ('catalog.json', 'plugin.json'):
+              assert json.loads((root/name).read_text())['version'] == '0.4.1'
+          packages = tomllib.loads((root/'uv.lock').read_text())['package']
+          assert next(p['version'] for p in packages if p['name']=='opendevguild-skills') == '0.4.1'
+          PY
+      - name: Reconstruct the exact reviewed archive twice
+        shell: bash
+        run: |
+          uv sync --frozen
+          uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.1.zip
+          uv run --frozen python scripts/guild.py package --output dist/repro/opendevguild-0.4.1.zip
+          cmp dist/opendevguild-0.4.1.zip dist/repro/opendevguild-0.4.1.zip
+          python -c "import hashlib,os,pathlib; assert hashlib.sha256(pathlib.Path('dist/opendevguild-0.4.1.zip').read_bytes()).hexdigest()==os.environ['EXPECTED_SHA256'], 'Archive differs from independent reviewed build'"
+          python scripts/verify_release.py --zip dist/opendevguild-0.4.1.zip --checksum dist/opendevguild-0.4.1.zip.sha256
+      - name: Publish new prerelease without replacing existing assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create v0.4.1
+          dist/opendevguild-0.4.1.zip dist/opendevguild-0.4.1.zip.sha256
+          --repo "$GITHUB_REPOSITORY" --verify-tag
+          --title 'OpenDevGuild 0.4.1 — Transactional Installer Maintenance'
+          --notes-file .github/release-notes/v0.4.1.md --prerelease
+  public-integrity:
+    needs: publish
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.source_sha }}
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      # Repository-token publication does not trigger another release workflow.
+      # These jobs use anonymous HTTPS and native checksum tools explicitly.
+      - run: python scripts/verify_release.py --output release-verification > public-integrity.json
+      - name: Require native checksum execution and independently reviewed hash
+        run: >-
+          python -c "import json,os,pathlib,sys;
+          r=json.loads(pathlib.Path('public-integrity.json').read_text(encoding='utf-8-sig'));
+          print(json.dumps(r,indent=2));
+          tool={'win32':'PowerShell Get-FileHash','darwin':'shasum'}.get(sys.platform,'sha256sum');
+          assert any(c['tool']==tool and c['outcome']=='passed' for c in r['native_checks']), 'Required native checksum did not run';
+          assert r['sha256']==os.environ['EXPECTED_SHA256'], 'Public bytes differ from reviewed archive'"

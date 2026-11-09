@@ -2,11 +2,13 @@
 
 ## Instalación rápida
 
-**Versión de desarrollo 0.4.0 · Apache-2.0 · [English](README.md)**
+**Prerelease de mantenimiento 0.4.1 · Apache-2.0 · [English](README.md)**
 
 OpenDevGuild aporta **34 skills de ingeniería y ocho especialistas visuales**.
 El cliente compatible aporta modelo, herramientas y permisos. Copiar una skill no
 inicia agentes, modifica tu app ni concede acceso automáticamente.
+
+Para el paquete de mantenimiento verificado, descargá **ambos**: [ZIP 0.4.1](https://github.com/kkshiiit/opendevguild/releases/download/v0.4.1/opendevguild-0.4.1.zip) y [SHA-256](https://github.com/kkshiiit/opendevguild/releases/download/v0.4.1/opendevguild-0.4.1.zip.sha256). Revisá la guía antes de copiar. La [release 0.4.0](https://github.com/kkshiiit/opendevguild/releases/tag/v0.4.0) sigue disponible; su instalador no incluye la corrección transaccional.
 
 1. Usá **Code → Download ZIP** o [descargá el repositorio](https://github.com/kkshiiit/opendevguild/archive/refs/heads/main.zip).
    Si preferís Git:
@@ -84,7 +86,7 @@ uv sync --frozen
 uv run --frozen python scripts/guild.py validate
 uv run --frozen python -m unittest discover -s tests -v
 uv run --frozen python scripts/guild.py check-handoff examples/handoff.json --task examples/task.json
-uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.0.zip
+uv run --frozen python scripts/guild.py package --output dist/opendevguild-0.4.1.zip
 ```
 
 Elegí otra salida si ya existe. Las capturas requieren el grupo visual opcional y

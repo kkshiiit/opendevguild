@@ -18,8 +18,8 @@ from the [catalog](catalog.md), not the entire catalog.
 
 Without Git, use the repository's **Code → Download ZIP**, then extract it.
 That download is a source snapshot, not the separately checksummed release bundle.
-For a versioned bundle use [release0.4.0](https://github.com/kkshiiit/opendevguild/releases/tag/v0.4.0)
-and download **both** `opendevguild-0.4.0.zip` and its `.zip.sha256` sidecar.
+For a versioned bundle use [release 0.4.1](https://github.com/kkshiiit/opendevguild/releases/tag/v0.4.1)
+and download **both** `opendevguild-0.4.1.zip` and its `.zip.sha256` sidecar.
 The release page and assets must exist before treating this version as published.
 The sidecar detects changed bytes, not publisher identity.
 
@@ -40,27 +40,27 @@ a different revision over uncommitted work. Review the chosen `SKILL.md` first.
 Keep both downloaded files in the same folder. Linux:
 
 ```bash
-sha256sum -c opendevguild-0.4.0.zip.sha256
+sha256sum -c opendevguild-0.4.1.zip.sha256
 ```
 
 macOS's standard Perl utility:
 
 ```bash
-shasum -a 256 -c opendevguild-0.4.0.zip.sha256
+shasum -a 256 -c opendevguild-0.4.1.zip.sha256
 ```
 
 Windows PowerShell:
 
 ```powershell
-$expected = (Get-Content .\opendevguild-0.4.0.zip.sha256).Split()[0].ToLowerInvariant()
-$actual = (Get-FileHash .\opendevguild-0.4.0.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+$expected = (Get-Content .\opendevguild-0.4.1.zip.sha256).Split()[0].ToLowerInvariant()
+$actual = (Get-FileHash .\opendevguild-0.4.1.zip -Algorithm SHA256).Hash.ToLowerInvariant()
 if ($actual -ne $expected) { throw 'SHA-256 mismatch: do not install' }
 'SHA-256 matches'
 ```
 
-Checksum recipes use the native utilities for each platform. The release-event
-CI downloads the actual public ZIP and sidecar on Linux, macOS and Windows and
-records available native utility results. Consult the final release report for
+Checksum recipes use the native utilities for each platform. The publication workflow
+downloads the actual public ZIP and sidecar on Linux, macOS and Windows and
+requires a passing native utility result for each platform. Consult the final release report for
 the observed run; copying alone never proves integrity. Stop on a mismatch.
 
 ## 2. Install one skill into a project
@@ -176,9 +176,9 @@ Manual update/uninstall/rollback was simulated with a synthetic local edit and
 retained it. This is file lifecycle evidence, not native-client proof. The optional
 installer refuses conflicting edits and supplies a managed rollback path; follow
 its [reference](installer-reference.md), including dry-run before changes.
-For the installer code after `v0.4.0`, a pending transaction blocks ordinary
+In the `v0.4.1` installer, a pending transaction blocks ordinary
 operations: review [transaction recovery](installer-reference.md#transaction-failures-and-recovery)
-and use `recover` for the whole recorded batch. The published 0.4.0 ZIP is unchanged.
+and use `recover` for the whole recorded batch. The older 0.4.0 ZIP is preserved and lacks this recovery command.
 
 ## Optional subagents
 

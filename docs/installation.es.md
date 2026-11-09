@@ -17,8 +17,8 @@ subagentes ni garantizan corrección. Elegí una o dos del [catálogo](catalog.m
 
 Sin Git, usá **Code → Download ZIP** del repositorio y extraé el archivo. Es un
 snapshot del código, distinto del ZIP de release con checksum. Para la versión
-fijada abrí [release0.4.0](https://github.com/kkshiiit/opendevguild/releases/tag/v0.4.0)
-y descargá **ambos**: `opendevguild-0.4.0.zip` y `opendevguild-0.4.0.zip.sha256`.
+fijada abrí [release 0.4.1](https://github.com/kkshiiit/opendevguild/releases/tag/v0.4.1)
+y descargá **ambos**: `opendevguild-0.4.1.zip` y `opendevguild-0.4.1.zip.sha256`.
 La publicación y los enlaces deben comprobarse antes de declarar disponible la
 release. El checksum detecta bytes distintos, no certifica identidad del editor.
 
@@ -38,26 +38,26 @@ Revisá el `SKILL.md` elegido antes de copiarlo.
 Guardá el ZIP y su sidecar en la misma carpeta. Linux:
 
 ```bash
-sha256sum -c opendevguild-0.4.0.zip.sha256
+sha256sum -c opendevguild-0.4.1.zip.sha256
 ```
 
 macOS:
 
 ```bash
-shasum -a 256 -c opendevguild-0.4.0.zip.sha256
+shasum -a 256 -c opendevguild-0.4.1.zip.sha256
 ```
 
 Windows PowerShell:
 
 ```powershell
-$expected = (Get-Content .\opendevguild-0.4.0.zip.sha256).Split()[0].ToLowerInvariant()
-$actual = (Get-FileHash .\opendevguild-0.4.0.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+$expected = (Get-Content .\opendevguild-0.4.1.zip.sha256).Split()[0].ToLowerInvariant()
+$actual = (Get-FileHash .\opendevguild-0.4.1.zip -Algorithm SHA256).Hash.ToLowerInvariant()
 if ($actual -ne $expected) { throw 'SHA-256 incorrecto: no instalar' }
 'SHA-256 coincide'
 ```
 
-El CI de la release descarga el ZIP y su checksum públicos en Linux, macOS y
-Windows y registra los resultados de sus utilidades nativas. No confundas copia
+El workflow de publicación descarga el ZIP y su checksum públicos en Linux, macOS y
+Windows y exige resultados aprobados de sus utilidades nativas. No confundas copia
 con integridad. La comprobación del ZIP realmente publicado
 pertenece al informe de entrega. Detenete si el hash no coincide.
 
@@ -172,9 +172,9 @@ Se simuló este ciclo con un cambio local sintético y se conservó. Es evidenci
 archivos, no prueba de ejecución de un cliente. El instalador opcional rechaza
 ediciones en conflicto; seguí su [referencia](installer-reference.md) y empezá
 por dry-run antes de cambiar archivos.
-En el instalador posterior a `v0.4.0`, una transacción pendiente bloquea nuevas
+En el instalador de `v0.4.1`, una transacción pendiente bloquea nuevas
 operaciones: revisá la [recuperación](installer-reference.md#recuperación-y-límites)
-y usá `recover` para el lote completo. El ZIP publicado de 0.4.0 no cambió.
+y usá `recover` para el lote completo. El ZIP anterior de 0.4.0 se conserva y no incluye este comando.
 
 ## Perfiles opcionales de subagentes
 
