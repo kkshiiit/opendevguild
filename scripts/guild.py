@@ -136,6 +136,32 @@ def check_handoff(root, task, report):
     return errors
 
 
+def claude_adapter_files(root):
+    """Allowlist native adapter sources without admitting private client state."""
+    if root.is_symlink() or getattr(root, 'is_junction', lambda: False)():
+        raise ValueError('linked Claude adapter root is not distributable')
+    # Claude also auto-discovers these even when the manifest omits them.
+    # This adapter deliberately supports skills + one reviewer only.
+    for name in ('.mcp.json', '.lsp.json', 'settings.json', 'hooks', 'commands',
+                 'workflows', 'monitors', 'output-styles', 'themes'):
+        path = root / name
+        if path.exists() or path.is_symlink():
+            raise ValueError(f'Unreviewed auto-discovered Claude component: {name}')
+    files = []
+    for name in ('.claude-plugin/plugin.json', 'agents/reviewer.md'):
+        path = root / name
+        if any(p.is_symlink() or getattr(p, 'is_junction', lambda: False)()
+               for p in (path.parent, path)):
+            raise ValueError('linked Claude adapter path is not distributable')
+        if path.parent.exists() and not path.parent.is_dir():
+            raise ValueError('Claude adapter parent must be a directory')
+        if path.exists() and not path.is_file():
+            raise ValueError('Non-regular Claude adapter file rejected')
+        if path.is_file():
+            files.append(path)
+    return files
+
+
 def source_files(root):
     """Reject symlinks, including directory links, before inspecting content."""
     if root.is_symlink():
@@ -154,6 +180,9 @@ def source_files(root):
             raise ValueError('symlink in agent configuration path')
         if path.is_file():
             files.append(path)
+    # Explicit native Claude adapter files only, never .claude user settings,
+    # credentials, caches or arbitrary .claude-plugin state.
+    files.extend(claude_adapter_files(root))
     for name in DIRECTORIES:
         directory = root / name
         if directory.is_symlink():
@@ -172,6 +201,43 @@ def source_files(root):
                     raise ValueError(f'unreviewed file type: {path.relative_to(root)}')
                 files.append(path)
     return sorted(set(files), key=lambda p: p.relative_to(root).as_posix())
+
+
+def validate_claude_plugin(root, version):
+    """Conservative project policy, not Claude's authoritative native validator."""
+    errors = []
+    try:
+        claude_adapter_files(root)
+        manifest = read_json(root / '.claude-plugin/plugin.json')
+        expected = {'name': 'opendevguild', 'version': version,
+                    'author': {'name': 'OpenDevGuild contributors'},
+                    'repository': 'https://github.com/kkshiiit/opendevguild',
+                    'license': 'Apache-2.0', 'agents': ['./agents/reviewer.md']}
+        if not isinstance(manifest, dict) or set(manifest) != set(expected) | {'description'}:
+            return ['Claude manifest must use the reviewed minimal field set (no implicit capabilities)']
+        for key, value in expected.items():
+            if manifest[key] != value:
+                errors.append(f'Claude manifest: unexpected {key}')
+        if not isinstance(manifest['description'], str) or not manifest['description'].strip():
+            errors.append('Claude manifest needs a description')
+        # Never resolve untrusted manifest paths. Only the reviewed fixed agent
+        # file is inspected, after source_files has guarded its ancestors.
+        content = (root / 'agents/reviewer.md').read_text(encoding='utf-8')
+        if not content.startswith('---\n'):
+            return errors + ['Claude reviewer needs YAML frontmatter']
+        header, body = content[4:].split('\n---\n', 1)
+        agent = dirty_load(header, allow_flow_style=True).data
+        if not isinstance(agent, dict) or set(agent) != {'name', 'description', 'tools', 'model'}:
+            errors.append('Claude reviewer must use the reviewed field set; ignored permission overrides are forbidden')
+        elif (agent['name'] != 'reviewer' or agent['tools'] != 'Read, Grep, Glob' or
+              agent['model'] != 'inherit' or not isinstance(agent['description'], str) or
+              not agent['description'].strip()):
+            errors.append('Claude reviewer must retain its read-only tools and inherited model')
+        if not body.strip():
+            errors.append('Claude reviewer needs an actual procedure')
+    except (OSError, ValueError, YAMLError) as error:
+        errors.append(f'Invalid Claude adapter: {error}')
+    return errors
 
 
 def validate_project(root):
@@ -221,6 +287,7 @@ def validate_project(root):
     errors += schema_errors(root, 'plugin.schema.json', read_json(root / 'plugin.json'))
     if read_json(root / 'plugin.json')['version'] != catalog['version']:
         errors.append('plugin and catalog versions differ')
+    errors += validate_claude_plugin(root, catalog['version'])
     for path in files:
         if path.suffix in ('.yml', '.yaml'):
             try:

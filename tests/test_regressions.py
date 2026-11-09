@@ -43,6 +43,10 @@ class RegressionTests(unittest.TestCase):
             source = ROOT / name
             if source.is_file():
                 shutil.copy2(source, target / name)
+        for source in guild.claude_adapter_files(ROOT):
+            destination = target / source.relative_to(ROOT)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
         for name in ('.codex', 'skills', 'docs', 'contracts', 'examples', 'scripts',
                      'tests', 'evaluations', 'visual'):
             shutil.copytree(ROOT / name, target / name,

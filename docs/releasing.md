@@ -10,7 +10,8 @@ be recorded after execution; naming the target here does not publish it.
 1. Review the complete [requirements](requirements.md), current
    [verification gaps](verification.md), intended support claims and release owner.
    Classify the work FAST, STANDARD or CRITICAL by risk, not desired publicity.
-2. Keep versions aligned in pyproject.toml, plugin.json, catalog.json, README
+2. Keep versions aligned in pyproject.toml, plugin.json, catalog.json,
+   `.claude-plugin/plugin.json`, README
    examples and changelog. The earlier 0.2.0 candidate changed provisional exchange
    conventions to the complete lifecycle and gate contract. Preserve 0.1.0 history;
    do not reinterpret its old handoffs as new-format VERIFIED results. Document

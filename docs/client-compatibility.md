@@ -12,7 +12,7 @@ No undocumented minimum client version is invented.
 | Codex CLI/IDE skills | Observed CLI0.167.0-alpha.4; not a minimum guarantee | `.agents/skills/`, `~/.agents/skills/` | DOCUMENTED_NOT_TESTED for native discovery/activation; authoring invocation blocked by expired authentication. `$name` and `/skills` documented. |
 | Codex custom profiles | Same observed CLI; current official mandatory3 fields | `.codex/agents/`, optional `~/.codex/agents/` | VERIFIED syntax/field tests; DOCUMENTED_NOT_TESTED runtime loading. No tool, sandbox or isolation guarantee. |
 | ChatGPT | Account/interface availability varies; no fixed tested version | Admitted plugin/workspace upload/publishing UI; bundle `plugin.json` plus `skills/` | DOCUMENTED_NOT_TESTED packaging mechanism; manual `.agents/skills` installation into ChatGPT is NOT_SUPPORTED. GitHub release is not plugin approval. |
-| Claude Code | Current docs, no local executable/version observed | `.claude/skills/`, `~/.claude/skills/` | DOCUMENTED_NOT_TESTED discovery and `/name` activation; Codex profiles are not Claude subagents. |
+| Claude Code | Current official docs; local executable unavailable, version not observed | Native `.claude-plugin/plugin.json`, default `skills/`, one `agents/reviewer.md`; load via `--plugin-dir` | Offline policy/packaging tested; official validator, discovery, `/opendevguild:name` activation and native child execution NOT_RUN. [Guide](claude-code.md). Codex profiles remain separate. |
 | Gemini CLI | Current docs, no local executable/version observed | `.gemini/skills/` or `.agents/skills/` alias; corresponding home paths | DOCUMENTED_NOT_TESTED; `/skills list`, `/skills reload` and native install/link commands documented. No syntax equivalence to Codex asserted. |
 | Other hosts | None established | Follow that host's actual Agent Skills documentation | NOT_SUPPORTED as a tested integration; format portability alone is insufficient. |
 
@@ -30,6 +30,9 @@ No undocumented minimum client version is invented.
 See [verification](verification.md) for newer actual runs, including optional
 installer lifecycle tests, rather than silently upgrading documentation labels.
 A client may be available while its authentication, SDK or tools remain blocked.
+The native Claude adapter is a source change after v0.4.1, not a retroactive
+addition to that ZIP. Standalone `.claude/skills/` copies still use `/name`.
+Claude is absent here; its runtime is not classified using Codex's HTTP 401.
 
 ## Official sources checked live
 

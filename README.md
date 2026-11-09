@@ -38,6 +38,11 @@ is optional when downloading ZIPs. The client has its own installation requireme
 · [Client/platform evidence](docs/client-compatibility.md) ·
 [Eight copyable task examples](docs/usage-examples.md).
 
+For the source-checkout **native Claude Code plugin**, see the
+[Claude guide](docs/claude-code.md). It reuses the skills and adds one optional
+read-only reviewer. Offline checks and unexecuted native activation are separate;
+the existing v0.4.1 release ZIP predates this adapter.
+
 ## What is included
 
 | Layer | Responsibility |
