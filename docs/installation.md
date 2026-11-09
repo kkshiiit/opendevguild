@@ -58,10 +58,10 @@ if ($actual -ne $expected) { throw 'SHA-256 mismatch: do not install' }
 'SHA-256 matches'
 ```
 
-The two shell checksum recipes were executed on Linux using controlled files;
-that does not prove macOS execution. The PowerShell recipe is documented until a
-native run is recorded. Actual release-asset download/integrity evidence belongs
-in the final release report. Stop on a mismatch.
+Checksum recipes use the native utilities for each platform. The release-event
+CI downloads the actual public ZIP and sidecar on Linux, macOS and Windows and
+records available native utility results. Consult the final release report for
+the observed run; copying alone never proves integrity. Stop on a mismatch.
 
 ## 2. Install one skill into a project
 
@@ -92,10 +92,11 @@ fi
 test -f "$odg_target/scope-guardian/SKILL.md"
 ```
 
-Replace the absolute path. This recipe was executed in a clean temporary Linux
-project, including the collision branch; macOS execution is not claimed.
+Replace the absolute path. Literal copy/collision examples are exercised in
+clean temporary Linux and macOS projects by hosted tests; client discovery is
+separate and remains subject to the compatibility matrix.
 
-PowerShell (documented Windows procedure; no Bash heredoc required):
+PowerShell (literal Windows copy/collision example tested in hosted CI):
 
 ```powershell
 $odgTarget = 'C:\path\to\your-app\.agents\skills'

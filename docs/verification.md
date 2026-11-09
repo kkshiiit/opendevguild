@@ -14,13 +14,13 @@ The sole authorized repository remains https://github.com/kkshiiit/opendevguild.
 |Onboarding|EN/ES install, quickstart, troubleshooting and8usage scenarios|Literal POSIX recipes, real checkout copy and collision tests|Client discovery is separate from filesystem copying|
 |Managed installation|Optional stdlib install/update/uninstall/rollback/dry-run|16tests cover collisions, tampered state/backups, user edits, capacity and recovery|Not crash-atomic or safe against concurrent writers; use manual recovery|
 |Research|SQLite batches, evidence levels, deduplication and seeded sampling|13tests;18technical documents at L1,18duplicates on reimport|No bulk crawl, app audit or demonstrated agent improvement|
-|Release integrity|ZIP/hash verifier and release-event matrix|4negative/positive tests; sha256sum/shasum locally|Public-download and nativeWindows/macOS evidence belongs to hosted release run|
+|Release integrity|ZIP/hash verifier and release-event matrix|5negative/positive tests; sha256sum/shasum locally|Public-download and nativeWindows/macOS evidence belongs to hosted release run|
 |Security|Public-source review, license metadata and locked dependencies|44installed packages:0known advisories onNov9; two source text patterns found none|Not complete secret scanning or legal certification|
 |Visual V1|Preserved captures, libraries, material guards and comparisons|Historical actual Chromium evidence;19visual regression methods|No new human/native/three-arm implementation result|
 
 ## Executed local suite
 
-The final local suite ran109methods:108passed and1PowerShell test skipped because
+The final local suite ran110methods:109passed and1PowerShell test skipped because
 pwsh is unavailable on this Linux executor. Fatal-error Ruff checks and project
 validation passed. Hosted jobs separately run platform-native documentation and
 checksum methods. Native Codex discovery was attempted onNov9 in a fresh temporary
@@ -55,3 +55,11 @@ screen-reader, human preference and repeated sealed-holdout comparisons remain
 not_run. Whole-task token/cost/model telemetry is unavailable; no efficiency or
 fine-tuning claim is made. See [final report](final-report.md) and release metadata
 for hosted CI, commit, artifacts and actual publication observations.
+
+## Hosted onboarding observations
+
+Run42554191638 passed the literal POSIX recipes on Linux/macOS and PowerShell
+copy/collision recipes on Windows. Its overall result failed on an attempted
+POSIX checksum-script launch on Windows. The verifier was corrected to use native
+PowerShell there, with an additional regression. The corrected full CI must pass
+before release publication; published-asset checks then run on all three systems.

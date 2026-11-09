@@ -56,9 +56,9 @@ if ($actual -ne $expected) { throw 'SHA-256 incorrecto: no instalar' }
 'SHA-256 coincide'
 ```
 
-Los comandos `sha256sum` y `shasum` se ejecutaron en Linux con archivos controlados;
-no equivalen a una prueba nativa de macOS. PowerShell queda documentado hasta que
-se registre una ejecución nativa. La comprobación del ZIP realmente publicado
+El CI de la release descarga el ZIP y su checksum públicos en Linux, macOS y
+Windows y registra los resultados de sus utilidades nativas. No confundas copia
+con integridad. La comprobación del ZIP realmente publicado
 pertenece al informe de entrega. Detenete si el hash no coincide.
 
 ## 2. Instalar una skill en tu proyecto
@@ -90,10 +90,10 @@ fi
 test -f "$odg_target/scope-guardian/SKILL.md"
 ```
 
-Reemplazá la ruta absoluta. Se ejecutó en un proyecto temporal Linux vacío y se
-comprobó el rechazo de colisión. No se afirma ejecución nativa en macOS.
+Reemplazá la ruta absoluta. Los ejemplos literales se ejecutan en proyectos
+temporales Linux y macOS con rechazo de colisión; la carga del cliente es otra prueba.
 
-PowerShell —procedimiento Windows documentado, sin heredoc de Bash—:
+PowerShell —ejemplo literal de copia y colisión probado en CI Windows—:
 
 ```powershell
 $odgTarget = 'C:\ruta\a\tu-app\.agents\skills'

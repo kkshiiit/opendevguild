@@ -22,8 +22,8 @@ No undocumented minimum client version is invented.
 | --- | --- |
 | Linux shell + manual selected-folder copy | VERIFIED temporary clean checkout/copy/collision/update/uninstall simulation; not native client loading |
 | Linux `sha256sum` and Perl `shasum` recipes | VERIFIED on controlled local checksum fixtures; actual release download must additionally be checked at publication |
-| macOS shell manual copy / `shasum` | DOCUMENTED_NOT_TESTED as native onboarding; prior macOS hosted CI verifies tooling, not these client workflows |
-| Windows PowerShell copy / Get-FileHash | DOCUMENTED_NOT_TESTED until a native onboarding run records the exact recipe; do not infer it from Unix testing |
+| macOS shell manual copy / `shasum` | VERIFIED literal copy/collision recipes in hosted macOS tests; public checksum outcomes in release CI; client runtime still unverified |
+| Windows PowerShell copy / Get-FileHash | VERIFIED literal PowerShell copy/collision recipe in hosted Windows tests; Get-FileHash public-download outcome is separately checked by release CI |
 | Linux/Python3.11 and3.12; Windows/Python3.12; macOS/Python3.12 tooling | VERIFIED by historical hosted CI linked from the verification record; does not prove client activation or native applications |
 | Android/Termux installation | NOT_SUPPORTED as an asserted/tested integration in this release; no universal installation claim |
 

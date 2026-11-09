@@ -34,7 +34,7 @@ como DEMOSTRADOS. Todo permanece independiente de un runtime propio.
 
 ## D. Calidad y gates
 
-Localmente:109 métodos,108 aprobados y1 omitido por falta de PowerShell. Incluye16
+Localmente:110 métodos,109 aprobados y1 omitido por falta de PowerShell. Incluye16
 pruebas del instalador,13 de investigación,4 de integridad y pruebas literales de
 las guías. Formato oficial, enlaces locales, sintaxis y Ruff pasaron. La revisión
 independiente encontró y verificó dos correcciones reales: capacidad del manifiesto
