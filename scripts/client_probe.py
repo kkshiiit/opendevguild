@@ -22,6 +22,8 @@ MAX_ENTRIES = 2000
 MAX_FILE_BYTES = 1024 * 1024
 MAX_TOTAL_BYTES = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = 256 * 1024
+MAX_DEPTH = 32
+MAX_PATH_BYTES = 4096
 BUGGY = '''"""Deliberately flawed, synthetic review fixture."""\n\ndef total_after_discount(total, discount):\n    """Return nonnegative total after discount."""\n    if total < 0 or discount < 0:\n        raise ValueError("nonnegative values required")\n    return max(0, total + discount)\n'''
 SCENARIOS = [
     {"id": "A-scope", "skill": "scope-guardian", "prompt":
@@ -40,9 +42,12 @@ SCENARIOS = [
 
 
 def safe_relative(path: str) -> bool:
+    if len(path.encode("utf-8")) > MAX_PATH_BYTES:
+        return False
     rel = PurePosixPath(path)
     return bool(path) and not rel.is_absolute() and '..' not in rel.parts \
-        and '\\' not in path and ':' not in path and path == rel.as_posix()
+        and '\\' not in path and ':' not in path and path == rel.as_posix() \
+        and 0 < len(rel.parts) <= MAX_DEPTH
 
 
 def no_links(path: Path) -> Path:
@@ -72,6 +77,9 @@ def entries(directory: Path):
                 if count > MAX_ENTRIES:
                     raise ValueError("fixture entry budget exceeded")
                 path = Path(child.path)
+                if (len(path.relative_to(directory).parts) > MAX_DEPTH or
+                        len(path.relative_to(directory).as_posix().encode("utf-8")) > MAX_PATH_BYTES):
+                    raise ValueError("fixture path budget exceeded")
                 yield path
                 linked = path.is_symlink() or getattr(path, "is_junction", lambda: False)()
                 if not linked and child.is_dir(follow_symlinks=False):
@@ -105,6 +113,8 @@ def source_files(root: Path) -> list[tuple[Path, str]]:
                 raise ValueError(f"source symlink rejected: {skill}")
             if path.is_file():
                 rel = (Path(".agents") / "skills" / skill / path.relative_to(base)).as_posix()
+                if not safe_relative(rel):
+                    raise ValueError("fixture path budget exceeded")
                 paths.append((path, rel))
                 if len(paths) > MAX_FILES:
                     raise ValueError("fixture file budget exceeded")

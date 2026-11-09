@@ -23,6 +23,7 @@ Preparation validates all payloads before creating the destination: at most
 directories), and 256 KiB of manifest JSON. Source walks are bounded to 2,000
 entries per selected skill and do not follow links/junctions. Special files
 (such as FIFOs), duplicate JSON keys and non-object manifests are rejected.
+Relative paths have at most 32 components and 4,096 UTF-8 bytes.
 Checks enforce the same payload/manifest limits. Invalid or over-budget input
 returns structured `ERROR` and exit 2; changed bytes/added files or links return
 `CHANGED` and exit 1; unchanged registered file bytes return exit 0. I/O failure

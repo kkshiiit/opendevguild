@@ -24,6 +24,7 @@ Antes de crear el destino, valida todos los archivos: máximo 1.000 archivos,
 carpetas) y 256 KiB de JSON del manifiesto. Recorre como máximo 2.000 entradas
 por skill de origen, sin seguir enlaces ni junctions. Rechaza archivos especiales
 (como FIFO), claves JSON duplicadas y manifiestos que no sean objetos.
+Las rutas relativas admiten hasta 32 componentes y 4.096 bytes UTF-8.
 La comprobación aplica los mismos límites. Una entrada inválida o excesiva devuelve
 `ERROR` estructurado y código 2; cambios de bytes/archivos o enlaces agregados, `CHANGED` y
 código 1; bytes registrados sin cambios, código 0. Un fallo de escritura puede

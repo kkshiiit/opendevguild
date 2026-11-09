@@ -32,15 +32,16 @@ that status. No new release or token/quality improvement claim.
 Reproduced malformed top-level JSON causing an uncontrolled `AttributeError` and
 source FIFOs silently omitted from the copied inventory. Added byte/file/entry
 budgets, regular-file checks, no-follow traversal, duplicate-key detection and
-controlled parser errors. Preparation preflights payloads and serialized metadata
+controlled parser errors. Relative paths are limited to 32 components and
+4,096 UTF-8 bytes before constructing ancestor checks. Preparation preflights payloads and serialized metadata
 before creating output. The exact bounds and failure semantics are in the
 [English](client-probe.md) and [Spanish](client-probe.es.md) user guides.
 
 Independent review identified an additional deeply nested JSON failure; the fix
 translates it to structured `ERROR`/exit 2 and a real CLI regression covers it.
 The previous actual repository fixture still passes `UNCHANGED`, preserving
-compatibility with existing generated manifests. The focused suite has 26 tests;
-25 passed locally, one native-Windows junction test skipped. Native Windows
+compatibility with existing generated manifests. The focused suite has 28 tests;
+27 passed locally, one native-Windows junction test skipped. Native Windows
 and full hosted acceptance must be recorded from this cycle's PR/CI.
 
 Next priority: prepare frozen, matched base/no-skill, released OpenDevGuild and

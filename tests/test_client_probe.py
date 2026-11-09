@@ -204,6 +204,23 @@ class ProbeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "duplicate"):
             probe.check(self.destination)
 
+    def test_manifest_paths_reject_excessive_depth_length_and_empty_parts(self):
+        probe.prepare(self.destination, root=self.source)
+        manifest = self.destination / "manifest.json"
+        original = json.loads(manifest.read_text())
+        for rel in ("/".join(["x"] * 2000), "x" * 5000, "."):
+            with self.subTest(rel=rel[:30]):
+                data = dict(original, files={rel: "0" * 64})
+                manifest.write_text(json.dumps(data))
+                with self.assertRaisesRegex(ValueError, "unsafe"):
+                    probe.check(self.destination)
+
+    def test_source_depth_budget_rejected_before_writing(self):
+        with patch.object(probe, "MAX_DEPTH", 1):
+            with self.assertRaisesRegex(ValueError, "budget"):
+                probe.prepare(self.destination, root=self.source)
+        self.assertFalse(self.destination.exists())
+
     def test_manifest_budget_preflight_does_not_create_output(self):
         with patch.object(probe, "MAX_MANIFEST_BYTES", 1):
             with self.assertRaisesRegex(ValueError, "budget"):
